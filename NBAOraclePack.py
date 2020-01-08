@@ -12,6 +12,7 @@ app.title("NBA Oracle")
 scroll = Scrollbar(app, orient="vertical")
 scroll.pack(side=RIGHT, fill=Y)
 
+# ALL THE TEAMS HAVE NOT BEEN ADDED
 ###############################################################
 
 # DATA
