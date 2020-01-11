@@ -7,7 +7,7 @@ Widget that provides general info and the latest scores of your favorite pro bas
 - A More impressive frame(appearence)
 
 #### What I Learned
--Widget creation
--Making graphics appear on canvas
--Practice API integration
--Parsing and Routing JSON data
+- Widget creation
+- Making graphics appear on canvas
+- Practice API integration
+- Parsing and Routing JSON data
