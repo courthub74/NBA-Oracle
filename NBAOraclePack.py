@@ -427,9 +427,9 @@ warriorsGame = lastGameDateGS + """
 """ + warriorsAway + ""
 
 ########################################################################################
-# HOUSTON ROCKETS
+# HOUSTON CALLS (ROCKETS)
 
-# ROCKETS General Info 134876
+# ROCKETS Info 134876
 rocketsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Houston%20Rockets")
 # ROCKETS Last Game Parsed 134876
 rocketsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134876")
