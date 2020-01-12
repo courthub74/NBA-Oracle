@@ -426,8 +426,44 @@ warriorsGame = lastGameDateGS + """
 """ + warriorsHome + """
 """ + warriorsAway + ""
 
-#################################################################################
+########################################################################################
+# HOUSTON ROCKETS
 
+# ROCKETS General Info 134876
+rocketsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Houston%20Rockets")
+# ROCKETS Last Game Parsed 134876
+rocketsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134876")
+# ROCKETS Next Game Parsed 134876
+rocketsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134876")
+
+# ROCKETS Info Parsed 134876
+dataHOU = rocketsRE.text
+parseHOU = json.loads(dataHOU)
+# ROCKETS Last Game Parsed 134876
+LGdataHOU = rocketsLG.text
+LGparseHOU = json.loads(LGdataHOU)
+# ROCKETS Next Game Parsed 134876
+NGdataHOU = rocketsNG.text
+NGparseHOU = json.loads(NGdataHOU)
+
+# info Layout for the Drop Down Menu to Gather from ROCKETS 134876
+rocketsTeam = parseHOU["teams"][0]["strTeam"]
+yearFormedHOU = parseHOU["teams"][0]["intFormedYear"]
+teamStadiumHOU = parseHOU["teams"][0]["strStadium"]
+teamInfoHOU = parseHOU["teams"][0]["strDescriptionEN"]
+lastGameDateHOU = LGparseHOU["results"][0]["dateEventLocal"]
+homeTeamHOU = LGparseHOU["results"][0]["strHomeTeam"]
+awayTeamHOU = LGparseHOU["results"][0]["strAwayTeam"]
+homeScoreHOU = LGparseHOU["results"][0]["intHomeScore"]
+awayScoreHOU = LGparseHOU["results"][0]["intAwayScore"]
+
+# Last Game Info Printout LAKERS
+rocketsHome = "Home: " + str(homeTeamHOU) + " " + str(homeScoreHOU)
+rocketsAway = "Away: " + str(awayTeamHOU) + " " + str(awayScoreHOU)
+
+rocketsGame = lastGameDateHOU + """
+""" + rocketsHome + """
+""" + rocketsAway + ""
 #########################################################################################
 # LOS ANGELES LAKERS
 # KCal the LAKERS are playing 134867
@@ -572,6 +608,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectGS = warriorsTeam
         teamSelectedOutput.insert(INSERT, selectGS)
+    if TeamsVar.get() == "Houston Rockets":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectHOU = rocketsTeam
+        teamSelectedOutput.insert(INSERT, selectHOU)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamSelectedOutput.delete(0.0, 'end')
         tSelect2 = lakersTeam
@@ -624,6 +664,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearGS = yearFormedGS
         yearFormOutput.insert(INSERT, yearGS)
+    if TeamsVar.get() == "Houston Rockets":
+        yearFormOutput.delete(0.0, 'end')
+        yearHOU = yearFormedHOU
+        yearFormOutput.insert(INSERT, yearHOU)
     if TeamsVar.get() == "Los Angeles Lakers":
         yearFormOutput.delete(0.0, 'end')
         yearSel2 = yearFormedLAL
@@ -676,6 +720,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumGS = teamStadiumGS
         teamStadiumOutput.insert(INSERT, stadiumGS)
+    if TeamsVar.get() == "Houston Rockets":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumHOU = teamStadiumHOU
+        teamStadiumOutput.insert(INSERT, stadiumHOU)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamStadiumOutput.delete(0.0, 'end')
         stadiumLAL = teamStadiumLAL
@@ -724,6 +772,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoGS = teamInfoGS
         teamInfoOutput.insert(INSERT, infoGS)
+    if TeamsVar.get() == "Houston Rockets":
+        teamInfoOutput.delete(0.0, 'end')
+        infoHOU = teamInfoHOU
+        teamInfoOutput.insert(INSERT, infoHOU)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamInfoOutput.delete(0.0, 'end')
         infoSel2 = teamInfoLAL
@@ -776,6 +828,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         warriorsLastGame = warriorsGame
         lastGameOutput.insert(INSERT, warriorsLastGame)
+    if TeamsVar.get() == "Houston Rockets":
+        lastGameOutput.delete(0.0, 'end')
+        rocketsLastGame = rocketsGame
+        lastGameOutput.insert(INSERT, rocketsLastGame)
     if TeamsVar.get() == "Los Angeles Lakers":
         lastGameOutput.delete(0.0, 'end')
         lakersLastGame = lakersGame
@@ -910,6 +966,11 @@ def callTeamLogo(*args):
         LogoCanvas.image = warriorsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=warriorsLogo)
         LogoCanvas.pack()
+    if TeamsVar.get() == "Houston Rockets":
+        LogoCanvas.delete("all")
+        rocketsLogo = PhotoImage(file="icons/Rockets3001.png")
+        LogoCanvas.image = rocketsLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=rocketsLogo)
     if TeamsVar.get() == "Los Angeles Lakers":
         LogoCanvas.delete("all")
         lakersLogo = PhotoImage(file='icons/Lakers1001.png')
