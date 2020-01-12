@@ -6,7 +6,7 @@ import json
 app = Tk()
 app.geometry("600x700")
 app.iconbitmap("icons/NBA.ico")
-app.configure(background="DarkBlue")
+app.configure(background="DarkGrey")
 # app.config(image='icons/BallCourt.png')
 app.title("NBA Oracle")
 scroll = Scrollbar(app, orient="vertical")
@@ -298,6 +298,90 @@ mavsGame = lastGameDateDAL + """
 """ + mavsHome + """
 """ + mavsAway + ""
 #################################################################################
+# DENVER NUGGETS
+
+# NUGGETS Info Parsed 134885
+nuggetsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Denver%20Nuggets")
+# NUGGETS Last Game 134885
+nuggetsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134885")
+# NUGGETS Next Game 134885
+nuggetsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134885")
+
+# General Info Parsed
+dataDEN = nuggetsRE.text
+parseDEN = json.loads(dataDEN)
+
+# Last Game Parsed
+LGdataDEN = nuggetsLG.text
+LGparseDEN = json.loads(LGdataDEN)
+
+# Next Game Parsed
+NGdataDEN = nuggetsNG.text
+NGparseDEN = json.loads(NGdataDEN)
+
+# info Layout for the Drop Down Menu to Gather from
+nuggetsTeam = parseDEN["teams"][0]["strTeam"]
+yearFormedDEN = parseDEN["teams"][0]["intFormedYear"]
+teamStadiumDEN = parseDEN["teams"][0]["strStadium"]
+teamInfoDEN = parseDEN["teams"][0]["strDescriptionEN"]
+lastGameDateDEN = LGparseDEN["results"][0]["dateEventLocal"]
+homeTeamDEN = LGparseDEN["results"][0]["strHomeTeam"]
+awayTeamDEN = LGparseDEN["results"][0]["strAwayTeam"]
+homeScoreDEN = LGparseDEN["results"][0]["intHomeScore"]
+awayScoreDEN = LGparseDEN["results"][0]["intAwayScore"]
+
+# Last Game Info Printout PISTONS
+nuggetsHome = "Home: " + str(homeTeamDEN) + " " + str(homeScoreDEN)
+nuggetsAway = "Away: " + str(awayTeamDEN) + " " + str(awayScoreDEN)
+
+nuggetsGame = lastGameDateDEN + """
+""" + nuggetsHome + """
+""" + nuggetsAway + ""
+
+#################################################################################
+# DETROIT PISTONS
+
+# PISTONS General Info 134872
+pistonsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Detroit%20Pistons")
+# PISTONS Last Game 134872
+pistonsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134872")
+# PISTONS Next Game 134872
+pistonsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134872")
+
+# General Info Parsed
+dataDET = pistonsRE.text
+parseDET = json.loads(dataDET)
+# For the Test
+# print(pistonsRE.status_code)
+# print(json.dumps(parseDET, indent=4))
+
+# Last Game Parsed
+LGdataDET = pistonsLG.text
+LGparseDET = json.loads(LGdataDET)
+
+# Next Game Parsed
+NGdataDET = pistonsNG.text
+NGparseDET = json.loads(NGdataDET)
+
+# info Layout for the Drop Down Menu to Gather from
+pistonsTeam = parseDET["teams"][0]["strTeam"]
+yearFormedDET = parseDET["teams"][0]["intFormedYear"]
+teamStadiumDET = parseDET["teams"][0]["strStadium"]
+teamInfoDET = parseDET["teams"][0]["strDescriptionEN"]
+lastGameDateDET = LGparseDET["results"][0]["dateEventLocal"]
+homeTeamDET = LGparseDET["results"][0]["strHomeTeam"]
+awayTeamDET = LGparseDET["results"][0]["strAwayTeam"]
+homeScoreDET = LGparseDET["results"][0]["intHomeScore"]
+awayScoreDET = LGparseDET["results"][0]["intAwayScore"]
+
+# Last Game Info Printout PISTONS
+pistonsHome = "Home: " + str(homeTeamDET) + " " + str(homeScoreDET)
+pistonsAway = "Away: " + str(awayTeamDET) + " " + str(awayScoreDET)
+
+pistonsGame = lastGameDateDET + """
+""" + pistonsHome + """
+""" + pistonsAway + ""
+#######################################################################################
 # GOLDEN STATE WARRIORS
 
 # WARRIORS General Info 134865
@@ -343,48 +427,7 @@ warriorsGame = lastGameDateGS + """
 """ + warriorsAway + ""
 
 #################################################################################
-# DETROIT PISTONS
 
-# PISTONS General Info 134872
-pistonsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Detroit%20Pistons")
-# PISTONS Last Game 134872
-pistonsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134872")
-# PISTONS Next Game 134872
-pistonsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134872")
-
-# General Info Parsed
-dataDET = pistonsRE.text
-parseDET = json.loads(dataDET)
-# For the Test
-# print(pistonsRE.status_code)
-# print(json.dumps(parseDET, indent=4))
-
-# Last Game Parsed
-LGdataDET = pistonsLG.text
-LGparseDET = json.loads(LGdataDET)
-
-# Next Game Parsed
-NGdataDET = pistonsNG.text
-NGparseDET = json.loads(NGdataDET)
-
-# info Layout for the Drop Down Menu to Gather from
-pistonsTeam = parseDET["teams"][0]["strTeam"]
-yearFormedDET = parseDET["teams"][0]["intFormedYear"]
-teamStadiumDET = parseDET["teams"][0]["strStadium"]
-teamInfoDET = parseDET["teams"][0]["strDescriptionEN"]
-lastGameDateDET = LGparseDET["results"][0]["dateEventLocal"]
-homeTeamDET = LGparseDET["results"][0]["strHomeTeam"]
-awayTeamDET = LGparseDET["results"][0]["strAwayTeam"]
-homeScoreDET = LGparseDET["results"][0]["intHomeScore"]
-awayScoreDET = LGparseDET["results"][0]["intAwayScore"]
-
-# Last Game Info Printout PISTONS
-pistonsHome = "Home: " + str(homeTeamDET) + " " + str(homeScoreDET)
-pistonsAway = "Away: " + str(awayTeamDET) + " " + str(awayScoreDET)
-
-pistonsGame = lastGameDateDET + """
-""" + pistonsHome + """
-""" + pistonsAway + ""
 #########################################################################################
 # LOS ANGELES LAKERS
 # KCal the LAKERS are playing 134867
@@ -517,10 +560,18 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectDAL = mavsTeam
         teamSelectedOutput.insert(INSERT, selectDAL)
+    if TeamsVar.get() == "Denver Nuggets":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectDEN = nuggetsTeam
+        teamSelectedOutput.insert(INSERT, selectDEN)
     if TeamsVar.get() == "Detroit Pistons":
         teamSelectedOutput.delete(0.0, 'end')
-        tSelect1 = pistonsTeam
-        teamSelectedOutput.insert(INSERT, tSelect1)
+        selectDET = pistonsTeam
+        teamSelectedOutput.insert(INSERT, selectDET)
+    if TeamsVar.get() == "Golden State Warriors":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectGS = warriorsTeam
+        teamSelectedOutput.insert(INSERT, selectGS)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamSelectedOutput.delete(0.0, 'end')
         tSelect2 = lakersTeam
@@ -561,10 +612,18 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearDAL = yearFormedDAL
         yearFormOutput.insert(INSERT, yearDAL)
+    if TeamsVar.get() == "Denver Nuggets":
+        yearFormOutput.delete(0.0, 'end')
+        yearDEN = yearFormedDEN
+        yearFormOutput.insert(INSERT, yearDEN)
     if TeamsVar.get() == "Detroit Pistons":
         yearFormOutput.delete(0.0, 'end')
-        yearSel1 = yearFormedDET
-        yearFormOutput.insert(INSERT, yearSel1)
+        yearDET = yearFormedDET
+        yearFormOutput.insert(INSERT, yearDET)
+    if TeamsVar.get() == "Golden State Warriors":
+        yearFormOutput.delete(0.0, 'end')
+        yearGS = yearFormedGS
+        yearFormOutput.insert(INSERT, yearGS)
     if TeamsVar.get() == "Los Angeles Lakers":
         yearFormOutput.delete(0.0, 'end')
         yearSel2 = yearFormedLAL
@@ -605,10 +664,18 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumDAL = teamStadiumDAL
         teamStadiumOutput.insert(INSERT, stadiumDAL)
+    if TeamsVar.get() == "Denver Nuggets":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumDEN = teamStadiumDEN
+        teamStadiumOutput.insert(INSERT, stadiumDEN)
     if TeamsVar.get() == "Detroit Pistons":
         teamStadiumOutput.delete(0.0, 'end')
         stadiumDET = teamStadiumDET
         teamStadiumOutput.insert(INSERT, stadiumDET)
+    if TeamsVar.get() == "Golden State Warriors":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumGS = teamStadiumGS
+        teamStadiumOutput.insert(INSERT, stadiumGS)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamStadiumOutput.delete(0.0, 'end')
         stadiumLAL = teamStadiumLAL
@@ -647,8 +714,16 @@ def callTeamInfo(*args):
         teamInfoOutput.insert(INSERT, infoDAL)
     if TeamsVar.get() == "Detroit Pistons":
         teamInfoOutput.delete(0.0, 'end')
-        infoSel1 = teamInfoDET
-        teamInfoOutput.insert(INSERT, infoSel1)
+        infoDET = teamInfoDET
+        teamInfoOutput.insert(INSERT, infoDET)
+    if TeamsVar.get() == "Denver Nuggets":
+        teamInfoOutput.delete(0.0, 'end')
+        infoDEN = teamInfoDEN
+        teamInfoOutput.insert(INSERT, infoDEN)
+    if TeamsVar.get() == "Golden State Warriors":
+        teamInfoOutput.delete(0.0, 'end')
+        infoGS = teamInfoGS
+        teamInfoOutput.insert(INSERT, infoGS)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamInfoOutput.delete(0.0, 'end')
         infoSel2 = teamInfoLAL
@@ -689,10 +764,18 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         mavsLastGame = mavsGame
         lastGameOutput.insert(INSERT, mavsLastGame)
+    if TeamsVar.get() == "Denver Nuggets":
+        lastGameOutput.delete(0.0, 'end')
+        nuggetsLastGame = nuggetsGame
+        lastGameOutput.insert(INSERT, nuggetsLastGame)
     if TeamsVar.get() == "Detroit Pistons":
         lastGameOutput.delete(0.0, 'end')
         pistonsLastGame = pistonsGame
         lastGameOutput.insert(INSERT, pistonsLastGame)
+    if TeamsVar.get() == "Golden State Warriors":
+        lastGameOutput.delete(0.0, 'end')
+        warriorsLastGame = warriorsGame
+        lastGameOutput.insert(INSERT, warriorsLastGame)
     if TeamsVar.get() == "Los Angeles Lakers":
         lastGameOutput.delete(0.0, 'end')
         lakersLastGame = lakersGame
@@ -722,7 +805,7 @@ TeamsVar.trace("w", callLastGame)
 
 # HEADER
 logo = PhotoImage(file='icons/nbaCLEAR.png')
-logoNBA = Label(app, image=logo, bg="DarkBlue")
+logoNBA = Label(app, image=logo, bg="DarkGrey")
 resizNBAlogo = logo.subsample(1, 1)
 logoNBA.config(image=resizNBAlogo)
 logoNBA.pack()
@@ -733,46 +816,46 @@ droplist.config(width=20, height=1, fg='Blue')
 droplist.pack()
 
 # Team Selected
-teamSelected = Label(app, text="Team Selected", bg='DarkBlue', fg='White', font='Arial 10 bold')
+teamSelected = Label(app, text="Team Selected", bg='DarkGrey', fg='White', font='Arial 10 bold')
 teamSelected.pack()
 teamSelectedOutput = Text(app, width=30, height=1, bg='Black', fg='White', font='none 10')
 teamSelectedOutput.pack()
 
 # Year Formed
-yearForm = Label(app, text="Year Formed", bg='DarkBlue', fg='White', font='Arial 10 bold')
+yearForm = Label(app, text="Year Formed", bg='DarkGrey', fg='White', font='Arial 10 bold')
 yearForm.pack()
 yearFormOutput = Text(app, width=10, height=1, bg='Black', fg='White', font='none 10')
 yearFormOutput.pack()
 
 # Team Stadium
-teamStadium = Label(app, text="Team Stadium", bg='DarkBlue', fg='White', font='Arial 10 bold')
+teamStadium = Label(app, text="Team Stadium", bg='DarkGrey', fg='White', font='Arial 10 bold')
 teamStadium.pack()
 teamStadiumOutput = Text(app, width=30, height=1, bg='Black', fg='White', font='none 10')
 teamStadiumOutput.pack()
 
 # Team Info
-teamInfo = Label(app, text="Team History", bg='DarkBlue', fg='White', font='Arial 10 bold')
+teamInfo = Label(app, text="Team History", bg='DarkGrey', fg='White', font='Arial 10 bold')
 teamInfo.pack()
 teamInfoOutput = Text(app, width=75, height=4, bg='Black', fg='White', font='none 10')
 teamInfoOutput.pack()
 
 # Last Game Info
-lastGame = Label(app, text="Last Game Played", bg='DarkBlue', fg='White', font='Arial 10 bold')
+lastGame = Label(app, text="Last Game Played", bg='DarkGrey', fg='White', font='Arial 10 bold')
 lastGame.pack()
 lastGameOutput = Text(app, width=30, height=3, bg='Black', fg='White', font='none 10')
 lastGameOutput.pack()
 
+
+#################################################################################################
+# LOGO TERRITORY
+
 # Team Logo
-'''teamLogo = Label(app, text="Team Logo", bg='DarkBlue', fg='White', font='Arial 10 bold')
+'''teamLogo = Label(app, text="Team Logo", bg='DarkGrey', fg='White', font='Arial 10 bold')
 teamLogo.pack()'''
 
 # Logo Canvas
-LogoCanvas = Canvas(height=150, width=100, borderwidth=0, highlightthickness=0, bg='DarkBlue', bd=0)
+LogoCanvas = Canvas(height=150, width=100, borderwidth=0, highlightthickness=0, bg='DarkGrey', bd=0)
 LogoCanvas.pack()
-
-# The image could maybe get extracted for a good challenge
-'''othaLogo = Canvas(app, bg="Blue")
-othaLogo.pack()'''
 
 
 def callTeamLogo(*args):
@@ -787,29 +870,45 @@ def callTeamLogo(*args):
         LogoCanvas.create_image(0, 0, anchor='nw', image=celticsLogo)
     if TeamsVar.get() == "Brooklyn Nets":
         netsLogo = PhotoImage(file="icons/Nets2001.png")
+        LogoCanvas.delete("all")
         LogoCanvas.image = netsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=netsLogo)
     if TeamsVar.get() == "Charlotte Hornets":
         hornetsLogo = PhotoImage(file="icons/Hornets1001.png")
+        LogoCanvas.delete("all")
         LogoCanvas.image = hornetsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=hornetsLogo)
     if TeamsVar.get() == "Chicago Bulls":
         bullsLogo = PhotoImage(file="icons/Bulls2001.png")
+        LogoCanvas.delete("all")
         LogoCanvas.image = bullsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=bullsLogo)
     if TeamsVar.get() == "Cleveland Cavaliers":
+        LogoCanvas.delete("all")
         cavsLogo = PhotoImage(file="icons/Cavs3001.png")
         LogoCanvas.image = cavsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=cavsLogo)
     if TeamsVar.get() == "Dallas Mavericks":
+        LogoCanvas.delete("all")
         mavsLogo = PhotoImage(file="icons/Mavs3001.png")
         LogoCanvas.image = mavsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=mavsLogo)
+    if TeamsVar.get() == "Denver Nuggets":
+        LogoCanvas.delete("all")
+        nuggetsLogo = PhotoImage(file="icons/Nuggets2001.png")
+        LogoCanvas.image = nuggetsLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=nuggetsLogo)
     if TeamsVar.get() == "Detroit Pistons":
         LogoCanvas.delete("all")
         pistonsLogo = PhotoImage(file='icons/Pistons1001.png')
         LogoCanvas.image = pistonsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=pistonsLogo)
+        LogoCanvas.pack()
+    if TeamsVar.get() == "Golden State Warriors":
+        LogoCanvas.delete("all")
+        warriorsLogo = PhotoImage(file="icons/Warriors2001.png")
+        LogoCanvas.image = warriorsLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=warriorsLogo)
         LogoCanvas.pack()
     if TeamsVar.get() == "Los Angeles Lakers":
         LogoCanvas.delete("all")
