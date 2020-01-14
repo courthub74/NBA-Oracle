@@ -1,0 +1,26 @@
+focused team score = x
+opposing team score = y
+
+if x > y:
+    then win
+
+if x < y:
+    then lose
+
+calculate the amount of x's(wins)
+calculate the amount of y's(losses)
+
+
+
+parse the data into: 
+
+a = total wins
+b = total losses
+
+
+       a - b (last 5 Games)
+
+
+determine win or loss streak:
+
+        
