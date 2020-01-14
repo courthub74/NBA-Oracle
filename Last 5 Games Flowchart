@@ -1,6 +1,26 @@
 focused team score = x
 opposing team score = y
 
+### Atlanta Hawks is the focused team
+
+      "strHomeTeam": "Brooklyn Nets",
+      "strAwayTeam": "Atlanta Hawks",
+      "intHomeScore": "108",
+      "intRound": "0",
+      "intAwayScore": "86",
+
+focusTeam = ["teams"][0]["strAwayTeam"]
+focusTeamScore = ["teams"][0]["intAwayScore"]
+(link the two above and turn into a variable)
+
+oppTeam = ["teams"][0]["strHomeTeam"]
+oppTeamScore = ["teams"][0]["intHomeScore"]
+(link the two above and turn into a variable)
+
+# Compare the two variables
+# Determine who won, so you can count the wins
+# Determine who lost so you can count the losses
+
 ##> think about linking the focused team score with the focused team
 
 if x > y:
