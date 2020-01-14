@@ -1,6 +1,8 @@
 focused team score = x
 opposing team score = y
 
+##> think about linking the focused team score with the focused team
+
 if x > y:
     then win
 
