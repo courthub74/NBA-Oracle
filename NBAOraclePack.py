@@ -431,9 +431,9 @@ warriorsGame = lastGameDateGS + """
 
 # ROCKETS Info 134876
 rocketsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Houston%20Rockets")
-# ROCKETS Last Game Parsed 134876
+# ROCKETS Last Game Info 134876
 rocketsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134876")
-# ROCKETS Next Game Parsed 134876
+# ROCKETS Next Game Info 134876
 rocketsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134876")
 
 # ROCKETS Info Parsed 134876
@@ -464,6 +464,37 @@ rocketsAway = "Away: " + str(awayTeamHOU) + " " + str(awayScoreHOU)
 rocketsGame = lastGameDateHOU + """
 """ + rocketsHome + """
 """ + rocketsAway + ""
+#########################################################################################
+# INDIANA PACERS
+
+# PACERS General Info 134873
+pacersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Indiana%20Pacers")
+# PACERS Last Game Info
+pacersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134873")
+# PACERS Next Game Info
+pacersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134873")
+
+# PACERS General Info Parsed 134873
+dataIND = pacersRE.text
+parseIND = json.loads(dataIND)
+# Last Game Parsed
+LGdataIND = pacersLG.text
+LGparseIND = json.loads(LGdataIND)
+# Next Game Parsed
+NGdataIND = pacersNG.text
+NGparseIND = json.loads(NGdataIND)
+
+# info Layout for the Drop Down Menu to Gather from PACERS 134873
+pacersTeam = parseIND["teams"][0]["strTeam"]
+yearFormedIND = parseIND["teams"][0]["intFormedYear"]
+teamStadiumIND = parseIND["teams"][0]["strStadium"]
+teamInfoIND = parseIND["teams"][0]["strDescriptionEN"]
+lastGameDateIND = LGparseIND["results"][0]["dateEventLocal"]
+homeTeamIND = LGparseIND["results"][0]["strHomeTeam"]
+awayTeamIND = LGparseIND["results"][0]["strAwayTeam"]
+homeScoreIND = LGparseIND["results"][0]["intHomeScore"]
+awayScoreIND = LGparseIND["results"][0]["intAwayScore"]
+
 #########################################################################################
 # LOS ANGELES LAKERS
 # KCal the LAKERS are playing 134867
