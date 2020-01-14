@@ -971,6 +971,11 @@ def callTeamLogo(*args):
         rocketsLogo = PhotoImage(file="icons/Rockets3001.png")
         LogoCanvas.image = rocketsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=rocketsLogo)
+    if TeamsVar.get() == "Indiana Pacers":
+        LogoCanvas.delete("all")
+        pacersLogo = PhotoImage(file="icons/Pacers1001.png")
+        LogoCanvas.image = pacersLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=pacersLogo)
     if TeamsVar.get() == "Los Angeles Lakers":
         LogoCanvas.delete("all")
         lakersLogo = PhotoImage(file='icons/Lakers1001.png')
