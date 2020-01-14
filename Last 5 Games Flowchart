@@ -22,5 +22,6 @@ b = total losses
 
 
 determine win or loss streak:
-
+- write a function that checks for consecutive wins and lists them
+-             "                    consecutive losses and lists those
         
