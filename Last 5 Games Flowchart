@@ -28,9 +28,13 @@ if focusTeamScore > oppTeamScore:
 if focusTeamScore < oppTeamScore:
     then Lose
 
-calculate the amount of x's(wins)
-calculate the amount of y's(losses)
+# calculate the amount of x's(wins)
+# calculate the amount of y's(losses)
 
+loss = Lose
+victor = Win
+
+# make a function that counts the losses and wins
 
 parse the data into: 
 
