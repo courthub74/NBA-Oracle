@@ -1,3 +1,5 @@
+##> think about linking the focused team score with the focused team
+
 focused team score = x
 opposing team score = y
 
@@ -21,17 +23,13 @@ oppTeamScore = ["teams"][0]["intHomeScore"]
 # Determine who won, so you can count the wins
 # Determine who lost so you can count the losses
 
-##> think about linking the focused team score with the focused team
-
-if x > y:
-    then win
-
-if x < y:
-    then lose
+if focusTeamScore > oppTeamScore:
+    then Win
+if focusTeamScore < oppTeamScore:
+    then Lose
 
 calculate the amount of x's(wins)
 calculate the amount of y's(losses)
-
 
 
 parse the data into: 
