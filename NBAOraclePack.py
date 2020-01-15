@@ -643,6 +643,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectHOU = rocketsTeam
         teamSelectedOutput.insert(INSERT, selectHOU)
+    if TeamsVar.get() == "Indiana Pacers":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectIND = pacersTeam
+        teamSelectedOutput.insert(INSERT, selectIND)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamSelectedOutput.delete(0.0, 'end')
         tSelect2 = lakersTeam
@@ -699,6 +703,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearHOU = yearFormedHOU
         yearFormOutput.insert(INSERT, yearHOU)
+    if TeamsVar.get() == "Indiana Pacers":
+        yearFormOutput.delete(0.0, 'end')
+        yearIND = yearFormedIND
+        yearFormOutput.insert(INSERT, yearIND)
     if TeamsVar.get() == "Los Angeles Lakers":
         yearFormOutput.delete(0.0, 'end')
         yearSel2 = yearFormedLAL
@@ -755,6 +763,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumHOU = teamStadiumHOU
         teamStadiumOutput.insert(INSERT, stadiumHOU)
+    if TeamsVar.get() == "Indiana Pacers":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumIND = teamStadiumIND
+        teamStadiumOutput.insert(INSERT, stadiumIND)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamStadiumOutput.delete(0.0, 'end')
         stadiumLAL = teamStadiumLAL
@@ -807,6 +819,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoHOU = teamInfoHOU
         teamInfoOutput.insert(INSERT, infoHOU)
+    if TeamsVar.get() == "Indiana Pacers":
+        teamInfoOutput.delete(0.0, 'end')
+        infoIND = teamInfoIND
+        teamInfoOutput.insert(INSERT, infoIND)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamInfoOutput.delete(0.0, 'end')
         infoSel2 = teamInfoLAL
@@ -863,6 +879,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         rocketsLastGame = rocketsGame
         lastGameOutput.insert(INSERT, rocketsLastGame)
+    if TeamsVar.get() == "Indiana Pacers":
+        lastGameOutput.delete(0.0, 'end')
+        pacersLastGame = pacersGame
+        lastGameOutput.insert(INSERT, pacersLastGame)
     if TeamsVar.get() == "Los Angeles Lakers":
         lastGameOutput.delete(0.0, 'end')
         lakersLastGame = lakersGame
