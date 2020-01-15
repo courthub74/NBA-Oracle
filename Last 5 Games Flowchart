@@ -23,9 +23,10 @@ oppTeamScore = ["teams"][0]["intHomeScore"]
 # Determine who won, so you can count the wins
 # Determine who lost so you can count the losses
 
-if focusTeamScore > oppTeamScore:
+if (focusTeamScore > oppTeamScore) TRUE
     then Win
-if focusTeamScore < oppTeamScore:
+    
+if (focusTeamScore < oppTeamScore) TRUE
     then Lose
 
 # calculate the amount of x's(wins)
