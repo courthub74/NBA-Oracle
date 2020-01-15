@@ -541,20 +541,25 @@ bucksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsla
 bucksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134874")
 
 # BUCKS General Info Parsed 134874
-dataRE3 = bucksRE.text
-parseRE3 = json.loads(dataRE3)
+dataMIL = bucksRE.text
+parseMIL = json.loads(dataMIL)
 # Last Game Parsed
-dataLG3 = bucksLG.text
-parseLG3 = json.loads(dataLG3)
+LGdataMIL = bucksLG.text
+LGparseMIL = json.loads(LGdataMIL)
 # Next Game Parsed
-dataNG3 = bucksNG.text
-parseNG3 = json.loads(dataNG3)
+NGdataMIL = bucksNG.text
+NGparseMIL = json.loads(NGdataMIL)
 
 # info Layout for the Drop Down Menu to Gather from BUCKS 134874
-teamName3 = parseRE3["teams"][0]["strTeam"]
-yearFormed3 = parseRE3["teams"][0]["intFormedYear"]
-teamStadium3 = parseRE3["teams"][0]["strStadium"]
-teamInfo3 = parseRE3["teams"][0]["strDescriptionEN"]
+bucksTeam = parseMIL["teams"][0]["strTeam"]
+yearFormedMIL = parseMIL["teams"][0]["intFormedYear"]
+teamStadiumMIL = parseMIL["teams"][0]["strStadium"]
+teamInfoMIL = parseMIL["teams"][0]["strDescriptionEN"]
+lastGameDateMIL = LGparseMIL["results"][0]["dateEventLocal"]
+homeTeamMIL = LGparseMIL["results"][0]["strHomeTeam"]
+awayTeamMIL = LGparseMIL["results"][0]["strAwayTeam"]
+homeScoreMIL = LGparseMIL["results"][0]["intHomeScore"]
+awayScoreMIL = LGparseMIL["results"][0]["intAwayScore"]
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
