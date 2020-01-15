@@ -1,3 +1,19 @@
+BASICS
+- Determine Scores
+- Determine the focus team
+- Determine the opp team
+- Compare the scores
+- Determine by comparison:
+    - the focus team vs the opp team
+    - if focus team score is less than opp team declare it a LOSS
+    - if focus team score is more than opp team declare it a WIN
+- Count the WINS
+- Count the LOSSES
+- Determine if there is a streak of more than one
+- if there is print it
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ##> think about linking the focused team score with the focused team
 
 focused team score = x
