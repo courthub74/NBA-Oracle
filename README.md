@@ -10,5 +10,5 @@ Widget that provides general info and the latest scores of your favorite pro bas
 #### What I Learned
 - Widget creation
 - Making graphics appear on canvas
-- Practice API integration
+- API integration
 - Parsing and Routing JSON data
