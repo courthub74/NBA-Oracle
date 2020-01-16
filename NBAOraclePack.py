@@ -495,6 +495,14 @@ awayTeamIND = LGparseIND["results"][0]["strAwayTeam"]
 homeScoreIND = LGparseIND["results"][0]["intHomeScore"]
 awayScoreIND = LGparseIND["results"][0]["intAwayScore"]
 
+# Last Game Info Printout PACERS
+pacersHome = "Home: " + str(homeTeamIND) + " " + str(homeScoreIND)
+pacersAway = "Away: " + str(awayTeamIND) + " " + str(awayScoreIND)
+
+pacersGame = lastGameDateIND + """
+""" + pacersHome + """
+""" + pacersAway + ""
+
 #########################################################################################
 # LOS ANGELES LAKERS
 # KCal the LAKERS are playing 134867
