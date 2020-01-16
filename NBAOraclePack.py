@@ -691,12 +691,12 @@ def callTeamSelected(*args):
         teamSelectedOutput.insert(INSERT, selectIND)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamSelectedOutput.delete(0.0, 'end')
-        tSelect2 = lakersTeam
-        teamSelectedOutput.insert(INSERT, tSelect2)
+        selectLAL = lakersTeam
+        teamSelectedOutput.insert(INSERT, selectLAL)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamSelectedOutput.delete(0.0, 'end')
-        tSelect3 = teamName3
-        teamSelectedOutput.insert(INSERT, tSelect3)
+        selectMIL = bucksTeam
+        teamSelectedOutput.insert(INSERT, selectMIL)
 
 
 # Year Formed Populate
@@ -751,12 +751,12 @@ def callYearFormed(*args):
         yearFormOutput.insert(INSERT, yearIND)
     if TeamsVar.get() == "Los Angeles Lakers":
         yearFormOutput.delete(0.0, 'end')
-        yearSel2 = yearFormedLAL
-        yearFormOutput.insert(INSERT, yearSel2)
+        yearLAL = yearFormedLAL
+        yearFormOutput.insert(INSERT, yearLAL)
     if TeamsVar.get() == "Milwaukee Bucks":
         yearFormOutput.delete(0.0, 'end')
-        yearSel3 = yearFormed3
-        yearFormOutput.insert(INSERT, yearSel3)
+        yearMIL = yearFormedMIL
+        yearFormOutput.insert(INSERT, yearMIL)
 
 
 # Team Stadium Populate
@@ -813,6 +813,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumLAL = teamStadiumLAL
         teamStadiumOutput.insert(INSERT, stadiumLAL)
+    if TeamsVar.get() == "Milwaukee Bucks":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumMIL = teamStadiumMIL
+        teamStadiumOutput.insert(INSERT, stadiumMIL)
 
 
 # Team Info Populate
@@ -867,12 +871,12 @@ def callTeamInfo(*args):
         teamInfoOutput.insert(INSERT, infoIND)
     if TeamsVar.get() == "Los Angeles Lakers":
         teamInfoOutput.delete(0.0, 'end')
-        infoSel2 = teamInfoLAL
-        teamInfoOutput.insert(INSERT, infoSel2)
+        infoLAL = teamInfoLAL
+        teamInfoOutput.insert(INSERT, infoLAL)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamInfoOutput.delete(0.0, 'end')
-        infoSel3 = teamInfo3
-        teamInfoOutput.insert(INSERT, infoSel3)
+        infoMIL = teamInfoMIL
+        teamInfoOutput.insert(INSERT, infoMIL)
 
 
 # Last Game Populate
@@ -929,6 +933,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         lakersLastGame = lakersGame
         lastGameOutput.insert(INSERT, lakersLastGame)
+    if TeamsVar.get() == "Milwaukee Bucks":
+        lastGameOutput.delete(0.0, 'end')
+        bucksLastGame = bucksGame
+        lastGameOutput.insert(INSERT, bucksLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
