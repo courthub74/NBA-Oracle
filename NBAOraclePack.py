@@ -522,16 +522,16 @@ LGparseLAC = json.loads(LGdataLAC)
 NGdataLAC = clippersNG.text
 NGparseLAC = json.loads(NGdataLAC)
 
-# info Layout for the Drop Down Menu to Gather from LAKERS 134867
-clippersTeam = parseIND["teams"][0]["strTeam"]
-yearFormedIND = parseIND["teams"][0]["intFormedYear"]
-teamStadiumIND = parseIND["teams"][0]["strStadium"]
-teamInfoIND = parseIND["teams"][0]["strDescriptionEN"]
-lastGameDateIND = LGparseIND["results"][0]["dateEventLocal"]
-homeTeamLAL = LGparseLAL["results"][0]["strHomeTeam"]
-awayTeamLAL = LGparseLAL["results"][0]["strAwayTeam"]
-homeScoreLAL = LGparseLAL["results"][0]["intHomeScore"]
-awayScoreLAL = LGparseLAL["results"][0]["intAwayScore"]
+# info Layout for the Drop Down Menu to Gather from CLIPPERS 134867
+clippersTeam = parseLAC["teams"][0]["strTeam"]
+yearFormedLAC = parseLAC["teams"][0]["intFormedYear"]
+teamStadiumLAC = parseLAC["teams"][0]["strStadium"]
+teamInfoLAC = parseLAC["teams"][0]["strDescriptionEN"]
+lastGameDateLAC = LGparseLAC["results"][0]["dateEventLocal"]
+homeTeamLAC = LGparseLAC["results"][0]["strHomeTeam"]
+awayTeamLAC = LGparseLAC["results"][0]["strAwayTeam"]
+homeScoreLAC = LGparseLAC["results"][0]["intHomeScore"]
+awayScoreLAC = LGparseLAC["results"][0]["intAwayScore"]
 #########################################################################################
 # LOS ANGELES LAKERS
 # KCal the LAKERS are playing 134867
