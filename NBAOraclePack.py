@@ -98,6 +98,7 @@ celticsAway = "Away: " + str(awayTeamBOS) + " " + str(awayScoreBOS)
 celticsGame = lastGameDateBOS + """
 """ + celticsHome + """
 """ + celticsAway + ""
+
 #################################################################################
 # BROOKLYN NETS
 # NETS General Info 134861
@@ -137,6 +138,7 @@ netsAway = "Away: " + str(awayTeamBKN) + " " + str(awayScoreBKN)
 netsGame = lastGameDateBKN + """
 """ + netsHome + """
 """ + netsAway + ""
+
 #################################################################################
 # CHARLOTTE HORNETS
 # HORNETS General Info 134881
@@ -176,6 +178,7 @@ hornetsAway = "Away: " + str(awayTeamCHA) + " " + str(awayScoreCHA)
 hornetsGame = lastGameDateCHA + """
 """ + hornetsHome + """
 """ + hornetsAway + ""
+
 #################################################################################
 # CHICAGO BULLS
 
@@ -216,6 +219,7 @@ bullsAway = "Away: " + str(awayTeamCHI) + " " + str(awayScoreCHI)
 bullsGame = lastGameDateCHI + """
 """ + bullsHome + """
 """ + bullsAway + ""
+
 #################################################################################
 # CLEVELAND CAVALIERS
 
@@ -257,6 +261,7 @@ cavsAway = "Away: " + str(awayTeamCLE) + " " + str(awayScoreCLE)
 cavsGame = lastGameDateCLE + """
 """ + cavsHome + """
 """ + cavsAway + ""
+
 #################################################################################
 # DALLAS MAVERICKS
 
@@ -297,6 +302,7 @@ mavsAway = "Away: " + str(awayTeamDAL) + " " + str(awayScoreDAL)
 mavsGame = lastGameDateDAL + """
 """ + mavsHome + """
 """ + mavsAway + ""
+
 #################################################################################
 # DENVER NUGGETS
 
@@ -381,6 +387,7 @@ pistonsAway = "Away: " + str(awayTeamDET) + " " + str(awayScoreDET)
 pistonsGame = lastGameDateDET + """
 """ + pistonsHome + """
 """ + pistonsAway + ""
+
 #######################################################################################
 # GOLDEN STATE WARRIORS
 
@@ -464,6 +471,7 @@ rocketsAway = "Away: " + str(awayTeamHOU) + " " + str(awayScoreHOU)
 rocketsGame = lastGameDateHOU + """
 """ + rocketsHome + """
 """ + rocketsAway + ""
+
 #########################################################################################
 # INDIANA PACERS
 
@@ -532,6 +540,15 @@ homeTeamLAC = LGparseLAC["results"][0]["strHomeTeam"]
 awayTeamLAC = LGparseLAC["results"][0]["strAwayTeam"]
 homeScoreLAC = LGparseLAC["results"][0]["intHomeScore"]
 awayScoreLAC = LGparseLAC["results"][0]["intAwayScore"]
+
+# Last Game Info Printout CLIPPERS
+clippersHome = "Home: " + str(homeTeamLAC) + " " + str(homeScoreLAC)
+clippersAway = "Away: " + str(awayTeamLAC) + " " + str(awayScoreLAC)
+
+clippersGame = lastGameDateLAC + """
+""" + clippersHome + """
+""" + clippersAway + ""
+
 #########################################################################################
 # LOS ANGELES LAKERS
 # KCal the LAKERS are playing 134867
@@ -569,7 +586,8 @@ lakersAway = "Away: " + str(awayTeamLAL) + " " + str(awayScoreLAL)
 lakersGame = lastGameDateDET + """
 """ + lakersHome + """
 """ + lakersAway + ""
-#########################################################################
+
+############################################################################################
 # MILWAUKEE BUCKS General Info 134874
 bucksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Milwaukee%20Bucks")
 # Last Game info for BUCKS 134874
