@@ -504,6 +504,35 @@ pacersGame = lastGameDateIND + """
 """ + pacersAway + ""
 
 #########################################################################################
+# LOS ANGELES CLIPPERS
+# CLIPPERS General Info 134866
+clippersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Los%20Angeles%20Clippers")
+# CLIPPERS last game info 134866
+clippersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134866")
+# CLIPPERS next game info 134866
+clippersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134866")
+
+# CLIPPERS General Info Parsed 134866
+dataLAC = clippersRE.text
+parseLAC = json.loads(dataLAC)
+# Last Game Parsed
+LGdataLAC = clippersLG.text
+LGparseLAC = json.loads(LGdataLAC)
+# Next Game Parsed
+NGdataLAC = clippersNG.text
+NGparseLAC = json.loads(NGdataLAC)
+
+# info Layout for the Drop Down Menu to Gather from LAKERS 134867
+clippersTeam = parseIND["teams"][0]["strTeam"]
+yearFormedIND = parseIND["teams"][0]["intFormedYear"]
+teamStadiumIND = parseIND["teams"][0]["strStadium"]
+teamInfoIND = parseIND["teams"][0]["strDescriptionEN"]
+lastGameDateIND = LGparseIND["results"][0]["dateEventLocal"]
+homeTeamLAL = LGparseLAL["results"][0]["strHomeTeam"]
+awayTeamLAL = LGparseLAL["results"][0]["strAwayTeam"]
+homeScoreLAL = LGparseLAL["results"][0]["intHomeScore"]
+awayScoreLAL = LGparseLAL["results"][0]["intAwayScore"]
+#########################################################################################
 # LOS ANGELES LAKERS
 # KCal the LAKERS are playing 134867
 lakersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Los%20Angeles%20Lakers")
