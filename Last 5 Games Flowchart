@@ -42,6 +42,8 @@ oppTeamScore = ["teams"][0]["intHomeScore"]
 if (focusTeamScore > oppTeamScore) TRUE
     then Win
     
+IDEA: Use BOOLEAN to determine the Variable
+
 if (focusTeamScore < oppTeamScore) TRUE
     then Lose
 
