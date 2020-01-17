@@ -711,6 +711,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectLAL = lakersTeam
         teamSelectedOutput.insert(INSERT, selectLAL)
+    if TeamsVar.get() == "Los Angeles Clippers":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectLAC = clippersTeam
+        teamSelectedOutput.insert(INSERT, selectLAC)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamSelectedOutput.delete(0.0, 'end')
         selectMIL = bucksTeam
@@ -771,6 +775,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearLAL = yearFormedLAL
         yearFormOutput.insert(INSERT, yearLAL)
+    if TeamsVar.get() == "Los Angeles Clippers":
+        yearFormOutput.delete(0.0, 'end')
+        yearLAC = yearFormedLAC
+        yearFormOutput.insert(INSERT, yearLAC)
     if TeamsVar.get() == "Milwaukee Bucks":
         yearFormOutput.delete(0.0, 'end')
         yearMIL = yearFormedMIL
@@ -831,6 +839,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumLAL = teamStadiumLAL
         teamStadiumOutput.insert(INSERT, stadiumLAL)
+    if TeamsVar.get() == "Los Angeles Clippers":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumLAC = teamStadiumLAC
+        teamStadiumOutput.insert(INSERT, stadiumLAC)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamStadiumOutput.delete(0.0, 'end')
         stadiumMIL = teamStadiumMIL
@@ -891,6 +903,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoLAL = teamInfoLAL
         teamInfoOutput.insert(INSERT, infoLAL)
+    if TeamsVar.get() == "Los Angeles Clippers":
+        teamInfoOutput.delete(0.0, 'end')
+        infoLAC = teamInfoLAC
+        teamInfoOutput.insert(INSERT, infoLAC)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamInfoOutput.delete(0.0, 'end')
         infoMIL = teamInfoMIL
@@ -951,6 +967,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         lakersLastGame = lakersGame
         lastGameOutput.insert(INSERT, lakersLastGame)
+    if TeamsVar.get() = "Los Angeles Clippers":
+        lastGameOutput.delete(0.0, 'end')
+        clippersLastGame = clippersGame
+        lastGameOutput.insert(INSERT, clippersLastGame)
     if TeamsVar.get() == "Milwaukee Bucks":
         lastGameOutput.delete(0.0, 'end')
         bucksLastGame = bucksGame
@@ -1101,6 +1121,11 @@ def callTeamLogo(*args):
         LogoCanvas.image = lakersLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=lakersLogo)
         LogoCanvas.pack()
+    if TeamsVar.get() == "Los Angeles Clippers":
+        LogoCanvas.delete("all")
+        clippersLogo = PhotoImage(file="icons/Clippers1001.png")
+        LogoCanvas.image = clippersLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=clippersLogo)
     if TeamsVar.get() == "Milwaukee Bucks":
         LogoCanvas.delete("all")
         bucksLogo = PhotoImage(file='icons/Bucks2001.png')
