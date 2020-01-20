@@ -588,6 +588,45 @@ lakersGame = lastGameDateDET + """
 """ + lakersAway + ""
 
 ############################################################################################
+# MEMPHIS GRIZZLIES
+
+# GRIZZLIES General Info 134877
+grizzRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Memphis%20Grizzlies")
+# Last Game info for GRIZZLIES 134877
+grizzLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134877")
+# Next Game info for GRIZZLIES 134877
+grizzNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134877")
+
+# GRIZZ General Info Parsed 134877
+dataMEM = grizzRE.text
+parseMEM = json.loads(dataMEM)
+# GRIZZ Last Game Parsed
+LGdataMEM = grizzLG.text
+LGparseMEM = json.loads(LGdataMEM)
+# GRIZZ Next Game Parsed
+NGdataMEM = grizzNG.text
+NGparseMEM = json.loads(NGdataMEM)
+
+# info Layout for the Drop Down Menu to Gather from GRIZZ 134877
+grizzTeam = parseMEM["teams"][0]["strTeam"]
+yearFormedMEM = parseMEM["teams"][0]["intFormedYear"]
+teamStadiumMEM = parseMEM["teams"][0]["strStadium"]
+teamInfoMEM = parseMEM["teams"][0]["strDescriptionEN"]
+lastGameDateMEM = LGparseMEM["results"][0]["dateEventLocal"]
+homeTeamMEM = LGparseMEM["results"][0]["strHomeTeam"]
+awayTeamMEM = LGparseMEM["results"][0]["strAwayTeam"]
+homeScoreMEM = LGparseMEM["results"][0]["intHomeScore"]
+awayScoreMEM = LGparseMEM["results"][0]["intAwayScore"]
+
+# Last Game Info Printout GRIZZLIES
+grizzHome = "Home: " + str(homeTeamMEM) + " " + str(homeScoreMEM)
+grizzAway = "Away: " + str(awayTeamMEM) + " " + str(awayScoreMEM)
+
+grizzGame = lastGameDateMEM + """
+""" + grizzHome + """
+""" + grizzAway + ""
+
+############################################################################################
 # MILWAUKEE BUCKS General Info 134874
 bucksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Milwaukee%20Bucks")
 # Last Game info for BUCKS 134874
@@ -615,6 +654,16 @@ homeTeamMIL = LGparseMIL["results"][0]["strHomeTeam"]
 awayTeamMIL = LGparseMIL["results"][0]["strAwayTeam"]
 homeScoreMIL = LGparseMIL["results"][0]["intHomeScore"]
 awayScoreMIL = LGparseMIL["results"][0]["intAwayScore"]
+
+# Last Game Info Printout BUCKS
+bucksHome = "Home: " + str(homeTeamMIL) + " " + str(homeScoreMIL)
+bucksAway = "Away: " + str(awayTeamMIL) + " " + str(awayScoreMIL)
+
+bucksGame = lastGameDateMIL + """
+""" + bucksHome + """
+""" + bucksAway + ""
+
+#######################################################################
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
@@ -715,6 +764,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectLAC = clippersTeam
         teamSelectedOutput.insert(INSERT, selectLAC)
+    if TeamsVar.get() == "Memphis Grizzlies":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectMEM = grizzTeam
+        teamSelectedOutput.insert(INSERT, selectMEM)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamSelectedOutput.delete(0.0, 'end')
         selectMIL = bucksTeam
@@ -779,6 +832,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearLAC = yearFormedLAC
         yearFormOutput.insert(INSERT, yearLAC)
+    if TeamsVar.get() == "Memphis Grizzlies":
+        yearFormOutput.delete(0.0, 'end')
+        yearMEM = yearFormedMEM
+        yearFormOutput.insert(INSERT, yearMEM)
     if TeamsVar.get() == "Milwaukee Bucks":
         yearFormOutput.delete(0.0, 'end')
         yearMIL = yearFormedMIL
@@ -843,6 +900,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumLAC = teamStadiumLAC
         teamStadiumOutput.insert(INSERT, stadiumLAC)
+    if TeamsVar.get() == "Memphis Grizzlies":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumMEM = teamStadiumMEM
+        teamStadiumOutput.insert(INSERT, stadiumMEM)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamStadiumOutput.delete(0.0, 'end')
         stadiumMIL = teamStadiumMIL
@@ -907,6 +968,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoLAC = teamInfoLAC
         teamInfoOutput.insert(INSERT, infoLAC)
+    if TeamsVar.get() == "Memphis Grizzlies":
+        teamInfoOutput.delete(0.0, 'end')
+        infoMEM = teamInfoMEM
+        teamInfoOutput.insert(INSERT, infoMEM)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamInfoOutput.delete(0.0, 'end')
         infoMIL = teamInfoMIL
@@ -916,7 +981,7 @@ def callTeamInfo(*args):
 # Last Game Populate
 def callLastGame(*args):
     if TeamsVar.get() == "Atlanta Hawks":
-        lastGameOutput.delete(0.0, 'end')
+        lastGameOutput.delete(0.0, 'end')  # Delete Clears the way for the incoming information
         hawksLastGame = hawksGame
         lastGameOutput.insert(INSERT, hawksLastGame)
     if TeamsVar.get() == "Boston Celtics":
@@ -967,10 +1032,14 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         lakersLastGame = lakersGame
         lastGameOutput.insert(INSERT, lakersLastGame)
-    if TeamsVar.get() = "Los Angeles Clippers":
+    if TeamsVar.get() == "Los Angeles Clippers":
         lastGameOutput.delete(0.0, 'end')
         clippersLastGame = clippersGame
         lastGameOutput.insert(INSERT, clippersLastGame)
+    if TeamsVar.get() == "Memphis Grizzlies":
+        lastGameOutput.delete(0.0, 'end')
+        grizzLastGame = grizzGame
+        lastGameOutput.insert(INSERT, grizzLastGame)
     if TeamsVar.get() == "Milwaukee Bucks":
         lastGameOutput.delete(0.0, 'end')
         bucksLastGame = bucksGame
@@ -1117,7 +1186,7 @@ def callTeamLogo(*args):
         LogoCanvas.create_image(0, 0, anchor='nw', image=pacersLogo)
     if TeamsVar.get() == "Los Angeles Lakers":
         LogoCanvas.delete("all")
-        lakersLogo = PhotoImage(file='icons/Lakers1001.png')
+        lakersLogo = PhotoImage(file='icons/Lakers2001.png')
         LogoCanvas.image = lakersLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=lakersLogo)
         LogoCanvas.pack()
@@ -1126,6 +1195,11 @@ def callTeamLogo(*args):
         clippersLogo = PhotoImage(file="icons/Clippers1001.png")
         LogoCanvas.image = clippersLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=clippersLogo)
+    if TeamsVar.get() == "Memphis Grizzlies":
+        LogoCanvas.delete("all")
+        grizzLogo = PhotoImage(file="icons/Grizzlies1001.png")
+        LogoCanvas.image = grizzLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=grizzLogo)
     if TeamsVar.get() == "Milwaukee Bucks":
         LogoCanvas.delete("all")
         bucksLogo = PhotoImage(file='icons/Bucks2001.png')
