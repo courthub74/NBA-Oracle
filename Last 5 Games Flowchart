@@ -68,3 +68,11 @@ determine win or loss streak:
 - write a function that checks for consecutive wins and lists them
 -             "                    consecutive losses and lists those
         
+        
+++++++++++++++++++++++++++++++++++=
+GROUP INPUT
+ I did one.. it determines the winner (in my game...which definitely must have a winner)... 
+ Then. It compares the scores using=> max() function
+ Then combined with if else Statement...
+
+Two input statements and a nested if will do the trick
