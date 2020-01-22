@@ -1149,7 +1149,7 @@ def callTeamLogo(*args):
         LogoCanvas.create_image(0, 0, anchor='nw', image=bullsLogo)
     if TeamsVar.get() == "Cleveland Cavaliers":
         LogoCanvas.delete("all")
-        cavsLogo = PhotoImage(file="icons/Cavs3001.png")
+        cavsLogo = PhotoImage(file="icons/Cavs2002.png")
         LogoCanvas.image = cavsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=cavsLogo)
     if TeamsVar.get() == "Dallas Mavericks":
