@@ -703,6 +703,45 @@ bucksGame = lastGameDateMIL + """
 """ + bucksAway + ""
 
 #######################################################################
+# MINNESOTA TIMBERWOLVES
+
+# T WOLVES General Info 134886
+twolvesRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Minnesota%20Timberwolves")
+# T-WOLVES Last Game Info
+twolvesLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134886")
+# T-WOLVES Next Game Info
+twolvesNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134886")
+
+# T-WOLVES General Info Parsed 134886
+dataMIN = twolvesRE.text
+parseMIN = json.loads(dataMIN)
+# Last Game Parsed
+LGdataMIN = twolvesLG.text
+LGparseMIN = json.loads(LGdataMIN)
+# Next Game Parsed
+NGdataMIN = twolvesNG.text
+NGparseMIN = json.loads(NGdataMIN)
+
+# info Layout for the Drop Down Menu to Gather from T-WOLVES 134866
+twolvesTeam = parseMIN["teams"][0]["strTeam"]
+yearFormedMIN = parseMIN["teams"][0]["intFormedYear"]
+teamStadiumMIN = parseMIN["teams"][0]["strStadium"]
+teamInfoMIN = parseMIN["teams"][0]["strDescriptionEN"]
+lastGameDateMIN = LGparseMIN["results"][0]["dateEventLocal"]
+homeTeamMIN = LGparseMIN["results"][0]["strHomeTeam"]
+awayTeamMIN = LGparseMIN["results"][0]["strAwayTeam"]
+homeScoreMIN = LGparseMIN["results"][0]["intHomeScore"]
+awayScoreMIN = LGparseMIN["results"][0]["intAwayScore"]
+
+# Last Game Info Printout BUCKS
+twolvesHome = "Home: " + str(homeTeamMIN) + " " + str(homeScoreMIN)
+twolvesAway = "Away: " + str(awayTeamMIN) + " " + str(awayScoreMIN)
+
+twolvesGame = lastGameDateMIN + """
+""" + twolvesHome + """
+""" + twolvesAway + ""
+
+#######################################################################
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
@@ -815,6 +854,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectMIL = bucksTeam
         teamSelectedOutput.insert(INSERT, selectMIL)
+    if TeamsVar.get() == "Minnesota Timberwolves":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectMIN = twolvesTeam
+        teamSelectedOutput.insert(INSERT, selectMIN)
 
 
 # Year Formed Populate
@@ -887,6 +930,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearMIL = yearFormedMIL
         yearFormOutput.insert(INSERT, yearMIL)
+    if TeamsVar.get() == "Minnesota Timberwolves":
+        yearFormOutput.delete(0.0, 'end')
+        yearMIN = yearFormedMIN
+        yearFormOutput.insert(INSERT, yearMIN)
 
 
 # Team Stadium Populate
@@ -959,6 +1006,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumMIL = teamStadiumMIL
         teamStadiumOutput.insert(INSERT, stadiumMIL)
+    if TeamsVar.get() == "Minnesota Timberwolves":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumMIN = teamStadiumMIN
+        teamStadiumOutput.insert(INSERT, stadiumMIN)
 
 
 # Team Info Populate
@@ -1031,6 +1082,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoMIL = teamInfoMIL
         teamInfoOutput.insert(INSERT, infoMIL)
+    if TeamsVar.get() == "Minnesota Timberwolves":
+        teamInfoOutput.delete(0.0, 'end')
+        infoMIN = teamInfoMIN
+        teamInfoOutput.insert(INSERT, infoMIN)
 
 
 # Last Game Populate
@@ -1103,6 +1158,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         bucksLastGame = bucksGame
         lastGameOutput.insert(INSERT, bucksLastGame)
+    if TeamsVar.get() == "Minnesota Timberwolves":
+        lastGameOutput.delete(0.0, 'end')
+        twolvesLastGame = twolvesGame
+        lastGameOutput.insert(INSERT, twolvesLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1269,6 +1328,12 @@ def callTeamLogo(*args):
         bucksLogo = PhotoImage(file='icons/Bucks2001.png')
         LogoCanvas.image = bucksLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=bucksLogo)
+        LogoCanvas.pack()
+    if TeamsVar.get() == "Minnesota Timberwolves":
+        LogoCanvas.delete("all")
+        twolvesLogo = PhotoImage(file="icons/Twolves2001.png")
+        LogoCanvas.image = twolvesLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=twolvesLogo)
         LogoCanvas.pack()
 
 
