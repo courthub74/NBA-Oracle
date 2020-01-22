@@ -646,7 +646,7 @@ LGparseMIA = json.loads(LGdataMIA)
 NGdataMIA = heatNG.text
 NGparseMIA = json.loads(NGdataMIA)
 
-# info Layout for the Drop Down Menu to Gather from BUCKS 134874
+# info Layout for the Drop Down Menu to Gather from HEAT 134882
 heatTeam = parseMIA["teams"][0]["strTeam"]
 yearFormedMIA = parseMIA["teams"][0]["intFormedYear"]
 teamStadiumMIA = parseMIA["teams"][0]["strStadium"]
