@@ -627,6 +627,45 @@ grizzGame = lastGameDateMEM + """
 """ + grizzAway + ""
 
 ############################################################################################
+# MIAMI HEAT
+
+# HEAT General Info 134882
+heatRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Miami%20Heat")
+# Last Game Info HEAT 134882
+heatLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134882")
+# Next Game Info HEAT 134882
+heatNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134882")
+
+# HEAT General Info Parsed 134882
+dataMIA = heatRE.text
+parseMIA = json.loads(dataMIA)
+# Last Game Parsed
+LGdataMIA = heatLG.text
+LGparseMIA = json.loads(LGdataMIA)
+# Next Game Parsed
+NGdataMIA = heatNG.text
+NGparseMIA = json.loads(NGdataMIA)
+
+# info Layout for the Drop Down Menu to Gather from BUCKS 134874
+heatTeam = parseMIA["teams"][0]["strTeam"]
+yearFormedMIA = parseMIA["teams"][0]["intFormedYear"]
+teamStadiumMIA = parseMIA["teams"][0]["strStadium"]
+teamInfoMIA = parseMIA["teams"][0]["strDescriptionEN"]
+lastGameDateMIA = LGparseMIA["results"][0]["dateEventLocal"]
+homeTeamMIA = LGparseMIA["results"][0]["strHomeTeam"]
+awayTeamMIA = LGparseMIA["results"][0]["strAwayTeam"]
+homeScoreMIA = LGparseMIA["results"][0]["intHomeScore"]
+awayScoreMIA = LGparseMIA["results"][0]["intAwayScore"]
+
+# Last Game Info Printout BUCKS
+heatHome = "Home: " + str(homeTeamMIA) + " " + str(homeScoreMIA)
+heatAway = "Away: " + str(awayTeamMIA) + " " + str(awayScoreMIA)
+
+heatGame = lastGameDateMIA + """
+""" + heatHome + """
+""" + heatAway + ""
+
+############################################################################################
 # MILWAUKEE BUCKS General Info 134874
 bucksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Milwaukee%20Bucks")
 # Last Game info for BUCKS 134874
@@ -768,6 +807,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectMEM = grizzTeam
         teamSelectedOutput.insert(INSERT, selectMEM)
+    if TeamsVar.get() == "Miami Heat":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectMIA = heatTeam
+        teamSelectedOutput.insert(INSERT, selectMIA)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamSelectedOutput.delete(0.0, 'end')
         selectMIL = bucksTeam
@@ -836,6 +879,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearMEM = yearFormedMEM
         yearFormOutput.insert(INSERT, yearMEM)
+    if TeamsVar.get() == "Miami Heat":
+        yearFormOutput.delete(0.0, 'end')
+        yearMIA = yearFormedMIA
+        yearFormOutput.insert(INSERT, yearMIA)
     if TeamsVar.get() == "Milwaukee Bucks":
         yearFormOutput.delete(0.0, 'end')
         yearMIL = yearFormedMIL
@@ -904,6 +951,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumMEM = teamStadiumMEM
         teamStadiumOutput.insert(INSERT, stadiumMEM)
+    if TeamsVar.get() == "Miami Heat":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumMIA = teamStadiumMIA
+        teamStadiumOutput.insert(INSERT, stadiumMIA)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamStadiumOutput.delete(0.0, 'end')
         stadiumMIL = teamStadiumMIL
@@ -972,6 +1023,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoMEM = teamInfoMEM
         teamInfoOutput.insert(INSERT, infoMEM)
+    if TeamsVar.get() == "Miami Heat":
+        teamInfoOutput.delete(0.0, 'end')
+        infoMIA = teamInfoMIA
+        teamInfoOutput.insert(INSERT, infoMIA)
     if TeamsVar.get() == "Milwaukee Bucks":
         teamInfoOutput.delete(0.0, 'end')
         infoMIL = teamInfoMIL
@@ -1040,6 +1095,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         grizzLastGame = grizzGame
         lastGameOutput.insert(INSERT, grizzLastGame)
+    if TeamsVar.get() == "Miami Heat":
+        lastGameOutput.delete(0.0, 'end')
+        heatLastGame = heatGame
+        lastGameOutput.insert(INSERT, heatLastGame)
     if TeamsVar.get() == "Milwaukee Bucks":
         lastGameOutput.delete(0.0, 'end')
         bucksLastGame = bucksGame
@@ -1200,6 +1259,11 @@ def callTeamLogo(*args):
         grizzLogo = PhotoImage(file="icons/Grizzlies1001.png")
         LogoCanvas.image = grizzLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=grizzLogo)
+    if TeamsVar.get() == "Miami Heat":
+        LogoCanvas.delete("all")
+        heatLogo = PhotoImage(file="icons/Heat3001.png")
+        LogoCanvas.image = heatLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=heatLogo)
     if TeamsVar.get() == "Milwaukee Bucks":
         LogoCanvas.delete("all")
         bucksLogo = PhotoImage(file='icons/Bucks2001.png')
