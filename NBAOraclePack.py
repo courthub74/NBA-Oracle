@@ -820,6 +820,45 @@ knicksGame = lastGameDateNYK + """
 """ + knicksAway + ""
 
 #######################################################################
+# OKLAHOMA CITY THUNDER
+
+# General Info for THUNDER 134887
+thunderRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Oklahoma%20City%20Thunder")
+# Last Game Info
+thunderLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134887")
+# Next Game Info
+thunderNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134887")
+
+# General Info Parsed for THUNDER 134887
+dataOKC = thunderRE.text
+parseOKC = json.loads(dataOKC)
+# Last Game Info
+LGdataOKC = thunderLG.text
+LGparseOKC = json.loads(LGdataOKC)
+# Next Game Info
+NGdataOKC = thunderNG.text
+NGparseOKC = json.loads(NGdataOKC)
+
+# info Layout for the Drop Down Menu to Gather from THUNDER 134887
+thunderTeam = parseOKC["teams"][0]["strTeam"]
+yearFormedOKC = parseOKC["teams"][0]["intFormedYear"]
+teamStadiumOKC = parseOKC["teams"][0]["strStadium"]
+teamInfoOKC = parseOKC["teams"][0]["strDescriptionEN"]
+lastGameDateOKC = LGparseOKC["results"][0]["dateEventLocal"]
+homeTeamOKC = LGparseOKC["results"][0]["strHomeTeam"]
+awayTeamOKC = LGparseOKC["results"][0]["strAwayTeam"]
+homeScoreOKC = LGparseOKC["results"][0]["intHomeScore"]
+awayScoreOKC = LGparseOKC["results"][0]["intAwayScore"]
+
+# Last Game Info Printout KNICKS
+thunderHome = "Home: " + str(homeTeamOKC) + " " + str(homeScoreOKC)
+thunderAway = "Away: " + str(awayTeamOKC) + " " + str(awayScoreOKC)
+
+thunderGame = lastGameDateOKC + """
+""" + thunderHome + """
+""" + thunderAway + ""
+
+#######################################################################
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
@@ -944,6 +983,11 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectNYK = knicksTeam
         teamSelectedOutput.insert(INSERT, selectNYK)
+    if TeamsVar.get() == "Oklahoma City Thunder":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectOKC = thunderTeam
+        teamSelectedOutput.insert(INSERT, selectOKC)
+
 
 
 # Year Formed Populate
@@ -1028,6 +1072,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearNYK = yearFormedNYK
         yearFormOutput.insert(INSERT, yearNYK)
+    if TeamsVar.get() == "Oklahoma City Thunder":
+        yearFormOutput.delete(0.0, 'end')
+        yearOKC = yearFormedOKC
+        yearFormOutput.insert(INSERT, yearOKC)
 
 
 # Team Stadium Populate
@@ -1112,6 +1160,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumNYK = teamStadiumNYK
         teamStadiumOutput.insert(INSERT, stadiumNYK)
+    if TeamsVar.get() == "Oklahoma City Thunder":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumOKC = teamStadiumOKC
+        teamStadiumOutput.insert(INSERT, stadiumOKC)
 
 
 # Team Info Populate
@@ -1196,6 +1248,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoNYK = teamInfoNYK
         teamInfoOutput.insert(INSERT, infoNYK)
+    if TeamsVar.get() == "Oklahoma City Thunder":
+        teamInfoOutput.delete(0.0, 'end')
+        infoOKC = teamInfoOKC
+        teamInfoOutput.insert(INSERT, infoOKC)
 
 
 # Last Game Populate
@@ -1280,6 +1336,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         knicksLastGame = knicksGame
         lastGameOutput.insert(INSERT, knicksLastGame)
+    if TeamsVar.get() == "Oklahoma City Thunder":
+        lastGameOutput.delete(0.0, 'end')
+        thunderLastGame = thunderGame
+        lastGameOutput.insert(INSERT, thunderLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1463,6 +1523,11 @@ def callTeamLogo(*args):
         knicksLogo = PhotoImage(file="icons/Knicks1001.png")
         LogoCanvas.image = knicksLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=knicksLogo)
+    if TeamsVar.get() == "Oklahoma City Thunder":
+        LogoCanvas.delete("all")
+        thunderLogo = PhotoImage(file="icons/Thunder1002.png")
+        LogoCanvas.image = thunderLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=thunderLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
