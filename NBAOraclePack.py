@@ -859,6 +859,45 @@ thunderGame = lastGameDateOKC + """
 """ + thunderAway + ""
 
 #######################################################################
+# ORLANDO MAGIC
+
+# General Info for MAGIC 134883
+magicRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Orlando%20Magic")
+# Last Game Info
+magicLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134883")
+# Next Game Info
+magicNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134883")
+
+# General Info Parsed MAGIC 134883
+dataORL = magicRE.text
+parseORL = json.loads(dataORL)
+# Last Game Parsed
+LGdataORL = magicLG.text
+LGparseORL = json.loads(LGdataORL)
+# Next Game Parsed
+NGdataORL = magicNG.text
+NGparseORL = json.loads(NGdataORL)
+
+# info Layout for the Drop Down Menu to Gather from MAGIC 134883
+magicTeam = parseORL["teams"][0]["strTeam"]
+yearFormedORL = parseORL["teams"][0]["intFormedYear"]
+teamStadiumORL = parseORL["teams"][0]["strStadium"]
+teamInfoORL = parseORL["teams"][0]["strDescriptionEN"]
+lastGameDateORL = LGparseORL["results"][0]["dateEventLocal"]
+homeTeamORL = LGparseORL["results"][0]["strHomeTeam"]
+awayTeamORL = LGparseORL["results"][0]["strAwayTeam"]
+homeScoreORL = LGparseORL["results"][0]["intHomeScore"]
+awayScoreORL = LGparseORL["results"][0]["intAwayScore"]
+
+# Last Game Info Printout MAGIC
+magicHome = "Home: " + str(homeTeamORL) + " " + str(homeScoreORL)
+magicAway = "Away: " + str(awayTeamORL) + " " + str(awayScoreORL)
+
+magicGame = lastGameDateOKC + """
+""" + magicHome + """
+""" + magicAway + ""
+
+#######################################################################
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
@@ -987,7 +1026,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectOKC = thunderTeam
         teamSelectedOutput.insert(INSERT, selectOKC)
-
+    if TeamsVar.get() == "Orlando Magic":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectORL = magicTeam
+        teamSelectedOutput.insert(INSERT, selectORL)
 
 
 # Year Formed Populate
@@ -1076,6 +1118,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearOKC = yearFormedOKC
         yearFormOutput.insert(INSERT, yearOKC)
+    if TeamsVar.get() == "Orlando Magic":
+        yearFormOutput.delete(0.0, 'end')
+        yearORL = yearFormedORL
+        yearFormOutput.insert(INSERT, yearORL)
 
 
 # Team Stadium Populate
@@ -1164,6 +1210,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumOKC = teamStadiumOKC
         teamStadiumOutput.insert(INSERT, stadiumOKC)
+    if TeamsVar.get() == "Orlando Magic":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumORL = teamStadiumORL
+        teamStadiumOutput.insert(INSERT, stadiumORL)
 
 
 # Team Info Populate
@@ -1252,6 +1302,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoOKC = teamInfoOKC
         teamInfoOutput.insert(INSERT, infoOKC)
+    if TeamsVar.get() == "Orlando Magic":
+        teamInfoOutput.delete(0.0, 'end')
+        infoORL = teamInfoORL
+        teamInfoOutput.insert(INSERT, infoORL)
 
 
 # Last Game Populate
@@ -1340,6 +1394,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         thunderLastGame = thunderGame
         lastGameOutput.insert(INSERT, thunderLastGame)
+    if TeamsVar.get() == "Orlando Magic":
+        lastGameOutput.delete(0.0, 'end')
+        magicLastGame = magicGame
+        lastGameOutput.insert(INSERT, magicLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1528,6 +1586,11 @@ def callTeamLogo(*args):
         thunderLogo = PhotoImage(file="icons/Thunder1002.png")
         LogoCanvas.image = thunderLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=thunderLogo)
+    if TeamsVar.get() == "Orlando Magic":
+        LogoCanvas.delete("all")
+        magicLogo = PhotoImage(file="icons/Magic3001.png")
+        LogoCanvas.image = magicLogo
+        LogoCanvas.create_image(0,0, anchor='nw', image=magicLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
