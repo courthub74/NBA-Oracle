@@ -742,6 +742,45 @@ twolvesGame = lastGameDateMIN + """
 """ + twolvesAway + ""
 
 #######################################################################
+# NEW ORLEANS PELICANS
+
+# General Info for PELICANS 134878
+pelicansRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=New%20Orleans%20Pelicans")
+# Last Game Info for PELLICANS 134878
+pelicansLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134878")
+# Next Game Info for PELICANS 134878
+pelicansNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134878")
+
+# General Info Parsed
+dataNOLA = pelicansRE.text
+parseNOLA = json.loads(dataNOLA)
+# Last Game Parsed
+LGdataNOLA = pelicansLG.text
+LGparseNOLA = json.loads(LGdataNOLA)
+# Next Game Parsed
+NGdataNOLA = pelicansNG.text
+NGparseNOLA = json.loads(NGdataNOLA)
+
+# info Layout for the Drop Down Menu to Gather from PELICANS 134878
+pelicansTeam = parseNOLA["teams"][0]["strTeam"]
+yearFormedNOLA = parseNOLA["teams"][0]["intFormedYear"]
+teamStadiumNOLA = parseNOLA["teams"][0]["strStadium"]
+teamInfoNOLA = parseNOLA["teams"][0]["strDescriptionEN"]
+lastGameDateNOLA = LGparseNOLA["results"][0]["dateEventLocal"]
+homeTeamNOLA = LGparseNOLA["results"][0]["strHomeTeam"]
+awayTeamNOLA = LGparseNOLA["results"][0]["strAwayTeam"]
+homeScoreNOLA = LGparseNOLA["results"][0]["intHomeScore"]
+awayScoreNOLA = LGparseNOLA["results"][0]["intAwayScore"]
+
+# Last Game Info Printout BUCKS
+pelicansHome = "Home: " + str(homeTeamNOLA) + " " + str(homeScoreNOLA)
+pelicansAway = "Away: " + str(awayTeamNOLA) + " " + str(awayScoreNOLA)
+
+pelicansGame = lastGameDateNOLA + """
+""" + pelicansHome + """
+""" + pelicansAway + ""
+
+#######################################################################
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
@@ -858,6 +897,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectMIN = twolvesTeam
         teamSelectedOutput.insert(INSERT, selectMIN)
+    if TeamsVar.get() == "New Orleans Pelicans":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectNOLA = pelicansTeam
+        teamSelectedOutput.insert(INSERT, selectNOLA)
 
 
 # Year Formed Populate
@@ -934,6 +977,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearMIN = yearFormedMIN
         yearFormOutput.insert(INSERT, yearMIN)
+    if TeamsVar.get() == "New Orleans Pelicans":
+        yearFormOutput.delete(0.0, 'end')
+        yearNOLA = yearFormedNOLA
+        yearFormOutput.insert(INSERT, yearNOLA)
 
 
 # Team Stadium Populate
@@ -1010,6 +1057,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumMIN = teamStadiumMIN
         teamStadiumOutput.insert(INSERT, stadiumMIN)
+    if TeamsVar.get() == "New Orleans Pelicans":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumNOLA = teamStadiumNOLA
+        teamStadiumOutput.insert(INSERT, stadiumNOLA)
 
 
 # Team Info Populate
@@ -1086,6 +1137,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoMIN = teamInfoMIN
         teamInfoOutput.insert(INSERT, infoMIN)
+    if TeamsVar.get() == "New Orleans Pelicans":
+        teamInfoOutput.delete(0.0, 'end')
+        infoNOLA = teamInfoNOLA
+        teamInfoOutput.insert(INSERT, infoNOLA)
 
 
 # Last Game Populate
@@ -1162,6 +1217,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         twolvesLastGame = twolvesGame
         lastGameOutput.insert(INSERT, twolvesLastGame)
+    if TeamsVar.get() == "New Orleans Pelicans":
+        lastGameOutput.delete(0.0, 'end')
+        pelicansLastGame = pelicansGame
+        lastGameOutput.insert(INSERT, pelicansLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1335,6 +1394,11 @@ def callTeamLogo(*args):
         LogoCanvas.image = twolvesLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=twolvesLogo)
         LogoCanvas.pack()
+    if TeamsVar.get() == "New Orleans Pelicans":
+        LogoCanvas.delete("all")
+        pelicansLogo = PhotoImage(file="icons/Pelicans2001.png")
+        LogoCanvas.image = pelicansLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=pelicansLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
