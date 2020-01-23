@@ -781,6 +781,45 @@ pelicansGame = lastGameDateNOLA + """
 """ + pelicansAway + ""
 
 #######################################################################
+# NEW YORK KNICKS
+
+# General Info for KNICKS 134862
+knicksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=New%20York%20Knicks")
+# Last Game Info
+knicksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134862")
+# Next Game Info
+knicksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134862")
+
+# General Info Parsed KNICKS 134862
+dataNYK = knicksRE.text
+parseNYK = json.loads(dataNYK)
+# Last Game Parsed
+LGdataNYK = knicksLG.text
+LGparseNYK = json.loads(LGdataNYK)
+# Next Game Parsed
+NGdataNYK = knicksNG.text
+NGparseNYK = json.loads(NGdataNYK)
+
+# info Layout for the Drop Down Menu to Gather from KNICKS 134862
+knicksTeam = parseNYK["teams"][0]["strTeam"]
+yearFormedNYK = parseNYK["teams"][0]["intFormedYear"]
+teamStadiumNYK = parseNYK["teams"][0]["strStadium"]
+teamInfoNYK = parseNYK["teams"][0]["strDescriptionEN"]
+lastGameDateNYK = LGparseNYK["results"][0]["dateEventLocal"]
+homeTeamNYK = LGparseNYK["results"][0]["strHomeTeam"]
+awayTeamNYK = LGparseNYK["results"][0]["strAwayTeam"]
+homeScoreNYK = LGparseNYK["results"][0]["intHomeScore"]
+awayScoreNYK = LGparseNYK["results"][0]["intAwayScore"]
+
+# Last Game Info Printout KNICKS
+knicksHome = "Home: " + str(homeTeamNYK) + " " + str(homeScoreNYK)
+knicksAway = "Away: " + str(awayTeamNYK) + " " + str(awayScoreNYK)
+
+knicksGame = lastGameDateNYK + """
+""" + knicksHome + """
+""" + knicksAway + ""
+
+#######################################################################
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
@@ -901,6 +940,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectNOLA = pelicansTeam
         teamSelectedOutput.insert(INSERT, selectNOLA)
+    if TeamsVar.get() == "New York Knicks":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectNYK = knicksTeam
+        teamSelectedOutput.insert(INSERT, selectNYK)
 
 
 # Year Formed Populate
@@ -981,6 +1024,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearNOLA = yearFormedNOLA
         yearFormOutput.insert(INSERT, yearNOLA)
+    if TeamsVar.get() == "New York Knicks":
+        yearFormOutput.delete(0.0, 'end')
+        yearNYK = yearFormedNYK
+        yearFormOutput.insert(INSERT, yearNYK)
 
 
 # Team Stadium Populate
@@ -1061,6 +1108,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumNOLA = teamStadiumNOLA
         teamStadiumOutput.insert(INSERT, stadiumNOLA)
+    if TeamsVar.get() == "New York Knicks":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumNYK = teamStadiumNYK
+        teamStadiumOutput.insert(INSERT, stadiumNYK)
 
 
 # Team Info Populate
@@ -1141,6 +1192,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoNOLA = teamInfoNOLA
         teamInfoOutput.insert(INSERT, infoNOLA)
+    if TeamsVar.get() == "New York Knicks":
+        teamInfoOutput.delete(0.0, 'end')
+        infoNYK = teamInfoNYK
+        teamInfoOutput.insert(INSERT, infoNYK)
 
 
 # Last Game Populate
@@ -1221,6 +1276,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         pelicansLastGame = pelicansGame
         lastGameOutput.insert(INSERT, pelicansLastGame)
+    if TeamsVar.get() == "New York Knicks":
+        lastGameOutput.delete(0.0, 'end')
+        knicksLastGame = knicksGame
+        lastGameOutput.insert(INSERT, knicksLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1399,6 +1458,11 @@ def callTeamLogo(*args):
         pelicansLogo = PhotoImage(file="icons/Pelicans2001.png")
         LogoCanvas.image = pelicansLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=pelicansLogo)
+    if TeamsVar.get() == "New York Knicks":
+        LogoCanvas.delete("all")
+        knicksLogo = PhotoImage(file="icons/Knicks1001.png")
+        LogoCanvas.image = knicksLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=knicksLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
