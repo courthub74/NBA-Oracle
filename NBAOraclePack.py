@@ -898,6 +898,47 @@ magicGame = lastGameDateOKC + """
 """ + magicAway + ""
 
 #######################################################################
+# PHILADELPHIA 76ERS
+
+# General Info for 76ERS 134863
+sixersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Philadelphia%2076ers")
+# Last Game Info for 76ERS 134863
+sixersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134863")
+# Next Game Info for 76ERS 134863
+sixersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134863")
+
+# General Info Parsed 76ERS 134863
+dataPHI = sixersRE.text
+parsePHI = json.loads(dataPHI)
+# Last Game Info Parsed
+LGdataPHI = sixersLG.text
+LGparsePHI = json.loads(LGdataPHI)
+# Next Game Info Parsed
+NGdataPHI = sixersNG.text
+NGparsePHI = json.loads(NGdataPHI)
+
+# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+sixersTeam = parsePHI["teams"][0]["strTeam"]
+yearFormedPHI = parsePHI["teams"][0]["intFormedYear"]
+teamStadiumPHI = parsePHI["teams"][0]["strStadium"]
+teamInfoPHI = parsePHI["teams"][0]["strDescriptionEN"]
+lastGameDatePHI = LGparsePHI["results"][0]["dateEventLocal"]
+homeTeamPHI = LGparsePHI["results"][0]["strHomeTeam"]
+awayTeamPHI = LGparsePHI["results"][0]["strAwayTeam"]
+homeScorePHI = LGparsePHI["results"][0]["intHomeScore"]
+awayScorePHI = LGparsePHI["results"][0]["intAwayScore"]
+
+# Last Game Info Printout MAGIC
+sixersHome = "Home: " + str(homeTeamPHI) + " " + str(homeScorePHI)
+sixersAway = "Away: " + str(awayTeamPHI) + " " + str(awayScorePHI)
+
+sixersGame = lastGameDatePHI + """
+""" + sixersHome + """
+""" + sixersAway + ""
+
+# print(sixersRE.status_code)  # Pull a status code on the actual REQUEST
+
+#######################################################################
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
@@ -1030,6 +1071,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectORL = magicTeam
         teamSelectedOutput.insert(INSERT, selectORL)
+    if TeamsVar.get() == "Philadelphia 76ers":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectPHI = sixersTeam
+        teamSelectedOutput.insert(INSERT, selectPHI)
 
 
 # Year Formed Populate
@@ -1122,6 +1167,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearORL = yearFormedORL
         yearFormOutput.insert(INSERT, yearORL)
+    if TeamsVar.get() == "Philadelphia 76ers":
+        yearFormOutput.delete(0.0, 'end')
+        yearPHI = yearFormedPHI
+        yearFormOutput.insert(INSERT, yearPHI)
 
 
 # Team Stadium Populate
@@ -1214,6 +1263,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumORL = teamStadiumORL
         teamStadiumOutput.insert(INSERT, stadiumORL)
+    if TeamsVar.get() == "Philadelphia 76ers":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumPHI = teamStadiumPHI
+        teamStadiumOutput.insert(INSERT, stadiumPHI)
 
 
 # Team Info Populate
@@ -1306,6 +1359,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoORL = teamInfoORL
         teamInfoOutput.insert(INSERT, infoORL)
+    if TeamsVar.get() == "Philadelphia 76ers":
+        teamInfoOutput.delete(0.0, 'end')
+        infoPHI = teamInfoPHI
+        teamInfoOutput.insert(INSERT, infoPHI)
 
 
 # Last Game Populate
@@ -1398,6 +1455,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         magicLastGame = magicGame
         lastGameOutput.insert(INSERT, magicLastGame)
+    if TeamsVar.get() == "Philadelphia 76ers":
+        lastGameOutput.delete(0.0, 'end')
+        sixersLastGame = sixersGame
+        lastGameOutput.insert(INSERT, sixersLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1590,7 +1651,12 @@ def callTeamLogo(*args):
         LogoCanvas.delete("all")
         magicLogo = PhotoImage(file="icons/Magic3001.png")
         LogoCanvas.image = magicLogo
-        LogoCanvas.create_image(0,0, anchor='nw', image=magicLogo)
+        LogoCanvas.create_image(0, 0, anchor='nw', image=magicLogo)
+    if TeamsVar.get() == "Philadelphia 76ers":
+        LogoCanvas.delete("all")
+        sixersLogo = PhotoImage(file="icons/Sixers1001.png")
+        LogoCanvas.image = sixersLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=sixersLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
