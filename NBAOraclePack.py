@@ -928,7 +928,7 @@ awayTeamPHI = LGparsePHI["results"][0]["strAwayTeam"]
 homeScorePHI = LGparsePHI["results"][0]["intHomeScore"]
 awayScorePHI = LGparsePHI["results"][0]["intAwayScore"]
 
-# Last Game Info Printout MAGIC
+# Last Game Info Printout SIXERS
 sixersHome = "Home: " + str(homeTeamPHI) + " " + str(homeScorePHI)
 sixersAway = "Away: " + str(awayTeamPHI) + " " + str(awayScorePHI)
 
@@ -939,6 +939,46 @@ sixersGame = lastGameDatePHI + """
 # print(sixersRE.status_code)  # Pull a status code on the actual REQUEST
 
 #######################################################################
+# PHOENIX SUNS
+
+# General Info for SUNS 134868
+sunsRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=Phoenix%20Suns")
+# Last Game Info for SUNS 134868
+sunsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134868")
+# Next Game Info
+sunsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134868")
+
+# General Info Parsed
+dataPHO = sunsRE.text
+parsePHO = json.loads(dataPHO)
+# Last Game Parsed
+LGdataPHO = sunsLG.text
+LGparsePHO = json.loads(LGdataPHO)
+# Next Game Parsed
+NGdataPHO = sunsNG.text
+NGparsePHO = json.loads(NGdataPHO)
+
+# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+sunsTeam = parsePHO["teams"][0]["strTeam"]
+yearFormedPHO = parsePHO["teams"][0]["intFormedYear"]
+teamStadiumPHO = parsePHO["teams"][0]["strStadium"]
+teamInfoPHO = parsePHO["teams"][0]["strDescriptionEN"]
+lastGameDatePHO = LGparsePHO["results"][0]["dateEventLocal"]
+homeTeamPHO = LGparsePHO["results"][0]["strHomeTeam"]
+awayTeamPHO = LGparsePHO["results"][0]["strAwayTeam"]
+homeScorePHO = LGparsePHO["results"][0]["intHomeScore"]
+awayScorePHO = LGparsePHO["results"][0]["intAwayScore"]
+
+# Last Game Info Printout SUNS
+sunsHome = "Home: " + str(homeTeamPHO) + " " + str(homeScorePHO)
+sunsAway = "Away: " + str(awayTeamPHO) + " " + str(awayScorePHO)
+
+sunsGame = lastGameDatePHO + """
+""" + sunsHome + """
+""" + sunsAway + ""
+
+#######################################################################
+
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
