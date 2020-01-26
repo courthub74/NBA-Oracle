@@ -978,6 +978,45 @@ sunsGame = lastGameDatePHO + """
 """ + sunsAway + ""
 
 #######################################################################
+# PORTLAND TRAIL BLAZERS 134888
+
+# General Info for BLAZERS
+blazersRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=Portland%20Trail%20Blazers")
+# Last Game Info for BLAZERS 134888
+blazersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134888")
+# Next Game Info for BLAZERS 134888
+blazersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134888")
+
+# General Info Parsed
+dataPOR = blazersRE.text
+parsePOR = json.loads(dataPOR)
+# Last Game Parsed
+LGdataPOR = blazersLG.text
+LGparsePOR = json.loads(LGdataPOR)
+# Next Game Parsed
+NGdataPOR = blazersNG.text
+NGparsePOR = json.loads(NGdataPOR)
+
+# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+blazersTeam = parsePOR["teams"][0]["strTeam"]
+yearFormedPOR = parsePOR["teams"][0]["intFormedYear"]
+teamStadiumPOR = parsePOR["teams"][0]["strStadium"]
+teamInfoPOR = parsePOR["teams"][0]["strDescriptionEN"]
+lastGameDatePOR = LGparsePOR["results"][0]["dateEventLocal"]
+homeTeamPOR = LGparsePOR["results"][0]["strHomeTeam"]
+awayTeamPOR = LGparsePOR["results"][0]["strAwayTeam"]
+homeScorePHO = LGparsePHO["results"][0]["intHomeScore"]
+awayScorePHO = LGparsePHO["results"][0]["intAwayScore"]
+
+# Last Game Info Printout SUNS
+blazersHome = "Home: " + str(homeTeamPOR) + " " + str(homeScorePOR)
+blazersAway = "Away: " + str(awayTeamPOR) + " " + str(awayScorePOR)
+
+blazersGame = lastGameDatePOR + """
+""" + blazersHome + """
+""" + blazersAway + ""
+
+#######################################################################
 
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
