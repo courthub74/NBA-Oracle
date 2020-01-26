@@ -1005,8 +1005,8 @@ teamInfoPOR = parsePOR["teams"][0]["strDescriptionEN"]
 lastGameDatePOR = LGparsePOR["results"][0]["dateEventLocal"]
 homeTeamPOR = LGparsePOR["results"][0]["strHomeTeam"]
 awayTeamPOR = LGparsePOR["results"][0]["strAwayTeam"]
-homeScorePHO = LGparsePHO["results"][0]["intHomeScore"]
-awayScorePHO = LGparsePHO["results"][0]["intAwayScore"]
+homeScorePOR = LGparsePOR["results"][0]["intHomeScore"]
+awayScorePOR = LGparsePOR["results"][0]["intAwayScore"]
 
 # Last Game Info Printout SUNS
 blazersHome = "Home: " + str(homeTeamPOR) + " " + str(homeScorePOR)
@@ -1158,6 +1158,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectPHO = sunsTeam
         teamSelectedOutput.insert(INSERT, selectPHO)
+    if TeamsVar.get() == "Portland Trail Blazers":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectPOR = blazersTeam
+        teamSelectedOutput.insert(INSERT, selectPOR)
 
 
 # Year Formed Populate
@@ -1258,6 +1262,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearPHO = yearFormedPHO
         yearFormOutput.insert(INSERT, yearPHO)
+    if TeamsVar.get() == "Portland Trail Blazers":
+        yearFormOutput.delete(0.0, 'end')
+        yearPOR = yearFormedPOR
+        yearFormOutput.insert(INSERT, yearPOR)
 
 
 # Team Stadium Populate
@@ -1358,6 +1366,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumPHO = teamStadiumPHO
         teamStadiumOutput.insert(INSERT, stadiumPHO)
+    if TeamsVar.get() == "Portland Trail Blazers":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumPOR = teamStadiumPOR
+        teamStadiumOutput.insert(INSERT, stadiumPOR)
 
 
 # Team Info Populate
@@ -1458,6 +1470,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoPHO = teamInfoPHO
         teamInfoOutput.insert(INSERT, infoPHO)
+    if TeamsVar.get() == "Portland Trail Blazers":
+        teamInfoOutput.delete(0.0, 'end')
+        infoPOR = teamInfoPOR
+        teamInfoOutput.insert(INSERT, infoPOR)
 
 
 # Last Game Populate
@@ -1558,6 +1574,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         sunsLastGame = sunsGame
         lastGameOutput.insert(INSERT, sunsLastGame)
+    if TeamsVar.get() == "Portland Trail Blazers":
+        lastGameOutput.delete(0.0, 'end')
+        blazersLastGame = blazersGame
+        lastGameOutput.insert(INSERT, blazersLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1700,7 +1720,7 @@ def callTeamLogo(*args):
         LogoCanvas.create_image(0, 0, anchor='nw', image=pacersLogo)
     if TeamsVar.get() == "Los Angeles Lakers":
         LogoCanvas.delete("all")
-        lakersLogo = PhotoImage(file='icons/Lakers2001.png')
+        lakersLogo = PhotoImage(file='icons/Lakers1001.png')
         LogoCanvas.image = lakersLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=lakersLogo)
         LogoCanvas.pack()
@@ -1761,6 +1781,11 @@ def callTeamLogo(*args):
         sunsLogo = PhotoImage(file="icons/Suns1001.png")
         LogoCanvas.image = sunsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=sunsLogo)
+    if TeamsVar.get() == "Portland Trail Blazers":
+        LogoCanvas.delete("all")
+        blazersLogo = PhotoImage(file="icons/Blazers1001.png")
+        LogoCanvas.image = blazersLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=blazersLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
