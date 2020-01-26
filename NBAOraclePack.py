@@ -6,7 +6,7 @@ import json
 app = Tk()
 app.geometry("600x700")
 app.iconbitmap("icons/NBA.ico")
-app.configure(background="DarkGrey")
+app.configure(background="DarkBlue")
 # app.config(image='icons/BallCourt.png')
 app.title("NBA Oracle")
 scroll = Scrollbar(app, orient="vertical")
@@ -1115,6 +1115,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectPHI = sixersTeam
         teamSelectedOutput.insert(INSERT, selectPHI)
+    if TeamsVar.get() == "Phoenix Suns":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectPHO = sunsTeam
+        teamSelectedOutput.insert(INSERT, selectPHO)
 
 
 # Year Formed Populate
@@ -1211,6 +1215,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearPHI = yearFormedPHI
         yearFormOutput.insert(INSERT, yearPHI)
+    if TeamsVar.get() == "Phoenix Suns":
+        yearFormOutput.delete(0.0, 'end')
+        yearPHO = yearFormedPHO
+        yearFormOutput.insert(INSERT, yearPHO)
 
 
 # Team Stadium Populate
@@ -1307,6 +1315,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumPHI = teamStadiumPHI
         teamStadiumOutput.insert(INSERT, stadiumPHI)
+    if TeamsVar.get() == "Phoenix Suns":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumPHO = teamStadiumPHO
+        teamStadiumOutput.insert(INSERT, stadiumPHO)
 
 
 # Team Info Populate
@@ -1403,6 +1415,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoPHI = teamInfoPHI
         teamInfoOutput.insert(INSERT, infoPHI)
+    if TeamsVar.get() == "Phoenix Suns":
+        teamInfoOutput.delete(0.0, 'end')
+        infoPHO = teamInfoPHO
+        teamInfoOutput.insert(INSERT, infoPHO)
 
 
 # Last Game Populate
@@ -1499,6 +1515,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         sixersLastGame = sixersGame
         lastGameOutput.insert(INSERT, sixersLastGame)
+    if TeamsVar.get() == "Phoenix Suns":
+        lastGameOutput.delete(0.0, 'end')
+        sunsLastGame = sunsGame
+        lastGameOutput.insert(INSERT, sunsLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1524,7 +1544,7 @@ TeamsVar.trace("w", callLastGame)
 
 # HEADER
 logo = PhotoImage(file='icons/nbaCLEAR.png')
-logoNBA = Label(app, image=logo, bg="DarkGrey")
+logoNBA = Label(app, image=logo, bg="DarkBlue")
 resizNBAlogo = logo.subsample(1, 1)
 logoNBA.config(image=resizNBAlogo)
 logoNBA.pack()
@@ -1535,31 +1555,31 @@ droplist.config(width=20, height=1, fg='Blue')
 droplist.pack()
 
 # Team Selected
-teamSelected = Label(app, text="Team Selected", bg='DarkGrey', fg='White', font='Arial 10 bold')
+teamSelected = Label(app, text="Team Selected", bg='DarkBlue', fg='White', font='Arial 10 bold')
 teamSelected.pack()
 teamSelectedOutput = Text(app, width=30, height=1, bg='Black', fg='White', font='none 10')
 teamSelectedOutput.pack()
 
 # Year Formed
-yearForm = Label(app, text="Year Formed", bg='DarkGrey', fg='White', font='Arial 10 bold')
+yearForm = Label(app, text="Year Formed", bg='DarkBlue', fg='White', font='Arial 10 bold')
 yearForm.pack()
 yearFormOutput = Text(app, width=10, height=1, bg='Black', fg='White', font='none 10')
 yearFormOutput.pack()
 
 # Team Stadium
-teamStadium = Label(app, text="Team Stadium", bg='DarkGrey', fg='White', font='Arial 10 bold')
+teamStadium = Label(app, text="Team Stadium", bg='DarkBlue', fg='White', font='Arial 10 bold')
 teamStadium.pack()
 teamStadiumOutput = Text(app, width=30, height=1, bg='Black', fg='White', font='none 10')
 teamStadiumOutput.pack()
 
 # Team Info
-teamInfo = Label(app, text="Team History", bg='DarkGrey', fg='White', font='Arial 10 bold')
+teamInfo = Label(app, text="Team History", bg='DarkBlue', fg='White', font='Arial 10 bold')
 teamInfo.pack()
 teamInfoOutput = Text(app, width=75, height=4, bg='Black', fg='White', font='none 10')
 teamInfoOutput.pack()
 
 # Last Game Info
-lastGame = Label(app, text="Last Game Played", bg='DarkGrey', fg='White', font='Arial 10 bold')
+lastGame = Label(app, text="Last Game Played", bg='DarkBlue', fg='White', font='Arial 10 bold')
 lastGame.pack()
 lastGameOutput = Text(app, width=30, height=3, bg='Black', fg='White', font='none 10')
 lastGameOutput.pack()
@@ -1573,7 +1593,7 @@ lastGameOutput.pack()
 teamLogo.pack()'''
 
 # Logo Canvas
-LogoCanvas = Canvas(height=150, width=100, borderwidth=0, highlightthickness=0, bg='DarkGrey', bd=0)
+LogoCanvas = Canvas(height=150, width=100, borderwidth=0, highlightthickness=0, bg='Darkblue', bd=0)
 LogoCanvas.pack()
 
 
@@ -1697,6 +1717,11 @@ def callTeamLogo(*args):
         sixersLogo = PhotoImage(file="icons/Sixers1001.png")
         LogoCanvas.image = sixersLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=sixersLogo)
+    if TeamsVar.get() == "Phoenix Suns":
+        LogoCanvas.delete("all")
+        sunsLogo = PhotoImage(file="icons/Suns1001.png")
+        LogoCanvas.image = sunsLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=sunsLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
