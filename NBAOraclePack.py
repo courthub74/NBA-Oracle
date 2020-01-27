@@ -1017,6 +1017,45 @@ blazersGame = lastGameDatePOR + """
 """ + blazersAway + ""
 
 #######################################################################
+# SACRAMENTO KINGS
+
+# General Info for KINGS 134869
+kingsRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=Sacramento%20Kings")
+# Last Game Info
+kingsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134869")
+# Next Game Info
+kingsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134869")
+
+# General Info Parsed
+dataSAC = kingsRE.text
+parseSAC = json.loads(dataSAC)
+# Last Game Parsed
+LGdataSAC = kingsLG.text
+LGparseSAC = json.loads(LGdataSAC)
+# Next Game Parsed
+NGdataSAC = kingsNG.text
+NGparseSAC = json.loads(NGdataSAC)
+
+# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+kingsTeam = parseSAC["teams"][0]["strTeam"]
+yearFormedSAC = parseSAC["teams"][0]["intFormedYear"]
+teamStadiumSAC = parseSAC["teams"][0]["strStadium"]
+teamInfoSAC = parseSAC["teams"][0]["strDescriptionEN"]
+lastGameDateSAC = LGparseSAC["results"][0]["dateEventLocal"]
+homeTeamSAC = LGparseSAC["results"][0]["strHomeTeam"]
+awayTeamSAC = LGparseSAC["results"][0]["strAwayTeam"]
+homeScoreSAC = LGparseSAC["results"][0]["intHomeScore"]
+awayScoreSAC = LGparseSAC["results"][0]["intAwayScore"]
+
+# Last Game Info Printout SUNS
+kingsHome = "Home: " + str(homeTeamSAC) + " " + str(homeScoreSAC)
+kingsAway = "Away: " + str(awayTeamSAC) + " " + str(awayScoreSAC)
+
+kingsGame = lastGameDateSAC + """
+""" + kingsHome + """
+""" + kingsAway + ""
+
+#######################################################################
 
 
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
