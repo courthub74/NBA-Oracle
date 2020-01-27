@@ -4,7 +4,7 @@ import json
 
 # WINDOW
 app = Tk()
-app.geometry("600x700")
+app.geometry("900x900")
 app.iconbitmap("icons/NBA.ico")
 app.configure(background="DarkBlue")
 # app.config(image='icons/BallCourt.png')
@@ -59,6 +59,46 @@ hawksGame = lastGameDateATL + """
 """ + hawksHome + """
 """ + hawksAway + ""
 
+#####################################################################################################
+ATLhomeTeam = homeTeamATL
+ATLoppTeam = awayTeamATL
+
+
+def CallWinnerATL():
+    if str(homeScoreATL) > str(awayScoreATL):
+        return ATLhomeTeam
+
+
+ATLwinner = CallWinnerATL()
+
+
+# ALL THE FUNCTION ABOVE DOES IS COMPARE HOME TEAM SCORE TO AWAY TEAM
+
+# BELOW YOU ARE USING THE OUTCOME TO LOOK FOR THE FOCUS TEAM BY
+# ENTERING THE STRING OF THE 'FOCUS TEAM' COMPARING IT TO THE WINNER
+
+
+def ATLCountWin(*args):
+    if ATLwinner == "Atlanta Hawks":
+        return "W"
+
+
+ATLCountWin()
+ATLwin = ATLCountWin()
+print(ATLwin)
+
+def ATLCountLoss(*args):
+    if ATLwinner != "Atlanta Hawks":
+        return "L"
+
+
+ATLCountLoss()
+ATLloss = ATLCountLoss()
+print(ATLloss)
+
+
+##########################################################################################################
+
 #################################################################################
 # BOSTON CELTICS
 # CELTICS General Info 134860
@@ -98,6 +138,45 @@ celticsAway = "Away: " + str(awayTeamBOS) + " " + str(awayScoreBOS)
 celticsGame = lastGameDateBOS + """
 """ + celticsHome + """
 """ + celticsAway + ""
+
+##########################################################################################################
+
+BOShomeTeam = homeTeamBOS
+BOSoppTeam = awayTeamBOS
+
+
+def BOSCallWinner():
+    if str(homeScoreBOS) > str(awayScoreBOS):
+        return BOShomeTeam
+
+
+BOSwinner = BOSCallWinner()
+
+
+# ALL THE FUNCTION ABOVE DOES IS COMPARE HOME TEAM SCORE TO AWAY TEAM
+
+# BELOW YOU ARE USING THE OUTCOME TO LOOK FOR THE FOCUS TEAM BY
+# ENTERING THE STRING OF THE 'FOCUS TEAM' COMPARING IT TO THE WINNER
+
+
+def BOSCountWin(*args):
+    if BOSwinner == "Boston Celtics":
+        return "W"
+
+
+BOSCountWin()
+BOSwin = BOSCountWin()
+print(BOSwin)
+
+
+def BOSCountLoss(*args):
+    if BOSwinner != "Boston Celtics":
+        return "L"
+
+
+BOSCountLoss()
+BOSloss = BOSCountLoss()
+print(BOSloss)
 
 #################################################################################
 # BROOKLYN NETS
@@ -139,6 +218,36 @@ netsGame = lastGameDateBKN + """
 """ + netsHome + """
 """ + netsAway + ""
 
+BKNhomeTeam = homeTeamBKN
+BKNoppTeam = awayTeamBKN
+
+
+def BKNCallWinner():
+    if str(homeScoreBKN) > str(awayScoreBKN):
+        return BKNhomeTeam
+
+
+BKNwinner = BKNCallWinner()
+
+
+def BKNCountWin():
+    if BKNwinner == "Brooklyn Nets":
+        return "W"
+
+
+BKNCountWin()
+BKNwin = BKNCountWin()
+print(BKNwin)
+
+
+def BKNCountLoss():
+    if BKNwinner != "Brooklyn Nets":
+        return "L"
+
+
+BKNCountLoss()
+BKNloss = BKNCountLoss()
+print(BKNloss)
 #################################################################################
 # CHARLOTTE HORNETS
 # HORNETS General Info 134881
@@ -178,6 +287,33 @@ hornetsAway = "Away: " + str(awayTeamCHA) + " " + str(awayScoreCHA)
 hornetsGame = lastGameDateCHA + """
 """ + hornetsHome + """
 """ + hornetsAway + ""
+
+
+CHAhomeTeam = homeTeamCHA
+CHAoppTeam = awayTeamCHA
+
+
+def CallWinnerCHA():
+    if str(homeScoreATL) > str(awayScoreATL):
+        return ATLhomeTeam
+
+
+CHAwinner = CallWinnerCHA()
+
+
+def CHACountWin(*args):
+    if CHAwinner == "Charlotte Hornets":
+        outcomeOut.delete(0.0, 'end')
+        won = "W"
+        outcomeOut.insert(INSERT, won)
+
+
+def CHACountLoss(*args):
+    if CHAwinner != "Charlotte Hornets":
+        outcomeOut.delete(0.0, 'end')
+        loss = "L"
+        outcomeOut.insert(INSERT, loss)
+
 
 #################################################################################
 # CHICAGO BULLS
@@ -1714,7 +1850,6 @@ TeamsVar.trace("w", callYearFormed)
 TeamsVar.trace("w", callTeamStadium)
 TeamsVar.trace("w", callTeamInfo)
 TeamsVar.trace("w", callLastGame)
-# TeamsVar.trace("w", callOthaLogo)
 
 ###############################################################
 # TKINTER DOMAIN
@@ -1728,49 +1863,50 @@ logoNBA.pack()
 
 # Drop Down Menu
 droplist = OptionMenu(app, TeamsVar, *TeamsList)
-droplist.config(width=20, height=1, fg='Blue')
+droplist.config(width=40, height=1, fg='Blue')
 droplist.pack()
 
 # Team Selected
 teamSelected = Label(app, text="Team Selected", bg='DarkBlue', fg='White', font='Arial 10 bold')
 teamSelected.pack()
-teamSelectedOutput = Text(app, width=30, height=1, bg='Black', fg='White', font='none 10')
+teamSelectedOutput = Text(app, width=30, height=2, bg='Black', fg='White', font='none 15')
 teamSelectedOutput.pack()
 
 # Year Formed
 yearForm = Label(app, text="Year Formed", bg='DarkBlue', fg='White', font='Arial 10 bold')
 yearForm.pack()
-yearFormOutput = Text(app, width=10, height=1, bg='Black', fg='White', font='none 10')
+yearFormOutput = Text(app, width=20, height=2, bg='Black', fg='White', font='none 15')
 yearFormOutput.pack()
 
 # Team Stadium
 teamStadium = Label(app, text="Team Stadium", bg='DarkBlue', fg='White', font='Arial 10 bold')
 teamStadium.pack()
-teamStadiumOutput = Text(app, width=30, height=1, bg='Black', fg='White', font='none 10')
+teamStadiumOutput = Text(app, width=50, height=2, bg='Black', fg='White', font='none 15')
 teamStadiumOutput.pack()
 
 # Team Info
 teamInfo = Label(app, text="Team History", bg='DarkBlue', fg='White', font='Arial 10 bold')
 teamInfo.pack()
-teamInfoOutput = Text(app, width=75, height=4, bg='Black', fg='White', font='none 10')
+teamInfoOutput = Text(app, width=100, height=4, bg='Black', fg='White', font='none 15')
 teamInfoOutput.pack()
 
 # Last Game Info
 lastGame = Label(app, text="Last Game Played", bg='DarkBlue', fg='White', font='Arial 10 bold')
 lastGame.pack()
-lastGameOutput = Text(app, width=30, height=3, bg='Black', fg='White', font='none 10')
+lastGameOutput = Text(app, width=40, height=5, bg='Black', fg='White', font='none 15')
 lastGameOutput.pack()
 
+# Win or Loss
+outcome = Label(app, text="Win or Loss", bg="DarkBlue", fg='White', font='Arial 10 bold')
+outcome.pack()
+outcomeOut = Text(app, width=20, height=1, bg='Black', fg='White', font='none 15')
+outcomeOut.pack()
 
 #################################################################################################
 # LOGO TERRITORY
 
-# Team Logo
-'''teamLogo = Label(app, text="Team Logo", bg='DarkGrey', fg='White', font='Arial 10 bold')
-teamLogo.pack()'''
-
 # Logo Canvas
-LogoCanvas = Canvas(height=150, width=100, borderwidth=0, highlightthickness=0, bg='Darkblue', bd=0)
+LogoCanvas = Canvas(height=150, width=150, borderwidth=0, highlightthickness=0, bg='Darkblue', bd=0)
 LogoCanvas.pack()
 
 
