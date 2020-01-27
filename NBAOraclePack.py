@@ -1244,6 +1244,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectSAC = kingsTeam
         teamSelectedOutput.insert(INSERT, selectSAC)
+    if TeamsVar.get() == "San Antonio Spurs":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectSAN = spursTeam
+        teamSelectedOutput.insert(INSERT, selectSAN)
 
 
 # Year Formed Populate
@@ -1352,6 +1356,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearSAC = yearFormedSAC
         yearFormOutput.insert(INSERT, yearSAC)
+    if TeamsVar.get() == "San Antonio Spurs":
+        yearFormOutput.delete(0.0, 'end')
+        yearSAN = yearFormedSAN
+        yearFormOutput.insert(INSERT, yearSAN)
 
 
 # Team Stadium Populate
@@ -1460,6 +1468,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumSAC = teamStadiumSAC
         teamStadiumOutput.insert(INSERT, stadiumSAC)
+    if TeamsVar.get() == "San Antonio Spurs":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumSAN = teamStadiumSAN
+        teamStadiumOutput.insert(INSERT, stadiumSAN)
 
 
 # Team Info Populate
@@ -1568,6 +1580,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoSAC = teamInfoSAC
         teamInfoOutput.insert(INSERT, infoSAC)
+    if TeamsVar.get() == "San Antonio Spurs":
+        teamInfoOutput.delete(0.0, 'end')
+        infoSAN = teamInfoSAN
+        teamInfoOutput.insert(INSERT, infoSAN)
 
 
 # Last Game Populate
@@ -1676,6 +1692,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         kingsLastGame = kingsGame
         lastGameOutput.insert(INSERT, kingsLastGame)
+    if TeamsVar.get() == "San Antonio Spurs":
+        lastGameOutput.delete(0.0, 'end')
+        spursLastGame = spursGame
+        lastGameOutput.insert(INSERT, spursLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1889,6 +1909,11 @@ def callTeamLogo(*args):
         kingsLogo = PhotoImage(file="icons/Kings1001.png")
         LogoCanvas.image = kingsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=kingsLogo)
+    if TeamsVar.get() == "San Antonio Spurs":
+        LogoCanvas.delete("all")
+        spursLogo = PhotoImage(file="icons/Spurs1001.png")
+        LogoCanvas.image = spursLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=spursLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
