@@ -25,12 +25,18 @@ awayTeamDET = LGparseDET["results"][0]["strAwayTeam"]
 homeScoreDET = LGparseDET["results"][0]["intHomeScore"]
 awayScoreDET = LGparseDET["results"][0]["intAwayScore"]
 
+#####################################################################
 pistonsHome = str(homeTeamDET) + str(homeScoreDET)
 pistonsAway = str(awayTeamDET) + str(awayScoreDET)
 
 print(pistonsHome)
 print(pistonsAway)
 
+# THE ISSUE IS IN THIS QUADRANT.  YOU NEED TO FIGURE OUT HOW TO DETERMINE
+# WHICH TEAM IS WHICH IN YOUR CODE BY STRING
+# CREATE A VARIABLE THAT STATES WINNING TEAM
+# AND THEN MATCH THAT STRING TO THE CALL WIN CALL LOSS FUNCTIONS
+######################################################################
 
 def CallWinnerDET():
     if str(pistonsHome) > str(pistonsAway):
