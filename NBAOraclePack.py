@@ -4,7 +4,7 @@ import json
 
 # WINDOW
 app = Tk()
-app.geometry("900x900")
+app.geometry("1800x1500")
 app.iconbitmap("icons/NBA.ico")
 app.configure(background="DarkBlue")
 # app.config(image='icons/BallCourt.png')
@@ -86,6 +86,7 @@ def ATLCountWin(*args):
 ATLCountWin()
 ATLwin = ATLCountWin()
 print(ATLwin)
+
 
 def ATLCountLoss(*args):
     if ATLwinner != "Atlanta Hawks":
@@ -303,14 +304,14 @@ CHAwinner = CallWinnerCHA()
 
 def CHACountWin(*args):
     if CHAwinner == "Charlotte Hornets":
-        outcomeOut.delete(0.0, 'end')
+        outcomeOut.delete(0.0, END)
         won = "W"
         outcomeOut.insert(INSERT, won)
 
 
 def CHACountLoss(*args):
     if CHAwinner != "Charlotte Hornets":
-        outcomeOut.delete(0.0, 'end')
+        outcomeOut.delete(0.0, END)
         loss = "L"
         outcomeOut.insert(INSERT, loss)
 
@@ -355,6 +356,53 @@ bullsAway = "Away: " + str(awayTeamCHI) + " " + str(awayScoreCHI)
 bullsGame = lastGameDateCHI + """
 """ + bullsHome + """
 """ + bullsAway + ""
+
+
+CHIhomeTeam = homeTeamCHI
+CHIoppTeam = awayTeamCHI
+
+
+def CallWinnerCHI():
+    if str(homeScoreCHI) > str(awayScoreCHI):
+        return CHIhomeTeam
+
+
+CHIwinner = CallWinnerCHI()
+
+
+def CHICountWin(*args):
+    if CHIwinner == "Chicago Bulls":
+        return "W"
+
+
+CHICountWin()
+CHIwin = CHICountWin()
+print(CHIwin)
+
+
+def CHICountLoss(*args):
+    if CHIwinner != "Chicago Bulls":
+        return "L"
+
+
+CHICountLoss()
+CHIloss = CHICountLoss()
+print(CHIloss)
+
+
+'''def CHICountWin(*args):
+    if CHIwinner == "Chicago Bulls":
+        outcomeOut.delete(0.0, END)
+        won = "W"
+        outcomeOut.insert(INSERT, won)
+
+
+def CHICountLoss(*args):
+    if CHIwinner != "Chicage Bulls":
+        outcomeOut.delete(0.0, END)
+        loss = "L"
+        outcomeOut.insert(INSERT, loss)'''
+
 
 #################################################################################
 # CLEVELAND CAVALIERS
@@ -1211,7 +1259,7 @@ LGparseSAN = json.loads(LGdataSAN)
 NGdataSAN = spursNG.text
 NGparseSAN = json.loads(NGdataSAN)
 
-# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+# info Layout for the Drop Down Menu to Gather from SPURS 134879
 spursTeam = parseSAN["teams"][0]["strTeam"]
 yearFormedSAN = parseSAN["teams"][0]["intFormedYear"]
 teamStadiumSAN = parseSAN["teams"][0]["strStadium"]
@@ -1222,11 +1270,50 @@ awayTeamSAN = LGparseSAN["results"][0]["strAwayTeam"]
 homeScoreSAN = LGparseSAN["results"][0]["intHomeScore"]
 awayScoreSAN = LGparseSAN["results"][0]["intAwayScore"]
 
-# Last Game Info Printout SUNS
+# Last Game Info Printout SPURS
 spursHome = "Home: " + str(homeTeamSAN) + " " + str(homeScoreSAN)
 spursAway = "Away: " + str(awayTeamSAN) + " " + str(awayScoreSAN)
 
 spursGame = lastGameDateSAN + """
+""" + spursHome + """
+""" + spursAway + ""
+
+#######################################################################
+# TORONTO RAPTORS
+
+# General Info on RAPTORS 134864
+raptorsRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=Toronto%20Raptors")
+# Last Game Info
+raptorsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134864")
+# Next Game Info
+raptorsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134864")
+
+# General Info Parsed
+dataTOR = raptorsRE.text
+parseTOR = json.loads(dataTOR)
+# Last Game Parsed
+LGdataTOR = raptorsLG.text
+LGparseTOR = json.loads(LGdataTOR)
+# Next Game Parsed
+NGdataTOR = raptorsNG.text
+NGparseTOR = json.loads(NGdataTOR)
+
+# info Layout for the Drop Down Menu to Gather from RAPTORS 134864
+raptorsTeam = parseTOR["teams"][0]["strTeam"]
+yearFormedTOR = parseTOR["teams"][0]["intFormedYear"]
+teamStadiumTOR = parseTOR["teams"][0]["strStadium"]
+teamInfoTOR = parseTOR["teams"][0]["strDescriptionEN"]
+lastGameDateTOR = LGparseTOR["results"][0]["dateEventLocal"]
+homeTeamTOR = LGparseTOR["results"][0]["strHomeTeam"]
+awayTeamTOR = LGparseTOR["results"][0]["strAwayTeam"]
+homeScoreTOR = LGparseTOR["results"][0]["intHomeScore"]
+awayScoreTOR = LGparseTOR["results"][0]["intAwayScore"]
+
+# Last Game Info Printout RAPTORS
+raptorsHome = "Home: " + str(homeTeamTOR) + " " + str(homeScoreTOR)
+raptorsAway = "Away: " + str(awayTeamTOR) + " " + str(awayScoreTOR)
+
+raptorsGame = lastGameDateTOR + """
 """ + spursHome + """
 """ + spursAway + ""
 
@@ -1851,6 +1938,7 @@ TeamsVar.trace("w", callTeamStadium)
 TeamsVar.trace("w", callTeamInfo)
 TeamsVar.trace("w", callLastGame)
 
+
 ###############################################################
 # TKINTER DOMAIN
 
@@ -1887,7 +1975,7 @@ teamStadiumOutput.pack()
 # Team Info
 teamInfo = Label(app, text="Team History", bg='DarkBlue', fg='White', font='Arial 10 bold')
 teamInfo.pack()
-teamInfoOutput = Text(app, width=100, height=4, bg='Black', fg='White', font='none 15')
+teamInfoOutput = Text(app, width=150, height=4, bg='Black', fg='White', font='none 15')
 teamInfoOutput.pack()
 
 # Last Game Info
