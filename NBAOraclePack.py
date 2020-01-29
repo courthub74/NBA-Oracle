@@ -1547,6 +1547,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectUTAH = jazzTeam
         teamSelectedOutput.insert(INSERT, selectUTAH)
+    if TeamsVar.get() == "Washington Wizards":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectWAS = wizzardsTeam
+        teamSelectedOutput.insert(INSERT, selectWAS)
 
 
 # Year Formed Populate
@@ -1667,6 +1671,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearUTAH = yearFormedUTAH
         yearFormOutput.insert(INSERT, yearUTAH)
+    if TeamsVar.get() == "Washington Wizards":
+        yearFormOutput.delete(0.0, 'end')
+        yearWAS = yearFormedWAS
+        yearFormOutput.insert(INSERT, yearWAS)
 
 
 # Team Stadium Populate
@@ -1787,6 +1795,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumUTAH = teamStadiumUTAH
         teamStadiumOutput.insert(INSERT, stadiumUTAH)
+    if TeamsVar.get() == "Washington Wizards":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumWAS = teamStadiumWAS
+        teamStadiumOutput.insert(INSERT, stadiumWAS)
 
 
 # Team Info Populate
@@ -1907,6 +1919,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoUTAH = teamInfoUTAH
         teamInfoOutput.insert(INSERT, infoUTAH)
+    if TeamsVar.get() == "Washington Wizards":
+        teamInfoOutput.delete(0.0, 'end')
+        infoWAS = teamInfoWAS
+        teamInfoOutput.insert(INSERT, infoWAS)
 
 
 # Last Game Populate
@@ -2027,6 +2043,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         jazzLastGame = jazzGame
         lastGameOutput.insert(INSERT, jazzLastGame)
+    if TeamsVar.get() == "Washington Wizards":
+        lastGameOutput.delete(0.0, 'end')
+        wizzardsLastGame = wizzardsGame
+        lastGameOutput.insert(INSERT, wizzardsLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -2150,13 +2170,11 @@ def callTeamLogo(*args):
         pistonsLogo = PhotoImage(file='icons/Pistons1001.png')
         LogoCanvas.image = pistonsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=pistonsLogo)
-        LogoCanvas.pack()
     if TeamsVar.get() == "Golden State Warriors":
         LogoCanvas.delete("all")
         warriorsLogo = PhotoImage(file="icons/Warriors2001.png")
         LogoCanvas.image = warriorsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=warriorsLogo)
-        LogoCanvas.pack()
     if TeamsVar.get() == "Houston Rockets":
         LogoCanvas.delete("all")
         rocketsLogo = PhotoImage(file="icons/Rockets3001.png")
@@ -2172,7 +2190,6 @@ def callTeamLogo(*args):
         lakersLogo = PhotoImage(file='icons/Lakers1001.png')
         LogoCanvas.image = lakersLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=lakersLogo)
-        LogoCanvas.pack()
     if TeamsVar.get() == "Los Angeles Clippers":
         LogoCanvas.delete("all")
         clippersLogo = PhotoImage(file="icons/Clippers1001.png")
@@ -2193,13 +2210,11 @@ def callTeamLogo(*args):
         bucksLogo = PhotoImage(file='icons/Bucks2001.png')
         LogoCanvas.image = bucksLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=bucksLogo)
-        LogoCanvas.pack()
     if TeamsVar.get() == "Minnesota Timberwolves":
         LogoCanvas.delete("all")
         twolvesLogo = PhotoImage(file="icons/Twolves2001.png")
         LogoCanvas.image = twolvesLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=twolvesLogo)
-        LogoCanvas.pack()
     if TeamsVar.get() == "New Orleans Pelicans":
         LogoCanvas.delete("all")
         pelicansLogo = PhotoImage(file="icons/Pelicans2001.png")
@@ -2255,6 +2270,12 @@ def callTeamLogo(*args):
         jazzLogo = PhotoImage(file="icons/Jazz1501.png")
         LogoCanvas.image = jazzLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=jazzLogo)
+    if TeamsVar.get() == "Washington Wizards":
+        LogoCanvas.delete("all")
+        wizzardsLogo = PhotoImage(file="icons/Wizards1501.png")
+        LogoCanvas.image = wizzardsLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=wizzardsLogo)
+
 
 
 TeamsVar.trace("w", callTeamLogo)
