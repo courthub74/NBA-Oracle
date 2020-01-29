@@ -36,7 +36,7 @@ LGparseATL = json.loads(LGdataATL)
 NGdataATL = hawksNG.text
 NGparseATL = json.loads(NGdataATL)
 
-# Info Layout for Drop Down ATLANTA
+# Info Layout for Drop Down ATLANTA 134880
 hawksTeam = parseATL["teams"][0]["strTeam"]
 yearFormedATL = parseATL["teams"][0]["intFormedYear"]
 teamStadiumATL = parseATL["teams"][0]["strStadium"]
@@ -117,7 +117,7 @@ LGparseBOS = json.loads(LGdataBOS)
 NGdataBOS = celticsNG.text
 NGparseBOS = json.loads(NGdataBOS)
 
-# Info Layout for Drop Down BOSTON
+# Info Layout for Drop Down BOSTON 134860
 celticsTeam = parseBOS["teams"][0]["strTeam"]
 yearFormedBOS = parseBOS["teams"][0]["intFormedYear"]
 teamStadiumBOS = parseBOS["teams"][0]["strStadium"]
@@ -196,7 +196,7 @@ LGparseBKN = json.loads(LGdataBKN)
 NGdataBKN = netsNG.text
 NGparseBKN = json.loads(NGdataBKN)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from NETS 134861
 netsTeam = parseBKN["teams"][0]["strTeam"]
 yearFormedBKN = parseBKN["teams"][0]["intFormedYear"]
 teamStadiumBKN = parseBKN["teams"][0]["strStadium"]
@@ -247,6 +247,7 @@ BKNloss = BKNCountLoss()
 print(BKNloss)
 #################################################################################
 # CHARLOTTE HORNETS
+
 # HORNETS General Info 134881
 hornetsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Charlotte%20Hornets")
 # HORNETS Last Game Info 134881
@@ -266,7 +267,7 @@ LGparseCHA = json.loads(LGdataCHA)
 NGdataCHA = hornetsNG.text
 NGdataCHA = json.loads(NGdataCHA)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from HORNETS 134881
 hornetsTeam = parseCHA["teams"][0]["strTeam"]
 yearFormedCHA = parseCHA["teams"][0]["intFormedYear"]
 teamStadiumCHA = parseCHA["teams"][0]["strStadium"]
@@ -334,7 +335,7 @@ LGparseCHI = json.loads(LGdataCHI)
 NGdataCHI = bullsNG.text
 NGparseCHI = json.loads(NGdataCHI)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from BULLS 134870
 bullsTeam = parseCHI["teams"][0]["strTeam"]
 yearFormedCHI = parseCHI["teams"][0]["intFormedYear"]
 teamStadiumCHI = parseCHI["teams"][0]["strStadium"]
@@ -423,7 +424,7 @@ LGparseCLE = json.loads(LGdataCLE)
 NGdataCLE = cavsNG.text
 NGparseCLE = json.loads(NGdataCLE)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from CAVALIERS 134871
 cavsTeam = parseCLE["teams"][0]["strTeam"]
 yearFormedCLE = parseCLE["teams"][0]["intFormedYear"]
 teamStadiumCLE = parseCLE["teams"][0]["strStadium"]
@@ -464,7 +465,7 @@ LGparseDAL = json.loads(LGdataDAL)
 NGdataDAL = mavsNG.text
 NGparseDAL = json.loads(NGdataDAL)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from MAVERICKS 134875
 mavsTeam = parseDAL["teams"][0]["strTeam"]
 yearFormedDAL = parseDAL["teams"][0]["intFormedYear"]
 teamStadiumDAL = parseDAL["teams"][0]["strStadium"]
@@ -505,7 +506,7 @@ LGparseDEN = json.loads(LGdataDEN)
 NGdataDEN = nuggetsNG.text
 NGparseDEN = json.loads(NGdataDEN)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from NUGGETS 134885
 nuggetsTeam = parseDEN["teams"][0]["strTeam"]
 yearFormedDEN = parseDEN["teams"][0]["intFormedYear"]
 teamStadiumDEN = parseDEN["teams"][0]["strStadium"]
@@ -549,7 +550,7 @@ LGparseDET = json.loads(LGdataDET)
 NGdataDET = pistonsNG.text
 NGparseDET = json.loads(NGdataDET)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from PISTONS 134872
 pistonsTeam = parseDET["teams"][0]["strTeam"]
 yearFormedDET = parseDET["teams"][0]["intFormedYear"]
 teamStadiumDET = parseDET["teams"][0]["strStadium"]
@@ -594,7 +595,7 @@ LGparseGS = json.loads(LGdataGS)
 NGdataGS = warriorsNG.text
 NGparseGS = json.loads(NGdataGS)
 
-# info Layout for the Drop Down Menu to Gather from
+# info Layout for the Drop Down Menu to Gather from WARRIORS 134865
 warriorsTeam = parseGS["teams"][0]["strTeam"]
 yearFormedGS = parseGS["teams"][0]["intFormedYear"]
 teamStadiumGS = parseGS["teams"][0]["strStadium"]
@@ -1138,7 +1139,7 @@ LGparsePHO = json.loads(LGdataPHO)
 NGdataPHO = sunsNG.text
 NGparsePHO = json.loads(NGdataPHO)
 
-# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+# info Layout for the Drop Down Menu to Gather from SUNS 134868
 sunsTeam = parsePHO["teams"][0]["strTeam"]
 yearFormedPHO = parsePHO["teams"][0]["intFormedYear"]
 teamStadiumPHO = parsePHO["teams"][0]["strStadium"]
@@ -1165,7 +1166,7 @@ blazersRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?
 # Last Game Info for BLAZERS 134888
 blazersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134888")
 # Next Game Info for BLAZERS 134888
-blazersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134888")
+blazersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134888")
 
 # General Info Parsed
 dataPOR = blazersRE.text
@@ -1177,7 +1178,7 @@ LGparsePOR = json.loads(LGdataPOR)
 NGdataPOR = blazersNG.text
 NGparsePOR = json.loads(NGdataPOR)
 
-# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+# info Layout for the Drop Down Menu to Gather from BLAZERS 134888
 blazersTeam = parsePOR["teams"][0]["strTeam"]
 yearFormedPOR = parsePOR["teams"][0]["intFormedYear"]
 teamStadiumPOR = parsePOR["teams"][0]["strStadium"]
@@ -1204,7 +1205,7 @@ kingsRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=
 # Last Game Info
 kingsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134869")
 # Next Game Info
-kingsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134869")
+kingsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134869")
 
 # General Info Parsed
 dataSAC = kingsRE.text
@@ -1216,7 +1217,7 @@ LGparseSAC = json.loads(LGdataSAC)
 NGdataSAC = kingsNG.text
 NGparseSAC = json.loads(NGdataSAC)
 
-# info Layout for the Drop Down Menu to Gather from 76ERS 134863
+# info Layout for the Drop Down Menu to Gather from KINGS 134869
 kingsTeam = parseSAC["teams"][0]["strTeam"]
 yearFormedSAC = parseSAC["teams"][0]["intFormedYear"]
 teamStadiumSAC = parseSAC["teams"][0]["strStadium"]
@@ -1243,7 +1244,7 @@ spursRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=
 # Last Game Info
 spursLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134879")
 # Next Game Info
-spursNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134879")
+spursNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134879")
 
 # General Info Parsed
 dataSAN = spursRE.text
@@ -1282,7 +1283,7 @@ raptorsRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?
 # Last Game Info
 raptorsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134864")
 # Next Game Info
-raptorsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134864")
+raptorsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134864")
 
 # General Info Parsed
 dataTOR = raptorsRE.text
@@ -1312,6 +1313,45 @@ raptorsAway = "Away: " + str(awayTeamTOR) + " " + str(awayScoreTOR)
 raptorsGame = lastGameDateTOR + """
 """ + raptorsHome + """
 """ + raptorsAway + ""
+
+#######################################################################
+# UTAH JAZZ
+
+# General Info for JAZZ 134889
+jazzRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=Utah%20Jazz")
+# Last Game Info
+jazzLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134889")
+# Next Game Info
+jazzNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134889")
+
+# General Info Parsed
+dataUTAH = jazzRE.text
+parseUTAH = json.loads(dataUTAH)
+# Last Game Parsed
+LGdataUTAH = jazzLG.text
+LGparseUTAH = json.loads(LGdataUTAH)
+# Next Game Parsed
+NGdataUTAH = jazzNG.text
+NGparseUTAH = json.loads(NGdataUTAH)
+
+# info Layout for the Drop Down Menu to Gather from JAZZ 134889
+jazzTeam = parseUTAH["teams"][0]["strTeam"]
+yearFormedUTAH = parseUTAH["teams"][0]["intFormedYear"]
+teamStadiumUTAH = parseUTAH["teams"][0]["strStadium"]
+teamInfoUTAH = parseUTAH["teams"][0]["strDescriptionEN"]
+lastGameDateUTAH = LGparseUTAH["results"][0]["dateEventLocal"]
+homeTeamUTAH = LGparseUTAH["results"][0]["strHomeTeam"]
+awayTeamUTAH = LGparseUTAH["results"][0]["strAwayTeam"]
+homeScoreUTAH = LGparseUTAH["results"][0]["intHomeScore"]
+awayScoreUTAH = LGparseUTAH["results"][0]["intAwayScore"]
+
+# Last Game Info Printout JAZZ
+jazzHome = "Home: " + str(homeTeamUTAH) + " " + str(homeScoreUTAH)
+jazzAway = "Away: " + str(awayTeamUTAH) + " " + str(awayScoreUTAH)
+
+jazzGame = lastGameDateUTAH + """
+""" + jazzHome + """
+""" + jazzAway + ""
 
 #######################################################################
 
