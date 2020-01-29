@@ -13,10 +13,6 @@ scroll = Scrollbar(app, orient="vertical")
 scroll.pack(side=RIGHT, fill=Y)
 
 ###############################################################
-
-# DATA
-blankspace = "          "
-
 # TEAM DATA API SCRAPING
 ##############################################################################
 # ATLANTA HAWKS
@@ -2022,7 +2018,7 @@ LogoCanvas.pack()
 def callTeamLogo(*args):
     if TeamsVar.get() == "Atlanta Hawks":
         LogoCanvas.delete("all")
-        hawksLogo = PhotoImage(file="icons/Hawks1001.png")
+        hawksLogo = PhotoImage(file="icons/Hawks1504.png")
         LogoCanvas.image = hawksLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=hawksLogo)
     if TeamsVar.get() == "Boston Celtics":
