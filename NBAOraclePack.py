@@ -1314,8 +1314,8 @@ raptorsHome = "Home: " + str(homeTeamTOR) + " " + str(homeScoreTOR)
 raptorsAway = "Away: " + str(awayTeamTOR) + " " + str(awayScoreTOR)
 
 raptorsGame = lastGameDateTOR + """
-""" + spursHome + """
-""" + spursAway + ""
+""" + raptorsHome + """
+""" + raptorsAway + ""
 
 #######################################################################
 
