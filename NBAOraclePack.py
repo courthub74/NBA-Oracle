@@ -1511,6 +1511,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectTOR = raptorsTeam
         teamSelectedOutput.insert(INSERT, selectTOR)
+    if TeamsVar.get() == "Utah Jazz":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectUTAH = jazzTeam
+        teamSelectedOutput.insert(INSERT, selectUTAH)
 
 
 # Year Formed Populate
@@ -1627,6 +1631,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearTOR = yearFormedTOR
         yearFormOutput.insert(INSERT, yearTOR)
+    if TeamsVar.get() == "Utah Jazz":
+        yearFormOutput.delete(0.0, 'end')
+        yearUTAH = yearFormedUTAH
+        yearFormOutput.insert(INSERT, yearUTAH)
 
 
 # Team Stadium Populate
@@ -1743,6 +1751,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumTOR = teamStadiumTOR
         teamStadiumOutput.insert(INSERT, stadiumTOR)
+    if TeamsVar.get() == "Utah Jazz":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumUTAH = teamStadiumUTAH
+        teamStadiumOutput.insert(INSERT, stadiumUTAH)
 
 
 # Team Info Populate
@@ -1859,6 +1871,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoTOR = teamInfoTOR
         teamInfoOutput.insert(INSERT, infoTOR)
+    if TeamsVar.get() == "Utah Jazz":
+        teamInfoOutput.delete(0.0, 'end')
+        infoUTAH = teamInfoUTAH
+        teamInfoOutput.insert(INSERT, infoUTAH)
 
 
 # Last Game Populate
@@ -1975,6 +1991,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         raptorsLastGame = raptorsGame
         lastGameOutput.insert(INSERT, raptorsLastGame)
+    if TeamsVar.get() == "Utah Jazz":
+        lastGameOutput.delete(0.0, 'end')
+        jazzLastGame = jazzGame
+        lastGameOutput.insert(INSERT, jazzLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -2200,6 +2220,11 @@ def callTeamLogo(*args):
         raptorsLogo = PhotoImage(file="icons/Raptors1501.png")
         LogoCanvas.image = raptorsLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=raptorsLogo)
+    if TeamsVar.get() == "Utah Jazz":
+        LogoCanvas.delete("all")
+        jazzLogo = PhotoImage(file="icons/Jazz1501.png")
+        LogoCanvas.image = jazzLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=jazzLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
