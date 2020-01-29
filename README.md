@@ -14,3 +14,4 @@ Widget that provides general info and the latest scores of your favorite pro bas
 - Making graphics appear at the push of a button
 - API integration
 - Parsing and Routing JSON data
+- How to gather desired outcome from limited data
