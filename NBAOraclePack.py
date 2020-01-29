@@ -1471,6 +1471,10 @@ def callTeamSelected(*args):
         teamSelectedOutput.delete(0.0, 'end')
         selectSAN = spursTeam
         teamSelectedOutput.insert(INSERT, selectSAN)
+    if TeamsVar.get() == "Toronto Raptors":
+        teamSelectedOutput.delete(0.0, 'end')
+        selectTOR = raptorsTeam
+        teamSelectedOutput.insert(INSERT, selectTOR)
 
 
 # Year Formed Populate
@@ -1583,6 +1587,10 @@ def callYearFormed(*args):
         yearFormOutput.delete(0.0, 'end')
         yearSAN = yearFormedSAN
         yearFormOutput.insert(INSERT, yearSAN)
+    if TeamsVar.get() == "Toronto Raptors":
+        yearFormOutput.delete(0.0, 'end')
+        yearTOR = yearFormedTOR
+        yearFormOutput.insert(INSERT, yearTOR)
 
 
 # Team Stadium Populate
@@ -1695,6 +1703,10 @@ def callTeamStadium(*args):
         teamStadiumOutput.delete(0.0, 'end')
         stadiumSAN = teamStadiumSAN
         teamStadiumOutput.insert(INSERT, stadiumSAN)
+    if TeamsVar.get() == "Toronto Raptors":
+        teamStadiumOutput.delete(0.0, 'end')
+        stadiumTOR = teamStadiumTOR
+        teamStadiumOutput.insert(INSERT, stadiumTOR)
 
 
 # Team Info Populate
@@ -1807,6 +1819,10 @@ def callTeamInfo(*args):
         teamInfoOutput.delete(0.0, 'end')
         infoSAN = teamInfoSAN
         teamInfoOutput.insert(INSERT, infoSAN)
+    if TeamsVar.get() == "Toronto Raptors":
+        teamInfoOutput.delete(0.0, 'end')
+        infoTOR = teamInfoTOR
+        teamInfoOutput.insert(INSERT, infoTOR)
 
 
 # Last Game Populate
@@ -1919,6 +1935,10 @@ def callLastGame(*args):
         lastGameOutput.delete(0.0, 'end')
         spursLastGame = spursGame
         lastGameOutput.insert(INSERT, spursLastGame)
+    if TeamsVar.get() == "Toronto Raptors":
+        lastGameOutput.delete(0.0, 'end')
+        raptorsLastGame = raptorsGame
+        lastGameOutput.insert(INSERT, raptorsLastGame)
 
 
 # For BELOW you would have to extract the image that comes from the link provided
@@ -1928,6 +1948,7 @@ def callLastGame(*args):
         othaLogo.delete(0.0, 'end')
         pisLogo = teamLogo
         othaLogo.insert(INSERT, pisLogo)'''
+
 
 # DROP DOWN MENU COMMAND (Trace Values)
 TeamsVar = StringVar()
@@ -2138,6 +2159,11 @@ def callTeamLogo(*args):
         spursLogo = PhotoImage(file="icons/Spurs1001.png")
         LogoCanvas.image = spursLogo
         LogoCanvas.create_image(0, 0, anchor='nw', image=spursLogo)
+    if TeamsVar.get() == "Toronto Raptors":
+        LogoCanvas.delete("all")
+        raptorsLogo = PhotoImage(file="icons/Raptors1501.png")
+        LogoCanvas.image = raptorsLogo
+        LogoCanvas.create_image(0, 0, anchor='nw', image=raptorsLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
