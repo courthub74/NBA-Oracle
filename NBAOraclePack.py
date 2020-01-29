@@ -93,7 +93,6 @@ ATLCountLoss()
 ATLloss = ATLCountLoss()
 print(ATLloss)
 
-
 ##########################################################################################################
 
 #################################################################################
@@ -286,7 +285,6 @@ hornetsGame = lastGameDateCHA + """
 """ + hornetsHome + """
 """ + hornetsAway + ""
 
-
 CHAhomeTeam = homeTeamCHA
 CHAoppTeam = awayTeamCHA
 
@@ -354,7 +352,6 @@ bullsGame = lastGameDateCHI + """
 """ + bullsHome + """
 """ + bullsAway + ""
 
-
 CHIhomeTeam = homeTeamCHI
 CHIoppTeam = awayTeamCHI
 
@@ -386,7 +383,6 @@ CHICountLoss()
 CHIloss = CHICountLoss()
 print(CHIloss)
 
-
 '''def CHICountWin(*args):
     if CHIwinner == "Chicago Bulls":
         outcomeOut.delete(0.0, END)
@@ -399,7 +395,6 @@ def CHICountLoss(*args):
         outcomeOut.delete(0.0, END)
         loss = "L"
         outcomeOut.insert(INSERT, loss)'''
-
 
 #################################################################################
 # CLEVELAND CAVALIERS
@@ -1354,8 +1349,45 @@ jazzGame = lastGameDateUTAH + """
 """ + jazzAway + ""
 
 #######################################################################
+# WASHINGTON WIZARDS
 
+# General Info for the WIZARDS 134884
+wizardsRE = requests.get("https://thesportsdb.com/api/v1/json/1/searchteams.php?t=Washington%20Wizards")
+# Last Game Info
+wizardsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134884")
+# Next Game Info
+wizardsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134884")
 
+# General Info Parsed
+dataWAS = wizardsRE.text
+parseWAS = json.loads(dataWAS)
+# Last Game Parsed
+LGdataWAS = wizardsLG.text
+LGparseWAS = json.loads(LGdataWAS)
+# Next Game Parsed
+NGdataWAS = wizardsNG.text
+NGparseWAS = json.loads(NGdataWAS)
+
+# info Layout for the Drop Down Menu to Gather from WIZARDS 134884
+wizzardsTeam = parseWAS["teams"][0]["strTeam"]
+yearFormedWAS = parseWAS["teams"][0]["intFormedYear"]
+teamStadiumWAS = parseWAS["teams"][0]["strStadium"]
+teamInfoWAS = parseWAS["teams"][0]["strDescriptionEN"]
+lastGameDateWAS = LGparseWAS["results"][0]["dateEventLocal"]
+homeTeamWAS = LGparseWAS["results"][0]["strHomeTeam"]
+awayTeamWAS = LGparseWAS["results"][0]["strAwayTeam"]
+homeScoreWAS = LGparseWAS["results"][0]["intHomeScore"]
+awayScoreWAS = LGparseWAS["results"][0]["intAwayScore"]
+
+# Last Game Info Printout WIZZARDS 134884
+wizzardsHome = "Home: " + str(homeTeamWAS) + " " + str(homeScoreWAS)
+wizzardsAway = "Away: " + str(awayTeamWAS) + " " + str(awayScoreWAS)
+
+wizzardsGame = lastGameDateWAS + """
+""" + wizzardsHome + """
+""" + wizzardsAway + ""
+
+#########################################################################################
 # The LIST of Teams on the DROP DOWN MENU (Blank has 10 spaces)
 TeamsList = [
     "Select Team Here:",
@@ -2005,7 +2037,6 @@ def callLastGame(*args):
         pisLogo = teamLogo
         othaLogo.insert(INSERT, pisLogo)'''
 
-
 # DROP DOWN MENU COMMAND (Trace Values)
 TeamsVar = StringVar()
 TeamsVar.set(TeamsList[0])
@@ -2014,7 +2045,6 @@ TeamsVar.trace("w", callYearFormed)
 TeamsVar.trace("w", callTeamStadium)
 TeamsVar.trace("w", callTeamInfo)
 TeamsVar.trace("w", callLastGame)
-
 
 ###############################################################
 # TKINTER DOMAIN
