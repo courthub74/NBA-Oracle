@@ -1,8 +1,6 @@
 
-
-
 TeamsList = [
-	"Select Team Dropdown:",
+    "Select Team Dropdown:",
     "Atlanta Hawks",
     "Boston Celtics",
     "Brooklyn Nets",
