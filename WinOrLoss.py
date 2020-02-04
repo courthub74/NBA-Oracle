@@ -1,33 +1,38 @@
-ATLhomeTeam = homeTeamATL
-oppTeam = awayTeamATL
+HomeTeam = "focusTeam"
+AwayTeam = "oppTeam"
+HomeScore = "123"
+AwayScore = "112"
+
+def team():
+	if HomeTeam == "focusTeam":
+		x = HomeScore
+		print(x)
+
+def away():
+	if HomeTeam == "oppTeam":
+		x = AwayScore
+		print(x)
+		
+
+team()
+away()
+
+def compare():
+	if HomeScore > AwayScore:
+		y = "Win"
+		print(y)
+	elif HomeScore < AwayScore:
+		y = "Loss"
+		print(y)
+
+compare()
 
 
-def CallWinner():
-    if str(homeScoreATL) > str(awayScoreATL):
-        return ATLhomeTeam
 
-
-winner = CallWinner()
-
-
-# ALL THE FUNCTION ABOVE DOES IS COMPARE HOME TEAM SCORE TO AWAY TEAM
-
-# BELOW YOU ARE USING THE OUTCOME TO LOOK FOR THE FOCUS TEAM BY
-# ENTERING THE STRING OF THE 'FOCUS TEAM' COMPARING IT TO THE WINNER
-
-
-def CountWin(*args):
-    if winner == "Atlanta Hawks":
+def CountWinLoss(*args):
         outcomeOut.delete(0.0, 'end')
-        won = "W"
+        outcome = compare
         outcomeOut.insert(INSERT, won)
 
-
-def CountLoss(*args):
-    if winner != "Atlanta Hawks":
-        outcomeOut.delete(0.0, 'end')
-        loss = "L"
-        outcomeOut.insert(INSERT, loss)
         
-TeamsVar.trace("w", CountWin)
-TeamsVar.trace("w", CountLoss)
+TeamsVar.trace("w", CountWinLoss)
