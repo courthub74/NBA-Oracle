@@ -2,6 +2,10 @@ from tkinter import *
 import teamslist
 import atlanta
 import boston
+import brooklyn
+import charlotte
+import chicago
+import cleveland
 
 # WINDOW
 window = Tk()
@@ -77,6 +81,14 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		selectBOS = boston.celticsTeam
 		teamSelectedOutput.insert(INSERT, selectBOS)
+	if TeamsVar.get() == "Brooklyn Nets":
+		teamSelectedOutput.delete(0.0, END)
+		selectBKN = brooklyn.netsTeam
+		teamSelectedOutput.insert(INSERT, selectBKN)
+	if TeamsVar.get() == "Charlotte Hornets":
+		teamSelectedOutput.delete(0.0, END)
+		selectCHA = charlotte.hornetsTeam
+		teamSelectedOutput.insert(INSERT, selectCHA)
 
 TeamsVar.trace("w", callTeamSelected)
 
@@ -90,6 +102,14 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearBOS = boston.yearFormedBOS
 		yearFormedOutput.insert(INSERT, yearBOS)
+	if TeamsVar.get() == "Brooklyn Nets":
+		yearFormedOutput.delete(0.0, END)
+		yearBKN = brooklyn.yearFormedBKN
+		yearFormedOutput.insert(INSERT, yearBKN)
+	if TeamsVar.get() == "Charlotte Hornets":
+		yearFormedOutput.delete(0.0, END)
+		yearCHA = charlotte.yearFormedCHA
+		yearFormedOutput.insert(INSERT, yearCHA)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -103,6 +123,15 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumBOS = boston.teamStadiumBOS
 		teamStadiumOutput.insert(INSERT, stadiumBOS)
+	if TeamsVar.get() == "Brooklyn Nets":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumBKN = brooklyn.teamStadiumBKN
+		teamStadiumOutput.insert(INSERT, stadiumBKN)
+	if TeamsVar.get() == "Charlotte Hornets":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumCHA = charlotte.teamStadiumCHA
+		teamStadiumOutput.insert(INSERT, stadiumCHA)
+
 
 TeamsVar.trace("w", callTeamStadium)
 
@@ -116,6 +145,14 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		infoBOS = boston.teamInfoBOS
 		teamInfoOutput.insert(INSERT, infoBOS)
+	if TeamsVar.get() == "Brooklyn Nets":
+		teamInfoOutput.delete(0.0, END)
+		infoBKN = brooklyn.teamInfoBKN
+		teamInfoOutput.insert(INSERT, infoBKN)
+	if TeamsVar.get() == "Charlotte Hornets":
+		teamInfoOutput.delete(0.0, END)
+		infoCHA = charlotte.teamInfoCHA
+		teamInfoOutput.insert(INSERT, infoCHA)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -129,6 +166,14 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		celticsLastGame = boston.celticsGame 
 		lastGameOutput.insert(INSERT, celticsLastGame)
+	if TeamsVar.get() == "Brooklyn Nets":
+		lastGameOutput.delete(0.0, END)
+		netsLastGame = brooklyn.netsGame 
+		lastGameOutput.insert(INSERT, netsLastGame)
+	if TeamsVar.get() == "Charlotte Hornets":
+		lastGameOutput.delete(0.0, END)
+		hornetsLastGame = charlotte.hornetsGame 
+		lastGameOutput.insert(INSERT, hornetsLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -144,6 +189,16 @@ def callTeamLogo(*args):
 		celticsLogo = PhotoImage(file="logos/Celtics300.png")
 		LogoCanvas.image = celticsLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=celticsLogo)
+	if TeamsVar.get() == "Brooklyn Nets":
+		LogoCanvas.delete("all")
+		netsLogo = PhotoImage(file="logos/Nets300.png")
+		LogoCanvas.image = netsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=netsLogo)
+	if TeamsVar.get() == "Charlotte Hornets":
+		LogoCanvas.delete("all")
+		hornetsLogo = PhotoImage(file="logos/Hornets300.png")
+		LogoCanvas.image = hornetsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=hornetsLogo)
 
 TeamsVar.trace("w", callTeamLogo)
 
