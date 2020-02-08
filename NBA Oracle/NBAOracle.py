@@ -110,6 +110,11 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearCHA = charlotte.yearFormedCHA
 		yearFormedOutput.insert(INSERT, yearCHA)
+	if TeamsVar.get() == "Chicago Bulls":
+		yearFormedOutput.delete(0.0, END)
+		yearCHI = chicago.yearFormedCHI
+		yearFormedOutput.insert(INSERT, yearCHI)
+
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -131,6 +136,11 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumCHA = charlotte.teamStadiumCHA
 		teamStadiumOutput.insert(INSERT, stadiumCHA)
+	if TeamsVar.get() == "Chicago Bulls": 
+		teamStadiumOutput.delete(0.0, END)
+		stadiumCHI = chicago.teamStadiumCHI
+		teamStadiumOutput.insert(INSERT, stadiumCHI)
+
 
 
 TeamsVar.trace("w", callTeamStadium)
@@ -153,6 +163,10 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		infoCHA = charlotte.teamInfoCHA
 		teamInfoOutput.insert(INSERT, infoCHA)
+	if TeamsVar.get() == "Chicago Bulls":
+		teamInfoOutput.delet(0.0, END)
+		infoCHI = chicago.teamInfoCHI
+		teamInfoOutput.insert(INSERT, infoCHI)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -174,6 +188,10 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		hornetsLastGame = charlotte.hornetsGame 
 		lastGameOutput.insert(INSERT, hornetsLastGame)
+	if TeamsVar.get() == "Chicago Bulls":
+		lastGameOutput.delete(0.0, END)
+		bullsLastGame = chicago.bullsGame
+		lastGameOutput.insert(INSERT,bullsLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -199,6 +217,12 @@ def callTeamLogo(*args):
 		hornetsLogo = PhotoImage(file="logos/Hornets300.png")
 		LogoCanvas.image = hornetsLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=hornetsLogo)
+	if TeamsVar.get() == "Chicago Bulls":
+		LogoCanvas.delete("all")
+		bullsLogo = PhotoImage(file="logos/Bulls300.png")
+		LogoCanvas.image = bullsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=bullsLogo)
+		
 
 TeamsVar.trace("w", callTeamLogo)
 
