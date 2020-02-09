@@ -111,7 +111,7 @@ def callTeamSelected(*args):
 	if TeamsVar.get() == "Detroit Pistons":
 		teamSelectedOutput.delete(0.0, END)
 		selectDET = detroit.pistonsTeam  
-		teamSelectedOutput.insert(INSERT, selectDEN)
+		teamSelectedOutput.insert(INSERT, selectDET)
 
 TeamsVar.trace("w", callTeamSelected)
 
