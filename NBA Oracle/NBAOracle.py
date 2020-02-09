@@ -6,6 +6,8 @@ import brooklyn
 import charlotte
 import chicago
 import cleveland
+import dallas
+import denver
 
 # WINDOW
 window = Tk()
@@ -89,6 +91,23 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		selectCHA = charlotte.hornetsTeam
 		teamSelectedOutput.insert(INSERT, selectCHA)
+	if TeamsVar.get() == "Chicago Bulls":
+		teamSelectedOutput.delete(0.0, END)
+		selectCHI = chicago.bullsTeam
+		teamSelectedOutput.insert(INSERT, selectCHI)
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		teamSelectedOutput.delete(0.0, END)
+		selectCLE = cleveland.cavsTeam
+		teamSelectedOutput.insert(INSERT, selectCLE)
+	if TeamsVar.get() == "Dallas Mavericks":
+		teamSelectedOutput.delete(0.0, END)
+		selectDAL = dallas.mavsTeam
+		teamSelectedOutput.insert(INSERT, selectDAL)
+	if TeamsVar.get() == "Denver Nuggets":
+		teamSelectedOutput.delete(0.0, END)
+		selectDEN = denver.nuggetsTeam  # Locate the imported file and then the variable that is the parsed string you are looking for
+		teamSelectedOutput.insert(INSERT, selectDEN) # NOW insert it into the field
+	
 
 TeamsVar.trace("w", callTeamSelected)
 
@@ -114,9 +133,21 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearCHI = chicago.yearFormedCHI
 		yearFormedOutput.insert(INSERT, yearCHI)
-
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		yearFormedOutput.delete(0.0, END)
+		yearCLE = cleveland.yearFormedCLE
+		yearFormedOutput.insert(INSERT, yearCLE)
+	if TeamsVar.get() == "Dallas Mavericks":
+		yearFormedOutput.delete(0.0, END)
+		yearDAL = dallas.yearFormedDAL
+		yearFormedOutput.insert(INSERT, yearDAL)
+	if TeamsVar.get() == "Denver Nuggets":
+		yearFormedOutput.delete(0.0, END)
+		yearDEN = denver.yearFormedDEN
+		yearFormedOutput.insert(INSERT, yearDEN)
 
 TeamsVar.trace("w", callYearFormed)
+
 
 # CALL TEAM STADIUM
 def callTeamStadium(*args):
@@ -140,7 +171,18 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumCHI = chicago.teamStadiumCHI
 		teamStadiumOutput.insert(INSERT, stadiumCHI)
-
+	if TeamsVar.get() == "Cleveland Cavaliers": 
+		teamStadiumOutput.delete(0.0, END)
+		stadiumCLE = cleveland.teamStadiumCLE
+		teamStadiumOutput.insert(INSERT, stadiumCLE)
+	if TeamsVar.get() == "Dallas Mavericks":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumDAL = dallas.teamStadiumDAL
+		teamStadiumOutput.insert(INSERT, stadiumDAL)
+	if TeamsVar.get() == "Denver Nuggets":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumDEN = denver.teamStadiumDEN
+		teamStadiumOutput.insert(INSERT, stadiumDEN)
 
 
 TeamsVar.trace("w", callTeamStadium)
@@ -164,9 +206,21 @@ def callTeamInfo(*args):
 		infoCHA = charlotte.teamInfoCHA
 		teamInfoOutput.insert(INSERT, infoCHA)
 	if TeamsVar.get() == "Chicago Bulls":
-		teamInfoOutput.delet(0.0, END)
+		teamInfoOutput.delete(0.0, END)
 		infoCHI = chicago.teamInfoCHI
 		teamInfoOutput.insert(INSERT, infoCHI)
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		teamInfoOutput.delete(0.0, END)
+		infoCLE = cleveland.teamInfoCLE
+		teamInfoOutput.insert(INSERT, infoCLE)
+	if TeamsVar.get() == "Dallas Mavericks":
+		teamInfoOutput.delete(0.0, END)
+		infoDAL = dallas.teamInfoDAL
+		teamInfoOutput.insert(INSERT, infoDAL)
+	if TeamsVar.get() == "Denver Nuggets":
+		teamInfoOutput.delete(0.0, END)
+		infoDEN = denver.teamInfoDEN
+		teamInfoOutput.insert(INSERT, infoDEN)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -192,16 +246,28 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		bullsLastGame = chicago.bullsGame
 		lastGameOutput.insert(INSERT,bullsLastGame)
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		lastGameOutput.delete(0.0, END)
+		cavsLastGame = cleveland.cavsGame
+		lastGameOutput.insert(INSERT,cavsLastGame)
+	if TeamsVar.get() == "Dallas Mavericks":
+		lastGameOutput.delete(0.0, END)
+		mavsLastGame = dallas.mavsGame 
+		lastGameOutput.insert(INSERT, mavsLastGame)
+	if TeamsVar.get() == "Denver Nuggets":
+		lastGameOutput.delete(0.0, END)
+		nuggetsLastGame = denver.nuggetsGame 
+		lastGameOutput.insert(INSERT, nuggetsLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
 # CALL TEAM LOGO
 def callTeamLogo(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
-		LogoCanvas.delete("all")
-		hawksLogo = PhotoImage(file="logos/Hawks300.png")
-		LogoCanvas.image = hawksLogo
-		LogoCanvas.create_image(0, 0, anchor='nw', image=hawksLogo)
+		LogoCanvas.delete("all")  # Deletes previous
+		hawksLogo = PhotoImage(file="logos/Hawks300.png") # Creates the actual image
+		LogoCanvas.image = hawksLogo  # Associates image with the canvas
+		LogoCanvas.create_image(0, 0, anchor='nw', image=hawksLogo) # Creates the appearance of the image
 	if TeamsVar.get() == "Boston Celtics":
 		LogoCanvas.delete("all")
 		celticsLogo = PhotoImage(file="logos/Celtics300.png")
@@ -222,7 +288,22 @@ def callTeamLogo(*args):
 		bullsLogo = PhotoImage(file="logos/Bulls300.png")
 		LogoCanvas.image = bullsLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=bullsLogo)
-		
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		LogoCanvas.delete("all")
+		cavsLogo = PhotoImage(file="logos/Cavs300.png")
+		LogoCanvas.image = cavsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=cavsLogo)
+	if TeamsVar.get() == "Dallas Mavericks":
+		LogoCanvas.delete("all")
+		mavsLogo = PhotoImage(file="logos/Mavs300.png")
+		LogoCanvas.image = mavsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=mavsLogo)
+	if TeamsVar.get() == "Denver Nuggets":
+		LogoCanvas.delete("all")
+		nuggetsLogo = PhotoImage(file="logos/Nuggets300.png")
+		LogoCanvas.image = nuggetsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=nuggetsLogo)
+
 
 TeamsVar.trace("w", callTeamLogo)
 
