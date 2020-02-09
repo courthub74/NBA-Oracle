@@ -75,6 +75,18 @@ away()
 awayWin()
 homeWin()
 
+
+def win():
+	if team1 == "Denver Nuggets" and scoreHome > scoreAway:
+		print("Nuggets Win")
+	elif team2 == "Denver Nuggets" and scoreAway > scoreHome:
+		print("Nuggets Win")
+	else:
+		print("Nuggets Lose")
+
+win()
+
+
 # NOW we just need to count the wins or losses
 
 
