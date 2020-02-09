@@ -1,9 +1,9 @@
-HomeTeam = "focusTeam"
-AwayTeam = "oppTeam"
+HomeTeam = "oppTeam"
+AwayTeam = "focusTeam"
 HomeScore = "123"
-AwayScore = "112"
+AwayScore = "156"
 
-def team():
+def home():
 	if HomeTeam == "focusTeam":
 		x = HomeScore
 		print(x)
@@ -14,15 +14,15 @@ def away():
 		print(x)
 		
 
-team()
+home()
 away()
 
 def compare():
 	if HomeScore > AwayScore:
-		y = "Win"
+		y = "Home team Wins"
 		print(y)
 	elif HomeScore < AwayScore:
-		y = "Loss"
+		y = "Home team Losses"
 		print(y)
 
 compare()
