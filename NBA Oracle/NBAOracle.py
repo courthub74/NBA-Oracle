@@ -8,6 +8,7 @@ import chicago
 import cleveland
 import dallas
 import denver
+import detroit
 
 # WINDOW
 window = Tk()
@@ -107,7 +108,10 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		selectDEN = denver.nuggetsTeam  # Locate the imported file and then the variable that is the parsed string you are looking for
 		teamSelectedOutput.insert(INSERT, selectDEN) # NOW insert it into the field
-	
+	if TeamsVar.get() == "Detroit Pistons":
+		teamSelectedOutput.delete(0.0, END)
+		selectDET = detroit.pistonsTeam  
+		teamSelectedOutput.insert(INSERT, selectDEN)
 
 TeamsVar.trace("w", callTeamSelected)
 
@@ -145,6 +149,10 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearDEN = denver.yearFormedDEN
 		yearFormedOutput.insert(INSERT, yearDEN)
+	if TeamsVar.get() == "Detroit Pistons":
+		yearFormedOutput.delete(0.0, END)
+		yearDET = detroit.yearFormedDET
+		yearFormedOutput.insert(INSERT, yearDET)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -183,8 +191,11 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumDEN = denver.teamStadiumDEN
 		teamStadiumOutput.insert(INSERT, stadiumDEN)
-
-
+	if TeamsVar.get() == "Detroit Pistons":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumDET = detroit.teamStadiumDET
+		teamStadiumOutput.insert(INSERT, stadiumDET)
+			
 TeamsVar.trace("w", callTeamStadium)
 
 # CALL TEAM INFO
@@ -221,6 +232,10 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		infoDEN = denver.teamInfoDEN
 		teamInfoOutput.insert(INSERT, infoDEN)
+	if TeamsVar.get() == "Detroit Pistons":
+		teamInfoOutput.delete(0.0, END)
+		infoDET = detroit.teamInfoDET
+		teamInfoOutput.insert(INSERT, infoDET)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -258,6 +273,10 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		nuggetsLastGame = denver.nuggetsGame 
 		lastGameOutput.insert(INSERT, nuggetsLastGame)
+	if TeamsVar.get() == "Detroit Pistons":
+		lastGameOutput.delete(0.0, END)
+		pistonsLastGame = detroit.pistonsGame 
+		lastGameOutput.insert(INSERT, pistonsLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -303,6 +322,11 @@ def callTeamLogo(*args):
 		nuggetsLogo = PhotoImage(file="logos/Nuggets300.png")
 		LogoCanvas.image = nuggetsLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=nuggetsLogo)
+	if TeamsVar.get() == "Detroit Pistons":
+		LogoCanvas.delete("all")
+		pistonsLogo = PhotoImage(file="logos/Pistons300.png")
+		LogoCanvas.image = pistonsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=pistonsLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
