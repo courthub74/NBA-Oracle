@@ -294,6 +294,10 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		netsStanding = brooklyn.win()
 		outcomeOutput.insert(INSERT, netsStanding)
+	if TeamsVar.get() == "Charlotte Hornets":
+		outcomeOutput.delete(0.0, END)
+		hornetsStanding = charlotte.win()
+		outcomeOutput.insert(INSERT, hornetsStanding)
 
 TeamsVar.trace("w", callWinLoss)
 
