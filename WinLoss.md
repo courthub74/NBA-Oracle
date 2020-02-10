@@ -1,4 +1,4 @@
-#Issue 1: Determining Winner
+## Issue 1: Determining Winner
 
 I have populated given data from the sportsAPI for my NBAOracle. The next challenge is to
 determine is the selected team by the user has won or loss their last game. This is a challenge
