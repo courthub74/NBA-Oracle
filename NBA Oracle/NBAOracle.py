@@ -280,6 +280,23 @@ def callLastGame(*args):
 
 TeamsVar.trace("w", callLastGame)
 
+# WIN or LOSS
+def callWinLoss(*args):
+	if TeamsVar.get() == "Atlanta Hawks":
+		outcomeOutput.delete(0.0, END)
+		hawksStanding = atlanta.win() 
+		outcomeOutput.insert(INSERT, hawksStanding)
+	if TeamsVar.get() == "Boston Celtics":
+		outcomeOutput.delete(0.0, END)
+		celticsStanding = boston.win()
+		outcomeOutput.insert(INSERT, celticsStanding)
+	if TeamsVar.get() == "Brooklyn Nets":
+		outcomeOutput.delete(0.0, END)
+		netsStanding = brooklyn.win()
+		outcomeOutput.insert(INSERT, netsStanding)
+
+TeamsVar.trace("w", callWinLoss)
+
 # CALL TEAM LOGO
 def callTeamLogo(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
