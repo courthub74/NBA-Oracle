@@ -4,7 +4,7 @@ I have populated given data from the sportsAPI for my NBAOracle. The next challe
 determine is the selected team by the user has won or loss their last game. This is a challenge
 because the API doesn't directly tell you if selected team has won or loss.
 
-The API data is returned as such:
+**The API data is returned as such:**
 
 hometeam = "String of team that played as home team"
 awayteam = "String of team that played as away team"
