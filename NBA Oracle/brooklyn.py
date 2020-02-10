@@ -42,3 +42,21 @@ netsAway = "Away: " + str(awayTeamBKN) + " " + str(awayScoreBKN)
 netsGame = lastGameDateBKN + """
 """ + netsHome + """
 """ + netsAway + ""
+
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamBKN
+teamAway = awayTeamBKN 
+
+scoreHome = homeScoreBKN 
+scoreAway = awayScoreBKN
+
+def win():
+	if teamHome == "Brooklyn Nets" and scoreHome > scoreAway:
+		return "Nets Win"
+		
+	elif teamAway == "Brooklyn Nets" and scoreAway > scoreHome:
+		return "Nets Win"
+	else:
+		return "Nets Lose"
+
+win()
