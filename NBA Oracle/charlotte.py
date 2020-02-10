@@ -42,3 +42,21 @@ hornetsAway = "Away: " + str(awayTeamCHA) + " " + str(awayScoreCHA)
 hornetsGame = lastGameDateCHA + """
 """ + hornetsHome + """
 """ + hornetsAway + ""
+
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamCHA
+teamAway = awayTeamCHA
+
+scoreHome = homeScoreCHA
+scoreAway = awayScoreCHA
+
+def win():
+	if teamHome == "Charlotte Hornets" and scoreHome > scoreAway:
+		return "Hornets Win"
+		
+	elif teamAway == "Charlotte Hornets" and scoreAway > scoreHome:
+		return "Hornets Win"
+	else:
+		return "Hornets Lose"
+
+win()
