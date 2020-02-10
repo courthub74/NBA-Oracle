@@ -42,3 +42,23 @@ celticsAway = "Away: " + str(awayTeamBOS) + " " + str(awayScoreBOS)
 celticsGame = lastGameDateBOS + """
 """ + celticsHome + """
 """ + celticsAway + ""
+
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamBOS
+teamAway = awayTeamBOS
+
+scoreHome = homeScoreBOS 
+scoreAway = awayScoreBOS 
+
+
+def win():
+	if teamHome == "Boston Celtics" and scoreHome > scoreAway:
+		return "Celtics Win"
+		
+	elif teamAway == "Boston Celtics" and scoreAway > scoreHome:
+		return "Celtics Win"
+	else:
+		return "Celtics Lose"
+
+win()
+
