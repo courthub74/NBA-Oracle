@@ -43,3 +43,20 @@ cavsAway = "Away: " + str(awayTeamCLE) + " " + str(awayScoreCLE)
 cavsGame = lastGameDateCLE + """
 """ + cavsHome + """
 """ + cavsAway + ""
+
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamCLE
+teamAway = awayTeamCLE
+
+scoreHome = homeScoreCLE
+scoreAway = awayScoreCLE
+
+def win():
+	if teamHome == "Cleveland Cavaliers" and scoreHome > scoreAway:
+		return "Cavs Win"
+	elif teamAway == "Cleveland Cavaliers" and scoreAway > scoreHome:
+		return "Cavs Win"
+	else:
+		return "Cavs Lose"
+
+win()

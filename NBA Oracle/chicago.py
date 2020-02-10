@@ -42,3 +42,22 @@ bullsAway = "Away: " + str(awayTeamCHI) + " " + str(awayScoreCHI)
 bullsGame = lastGameDateCHI + """
 """ + bullsHome + """
 """ + bullsAway + ""
+
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamCHI
+teamAway = awayTeamCHI
+
+scoreHome = homeScoreCHI
+scoreAway = awayScoreCHI
+
+
+def win():
+	if teamHome == "Chicago Bulls" and scoreHome > scoreAway:
+		return "Bulls Win"
+		
+	elif teamAway == "Chicago Bulls" and scoreAway > scoreHome:
+		return "Bulls Win"
+	else:
+		return "Bulls Lose"
+
+win()

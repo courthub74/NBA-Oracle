@@ -42,3 +42,20 @@ mavsAway = "Away: " + str(awayTeamDAL) + " " + str(awayScoreDAL)
 mavsGame = lastGameDateDAL + """
 """ + mavsHome + """
 """ + mavsAway + ""
+
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamDAL
+teamAway = awayTeamDAL
+
+scoreHome = homeScoreDAL
+scoreAway = awayScoreDAL
+
+def win():
+	if teamHome == "Dallas Mavericks" and scoreHome > scoreAway:
+		return "Mavs Win"
+	elif teamAway == "Dallas Mavericks" and scoreAway > scoreHome:
+		return "Mavs Win"
+	else:
+		return "Mavs Lose"
+
+win()

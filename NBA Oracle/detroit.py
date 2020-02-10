@@ -45,3 +45,21 @@ pistonsAway = "Away: " + str(awayTeamDET) + " " + str(awayScoreDET)
 pistonsGame = lastGameDateDET + """
 """ + pistonsHome + """
 """ + pistonsAway + ""
+
+
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamDET
+teamAway = awayTeamDET
+
+scoreHome = homeScoreDET
+scoreAway = awayScoreDET
+
+def win():
+	if teamHome == "Detroit Pistons" and scoreHome > scoreAway:
+		return "Pistons Win"
+	elif teamAway == "Detroit Pistons" and scoreAway > scoreHome:
+		return "Pistons Win"
+	else:
+		return "Pistons Lose"
+
+win()

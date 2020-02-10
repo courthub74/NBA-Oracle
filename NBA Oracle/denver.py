@@ -45,3 +45,19 @@ nuggetsGame = lastGameDateDEN + """
 """ + nuggetsAway + ""
 
 
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamDEN
+teamAway = awayTeamDEN
+
+scoreHome = homeScoreDEN
+scoreAway = awayScoreDEN
+
+def win():
+	if teamHome == "Denver Nuggets" and scoreHome > scoreAway:
+		return "Nuggets Win"
+	elif teamAway == "Denver Nuggets" and scoreAway > scoreHome:
+		return "Nuggets Win"
+	else:
+		return "Nuggets Lose"
+
+win()
