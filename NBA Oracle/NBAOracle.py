@@ -298,6 +298,27 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		hornetsStanding = charlotte.win()
 		outcomeOutput.insert(INSERT, hornetsStanding)
+	if TeamsVar.get() == "Chicago Bulls":
+		outcomeOutput.delete(0.0, END)
+		bullsStanding = chicago.win()
+		outcomeOutput.insert(INSERT, bullsStanding)
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		outcomeOutput.delete(0.0, END)
+		cavsStanding = cleveland.win()
+		outcomeOutput.insert(INSERT, cavsStanding)
+	if TeamsVar.get() == "Dallas Mavericks":
+		outcomeOutput.delete(0.0, END)
+		mavsStanding = dallas.win()
+		outcomeOutput.insert(INSERT, mavsStanding)
+	if TeamsVar.get() == "Denver Nuggets":
+		outcomeOutput.delete(0.0, END)
+		nuggetsStanding = denver.win()
+		outcomeOutput.insert(INSERT, nuggetsStanding)
+	if TeamsVar.get() == "Detroit Pistons":
+		outcomeOutput.delete(0.0, END)
+		pistonsStanding = detroit.win()
+		outcomeOutput.insert(INSERT, pistonsStanding)
+
 
 TeamsVar.trace("w", callWinLoss)
 
