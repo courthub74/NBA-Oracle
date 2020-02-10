@@ -64,6 +64,3 @@ def win():
 		#print("Hawks Lose")
 
 win()
-
-
-
