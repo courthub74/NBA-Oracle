@@ -43,3 +43,27 @@ hawksGame = lastGameDateATL + """
 """ + hawksHome + """
 """ + hawksAway + ""
 
+# DETERMINING the WIN or LOSS
+teamHome = homeTeamATL
+teamAway = awayTeamATL 
+
+scoreHome = homeScoreATL 
+scoreAway = awayScoreATL 
+
+
+def win():
+	if teamHome == "Atlanta Hawks" and scoreHome > scoreAway:
+		return "Hawks Win"
+		
+		
+	elif teamAway == "Atlanta Hawks" and scoreAway > scoreHome:
+		return "Hawks Win"
+		#print("Hawks Win")
+	else:
+		return "Hawks Lose"
+		#print("Hawks Lose")
+
+win()
+
+
+
