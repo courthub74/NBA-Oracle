@@ -9,6 +9,7 @@ import cleveland
 import dallas
 import denver
 import detroit
+import goldenstate
 
 # WINDOW
 window = Tk()
@@ -112,6 +113,10 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		selectDET = detroit.pistonsTeam  
 		teamSelectedOutput.insert(INSERT, selectDET)
+	if TeamsVar.get() == "Golden State Warriors":
+		teamSelectedOutput.delete(0.0, END)
+		selectGS = goldenstate.warriorsTeam
+		teamSelectedOutput.insert(INSERT, selectGS)
 
 TeamsVar.trace("w", callTeamSelected)
 
@@ -153,6 +158,10 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearDET = detroit.yearFormedDET
 		yearFormedOutput.insert(INSERT, yearDET)
+	if TeamsVar.get() == "Golden State Warriors":
+		yearFormedOutput.delete(0.0, END)
+		yearGS = goldenstate.yearFormedGS
+		yearFormedOutput.insert(INSERT, yearGS)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -195,6 +204,10 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumDET = detroit.teamStadiumDET
 		teamStadiumOutput.insert(INSERT, stadiumDET)
+	if TeamsVar.get() == "Golden State Warriors":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumGS = goldenstate.teamStadiumGS
+		teamStadiumOutput.insert(INSERT, stadiumGS)
 			
 TeamsVar.trace("w", callTeamStadium)
 
@@ -236,6 +249,10 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		infoDET = detroit.teamInfoDET
 		teamInfoOutput.insert(INSERT, infoDET)
+	if TeamsVar.get() == "Golden State Warriors":
+		teamInfoOutput.delete(0.0, END)
+		infoGS = goldenstate.teamInfoGS
+		teamInfoOutput.insert(INSERT, infoGS)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -277,6 +294,10 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		pistonsLastGame = detroit.pistonsGame 
 		lastGameOutput.insert(INSERT, pistonsLastGame)
+	if TeamsVar.get() == "Golden State Warriors":
+		lastGameOutput.delete(0.0, END)
+		warriorsLastGame = goldenstate.warriorsGame 
+		lastGameOutput.insert(INSERT, warriorsLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -318,7 +339,10 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		pistonsStanding = detroit.win()
 		outcomeOutput.insert(INSERT, pistonsStanding)
-
+	if TeamsVar.get() == "Golden State Warriors":
+		outcomeOutput.delete(0.0, END)
+		warriorsStanding = goldenstate.win()
+		outcomeOutput.insert(INSERT, warriorsStanding)
 
 TeamsVar.trace("w", callWinLoss)
 
@@ -369,6 +393,11 @@ def callTeamLogo(*args):
 		pistonsLogo = PhotoImage(file="logos/Pistons300.png")
 		LogoCanvas.image = pistonsLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=pistonsLogo)
+	if TeamsVar.get() == "Golden State Warriors":
+		LogoCanvas.delete("all")
+		warriorsLogo = PhotoImage(file="logos/Warriors300.png")
+		LogoCanvas.image = warriorsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=warriorsLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
