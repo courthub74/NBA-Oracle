@@ -51,11 +51,11 @@ pistonsGame = lastGameDateDET + """
 teamHome = homeTeamDET
 teamAway = awayTeamDET
 
-scoreHome = homeScoreDET
-scoreAway = awayScoreDET
+scoreHome = int(homeScoreDET)
+scoreAway = int(awayScoreDET)
 
 def win():
-	if int(scoreHome) < 80 and int(scoreAway) < 80:
+	if scoreHome < 80 and scoreAway < 80:
 		return "Game in Progress"
 	elif teamHome == "Detroit Pistons" and scoreHome > scoreAway:
 		return "Pistons Win"

@@ -46,13 +46,13 @@ cavsGame = lastGameDateCLE + """
 
 # DETERMINING the WIN or LOSS
 teamHome = homeTeamCLE
-teamAway = awayTeamCLE
+teamAway = awayTeamCLE 
 
-scoreHome = homeScoreCLE
-scoreAway = awayScoreCLE
+scoreHome = int(homeScoreCLE)
+scoreAway = int(awayScoreCLE)
 
 def win():
-	if int(scoreHome) < 80 and int(scoreAway) < 80:
+	if scoreHome < 80 and scoreAway < 80:
 		return "Game in Progress"
 	elif teamHome == "Cleveland Cavaliers" and scoreHome > scoreAway:
 		return "Cavs Win"

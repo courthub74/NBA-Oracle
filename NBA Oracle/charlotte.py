@@ -47,11 +47,11 @@ hornetsGame = lastGameDateCHA + """
 teamHome = homeTeamCHA
 teamAway = awayTeamCHA
 
-scoreHome = homeScoreCHA
-scoreAway = awayScoreCHA
+scoreHome = int(homeScoreCHA)
+scoreAway = int(awayScoreCHA)
 
 def win():
-	if int(scoreHome) < 80 and int(scoreAway) < 80:
+	if scoreHome < 80 and scoreAway < 80:
 		return "Game in Progress"
 	if teamHome == "Charlotte Hornets" and scoreHome > scoreAway:
 		return "Hornets Win"

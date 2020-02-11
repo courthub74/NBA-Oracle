@@ -47,8 +47,8 @@ mavsGame = lastGameDateDAL + """
 teamHome = homeTeamDAL
 teamAway = awayTeamDAL
 
-scoreHome = homeScoreDAL
-scoreAway = awayScoreDAL
+scoreHome = int(homeScoreDAL)
+scoreAway = int(awayScoreDAL)
 
 def win():
 	if int(scoreHome) < 80 and int(scoreAway) < 80:

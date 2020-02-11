@@ -47,12 +47,11 @@ hawksGame = lastGameDateATL + """
 teamHome = homeTeamATL
 teamAway = awayTeamATL 
 
-scoreHome = homeScoreATL 
-scoreAway = awayScoreATL 
-
+scoreHome = int(homeScoreATL)
+scoreAway = int(awayScoreATL)
 
 def win():
-	if int(scoreHome) < 80 and int(scoreAway) < 80:
+	if scoreHome < 80 and scoreAway < 80:
 		return "Game in Progress"
 	elif teamHome == "Atlanta Hawks" and scoreHome > scoreAway:
 		return "Hawks Win"

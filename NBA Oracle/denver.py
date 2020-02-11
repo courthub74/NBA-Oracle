@@ -49,11 +49,11 @@ nuggetsGame = lastGameDateDEN + """
 teamHome = homeTeamDEN
 teamAway = awayTeamDEN
 
-scoreHome = homeScoreDEN
-scoreAway = awayScoreDEN
+scoreHome = int(homeScoreDEN)
+scoreAway = int(awayScoreDEN)
 
 def win():
-	if int(scoreHome) < 80 and int(scoreAway) < 80:
+	if scoreHome < 80 and scoreAway < 80:
 		return "Game in Progress"
 	elif teamHome == "Denver Nuggets" and scoreHome > scoreAway:
 		return "Nuggets Win"
