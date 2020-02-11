@@ -52,9 +52,10 @@ scoreAway = awayScoreBOS
 
 
 def win():
-	if teamHome == "Boston Celtics" and scoreHome > scoreAway:
+	if int(scoreHome) < 80 and int(scoreAway) < 80:
+		return "Game in Progress"
+	elif teamHome == "Boston Celtics" and scoreHome > scoreAway:
 		return "Celtics Win"
-		
 	elif teamAway == "Boston Celtics" and scoreAway > scoreHome:
 		return "Celtics Win"
 	else:

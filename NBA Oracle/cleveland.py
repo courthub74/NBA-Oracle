@@ -52,7 +52,9 @@ scoreHome = homeScoreCLE
 scoreAway = awayScoreCLE
 
 def win():
-	if teamHome == "Cleveland Cavaliers" and scoreHome > scoreAway:
+	if int(scoreHome) < 80 and int(scoreAway) < 80:
+		return "Game in Progress"
+	elif teamHome == "Cleveland Cavaliers" and scoreHome > scoreAway:
 		return "Cavs Win"
 	elif teamAway == "Cleveland Cavaliers" and scoreAway > scoreHome:
 		return "Cavs Win"

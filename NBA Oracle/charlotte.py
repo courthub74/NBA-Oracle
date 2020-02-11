@@ -51,9 +51,10 @@ scoreHome = homeScoreCHA
 scoreAway = awayScoreCHA
 
 def win():
+	if int(scoreHome) < 80 and int(scoreAway) < 80:
+		return "Game in Progress"
 	if teamHome == "Charlotte Hornets" and scoreHome > scoreAway:
 		return "Hornets Win"
-		
 	elif teamAway == "Charlotte Hornets" and scoreAway > scoreHome:
 		return "Hornets Win"
 	else:

@@ -53,7 +53,9 @@ scoreHome = homeScoreDEN
 scoreAway = awayScoreDEN
 
 def win():
-	if teamHome == "Denver Nuggets" and scoreHome > scoreAway:
+	if int(scoreHome) < 80 and int(scoreAway) < 80:
+		return "Game in Progress"
+	elif teamHome == "Denver Nuggets" and scoreHome > scoreAway:
 		return "Nuggets Win"
 	elif teamAway == "Denver Nuggets" and scoreAway > scoreHome:
 		return "Nuggets Win"

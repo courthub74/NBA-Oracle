@@ -51,7 +51,9 @@ scoreHome = homeScoreDAL
 scoreAway = awayScoreDAL
 
 def win():
-	if teamHome == "Dallas Mavericks" and scoreHome > scoreAway:
+	if int(scoreHome) < 80 and int(scoreAway) < 80:
+		return "Game in Progress"
+	elif teamHome == "Dallas Mavericks" and scoreHome > scoreAway:
 		return "Mavs Win"
 	elif teamAway == "Dallas Mavericks" and scoreAway > scoreHome:
 		return "Mavs Win"

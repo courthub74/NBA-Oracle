@@ -51,9 +51,10 @@ scoreHome = homeScoreBKN
 scoreAway = awayScoreBKN
 
 def win():
-	if teamHome == "Brooklyn Nets" and scoreHome > scoreAway:
+	if int(scoreHome) < 80 and int(scoreAway) < 80:
+		return "Game in Progress"
+	elif teamHome == "Brooklyn Nets" and scoreHome > scoreAway:
 		return "Nets Win"
-		
 	elif teamAway == "Brooklyn Nets" and scoreAway > scoreHome:
 		return "Nets Win"
 	else:
