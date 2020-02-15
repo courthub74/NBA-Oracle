@@ -10,6 +10,8 @@ import dallas
 import denver
 import detroit
 import goldenstate
+import houston
+import indiana
 
 # WINDOW
 window = Tk()
@@ -117,8 +119,16 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		selectGS = goldenstate.warriorsTeam
 		teamSelectedOutput.insert(INSERT, selectGS)
+	if TeamsVar.get() == "Houston Rockets":
+		teamSelectedOutput.delete(0.0, END)
+		selectHOU = houston.rocketsTeam
+		teamSelectedOutput.insert(INSERT, selectHOU)
+	if TeamsVar.get() == "Indiana Pacers":
+		teamSelectedOutput.delete(0.0, END)
+		selectIND = indiana.pacersTeam
+		teamSelectedOutput.insert(INSERT, selectIND)
 
-TeamsVar.trace("w", callTeamSelected)
+TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected
 
 # CALL YEAR FORMED
 def callYearFormed(*args):
@@ -162,6 +172,14 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearGS = goldenstate.yearFormedGS
 		yearFormedOutput.insert(INSERT, yearGS)
+	if TeamsVar.get() == "Houston Rockets":
+		yearFormedOutput.delete(0.0, END)
+		yearHOU = houston.yearFormedHOU
+		yearFormedOutput.insert(INSERT, yearHOU)
+	if TeamsVar.get() == "Indiana Pacers":
+		yearFormedOutput.delete(0.0, END)
+		yearIND = indiana.yearFormedIND
+		yearFormedOutput.insert(INSERT, yearIND)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -208,6 +226,14 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumGS = goldenstate.teamStadiumGS
 		teamStadiumOutput.insert(INSERT, stadiumGS)
+	if TeamsVar.get() == "Houston Rockets":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumHOU = houston.teamStadiumHOU
+		teamStadiumOutput.insert(INSERT, stadiumHOU)
+	if TeamsVar.get() == "Indiana Pacers":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumIND = indiana.teamStadiumIND
+		teamStadiumOutput.insert(INSERT, stadiumIND)
 			
 TeamsVar.trace("w", callTeamStadium)
 
@@ -253,6 +279,14 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		infoGS = goldenstate.teamInfoGS
 		teamInfoOutput.insert(INSERT, infoGS)
+	if TeamsVar.get() == "Houston Rockets":
+		teamInfoOutput.delete(0.0, END)
+		infoHOU = houston.teamInfoHOU
+		teamInfoOutput.insert(INSERT, infoHOU)
+	if TeamsVar.get() == "Indiana Pacers":
+		teamInfoOutput.delete(0.0, END)
+		infoIND = indiana.teamInfoIND
+		teamInfoOutput.insert(INSERT, infoIND)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -298,6 +332,14 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		warriorsLastGame = goldenstate.warriorsGame 
 		lastGameOutput.insert(INSERT, warriorsLastGame)
+	if TeamsVar.get() == "Houston Rockets":
+		lastGameOutput.delete(0.0, END)
+		rocketsLastGame = houston.rocketsGame 
+		lastGameOutput.insert(INSERT, rocketsLastGame)
+	if TeamsVar.get() == "Indiana Pacers":
+		lastGameOutput.delete(0.0, END)
+		pacersLastGame = indiana.pacersGame
+		lastGameOutput.insert(INSERT, pacersLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -343,6 +385,14 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		warriorsStanding = goldenstate.win()
 		outcomeOutput.insert(INSERT, warriorsStanding)
+	if TeamsVar.get() == "Houston Rockets":
+		outcomeOutput.delete(0.0, END)
+		rocketsStanding = houston.win()
+		outcomeOutput.insert(INSERT, rocketsStanding)
+	if TeamsVar.get() == "Indiana Pacers":
+		outcomeOutput.delete(0.0, END)
+		pacersStanding = indiana.win()
+		outcomeOutput.insert(INSERT, pacersStanding)
 
 TeamsVar.trace("w", callWinLoss)
 
@@ -398,7 +448,16 @@ def callTeamLogo(*args):
 		warriorsLogo = PhotoImage(file="logos/Warriors300.png")
 		LogoCanvas.image = warriorsLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=warriorsLogo)
-
+	if TeamsVar.get() == "Houston Rockets":
+		LogoCanvas.delete("all")
+		rocketsLogo = PhotoImage(file="logos/Rockets300.png")
+		LogoCanvas.image = rocketsLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=rocketsLogo)
+	if TeamsVar.get() == "Indiana Pacers":
+		LogoCanvas.delete("all")
+		pacersLogo = PhotoImage(file="logos/Pacers300.png")
+		LogoCanvas.image = pacersLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=pacersLogo)
 
 TeamsVar.trace("w", callTeamLogo)
 
