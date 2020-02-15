@@ -1,27 +1,25 @@
-# BELOW is the code for determining 
+# BELOW is the code for determining WIN | LOSS | IN PROGRESS
 
 # Starting with the ATL:
 
 teamHome = homeTeamATL
 teamAway = awayTeamATL 
 
-scoreHome = homeScoreATL 
-scoreAway = awayScoreATL 
-
+scoreHome = int(homeScoreATL)
+scoreAway = int(awayScoreATL)
 
 def win():
-	if teamHome == "Atlanta Hawks" and scoreHome > scoreAway:
+	if scoreHome < 80 and scoreAway < 80:
+		return "Game in Progress"
+	elif teamHome == "Atlanta Hawks" and scoreHome > scoreAway:
 		return "Hawks Win"
-		
-		
 	elif teamAway == "Atlanta Hawks" and scoreAway > scoreHome:
 		return "Hawks Win"
-		#print("Hawks Win")
 	else:
 		return "Hawks Lose"
-		#print("Hawks Lose")
 
 win()
+
 
 # Then you call it on the display side comme ca:
 
