@@ -14,6 +14,7 @@ import houston
 import indiana
 import losangelesC
 import losangelesL
+import memphis
 
 # WINDOW
 window = Tk()
@@ -76,6 +77,10 @@ outcomeOutput.grid(row=7,column=1,sticky=W)
 LogoCanvas = Canvas(height=300, width=300, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
 LogoCanvas.grid(row=8,column=1)
 
+# LOGO LABEL
+LabelCanvas = Canvas(height=1, width=3, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
+LabelCanvas.grid(row=8,column=0)
+
 
 # FUNCTIONALITY
 #############################################################
@@ -137,6 +142,11 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		selectLAL = losangelesL.lakersTeam
 		teamSelectedOutput.insert(INSERT, selectLAL)
+	if TeamsVar.get() == "Memphis Grizzlies":
+		teamSelectedOutput.delete(0.0, END)
+		selectMEM = memphis.grizzTeam
+		teamSelectedOutput.insert(INSERT, selectMEM)
+
 
 TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected
 
@@ -198,6 +208,10 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearLAL = losangelesL.yearFormedLAL
 		yearFormedOutput.insert(INSERT, yearLAL)
+	if TeamsVar.get() == "Memphis Grizzlies":
+		yearFormedOutput.delete(0.0, END)
+		yearMEM = memphis.yearFormedMEM
+		yearFormedOutput.insert(INSERT, yearMEM)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -260,6 +274,10 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumLAL = losangelesL.teamStadiumLAL
 		teamStadiumOutput.insert(INSERT, stadiumLAL)
+	if TeamsVar.get() == "Memphis Grizzlies":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumMEM = memphis.teamStadiumMEM
+		teamStadiumOutput.insert(INSERT, stadiumMEM)
 
 			
 TeamsVar.trace("w", callTeamStadium)
@@ -322,6 +340,10 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		infoLAL = losangelesL.teamInfoLAL
 		teamInfoOutput.insert(INSERT, infoLAL)
+	if TeamsVar.get() == "Memphis Grizzlies":
+		teamInfoOutput.delete(0.0, END)
+		infoMEM = memphis.teamInfoMEM
+		teamInfoOutput.insert(INSERT, infoMEM)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -383,6 +405,10 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		lakersLastGame = losangelesL.lakersGame 
 		lastGameOutput.insert(INSERT, lakersLastGame)
+	if TeamsVar.get() == "Memphis Grizzlies":
+		lastGameOutput.delete(0.0, END)
+		grizzliesLastGame = memphis.grizzGame 
+		lastGameOutput.insert(INSERT, grizzliesLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -444,6 +470,10 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		lakersStanding = losangelesL.win()
 		outcomeOutput.insert(INSERT, lakersStanding)
+	if TeamsVar.get() == "Memphis Grizzlies":
+		outcomeOutput.delete(0.0, END)
+		grizzliesStanding = memphis.win()
+		outcomeOutput.insert(INSERT, grizzliesStanding)
 
 TeamsVar.trace("w", callWinLoss)
 
@@ -519,7 +549,14 @@ def callTeamLogo(*args):
 		lakersLogo = PhotoImage(file="logos/Lakers300.png")
 		LogoCanvas.image =lakersLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=lakersLogo)
+	if TeamsVar.get() == "Memphis Grizzlies":
+		LogoCanvas.delete("all")
+		grizzliesLogo = PhotoImage(file="logos/Grizzlies300.png")
+		LogoCanvas.image = grizzliesLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=grizzliesLogo)
 
 TeamsVar.trace("w", callTeamLogo)
+
+
 
 window.mainloop()
