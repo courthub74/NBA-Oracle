@@ -2,7 +2,7 @@
 
 I have populated given data from the sportsAPI for my NBAOracle. The next challenge is to
 determine is the selected team by the user has won or loss their last game. This is a challenge
-because the API doesn't directly tell you if selected team has won or loss.
+because the API doesn't directly tell you if selected team has won or lost.
 
 **The API data is returned as such:**
 
