@@ -13,6 +13,7 @@ import goldenstate
 import houston
 import indiana
 import losangelesC
+import losangelesL
 
 # WINDOW
 window = Tk()
@@ -132,6 +133,10 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		selectLAC = losangelesC.clippersTeam
 		teamSelectedOutput.insert(INSERT, selectLAC)
+	if TeamsVar.get() == "Los Angeles Lakers":
+		teamSelectedOutput.delete(0.0, END)
+		selectLAL = losangelesL.lakersTeam
+		teamSelectedOutput.insert(INSERT, selectLAL)
 
 TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected
 
@@ -189,6 +194,10 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		yearLAC = losangelesC.yearFormedLAC
 		yearFormedOutput.insert(INSERT, yearLAC)
+	if TeamsVar.get() == "Los Angeles Lakers":
+		yearFormedOutput.delete(0.0, END)
+		yearLAL = losangelesL.yearFormedLAL
+		yearFormedOutput.insert(INSERT, yearLAL)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -247,6 +256,11 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		stadiumLAC = losangelesC.teamStadiumLAC
 		teamStadiumOutput.insert(INSERT, stadiumLAC)
+	if TeamsVar.get() == "Los Angeles Lakers":
+		teamStadiumOutput.delete(0.0, END)
+		stadiumLAL = losangelesL.teamStadiumLAL
+		teamStadiumOutput.insert(INSERT, stadiumLAL)
+
 			
 TeamsVar.trace("w", callTeamStadium)
 
@@ -304,6 +318,10 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		infoLAC = losangelesC.teamInfoLAC
 		teamInfoOutput.insert(INSERT, infoLAC)
+	if TeamsVar.get() == "Los Angeles Lakers":
+		teamInfoOutput.delete(0.0, END)
+		infoLAL = losangelesL.teamInfoLAL
+		teamInfoOutput.insert(INSERT, infoLAL)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -361,6 +379,10 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		clippersLastGame = losangelesC.clippersGame 
 		lastGameOutput.insert(INSERT, clippersLastGame)
+	if TeamsVar.get() == "Los Angeles Lakers":
+		lastGameOutput.delete(0.0, END)
+		lakersLastGame = losangelesL.lakersGame 
+		lastGameOutput.insert(INSERT, lakersLastGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -418,6 +440,10 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		clippersStanding = losangelesC.win()
 		outcomeOutput.insert(INSERT, clippersStanding)
+	if TeamsVar.get() == "Los Angeles Lakers":
+		outcomeOutput.delete(0.0, END)
+		lakersStanding = losangelesL.win()
+		outcomeOutput.insert(INSERT, lakersStanding)
 
 TeamsVar.trace("w", callWinLoss)
 
@@ -488,6 +514,11 @@ def callTeamLogo(*args):
 		clippersLogo = PhotoImage(file="logos/Clippers300.png")
 		LogoCanvas.image = clippersLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=clippersLogo)
+	if TeamsVar.get() == "Los Angeles Lakers":
+		LogoCanvas.delete("all")
+		lakersLogo = PhotoImage(file="logos/Lakers300.png")
+		LogoCanvas.image =lakersLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=lakersLogo)
 
 TeamsVar.trace("w", callTeamLogo)
 
