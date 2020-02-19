@@ -88,64 +88,64 @@ LabelCanvas.grid(row=8,column=0)
 def callTeamSelected(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
 		teamSelectedOutput.delete(0.0, END)
-		selectATL = atlanta.hawksTeam
-		teamSelectedOutput.insert(INSERT, selectATL)
+		atlanta.hawksTeam
+		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)
 	if TeamsVar.get() == "Boston Celtics":
 		teamSelectedOutput.delete(0.0, END)
-		selectBOS = boston.celticsTeam
-		teamSelectedOutput.insert(INSERT, selectBOS)
+		boston.celticsTeam
+		teamSelectedOutput.insert(INSERT, boston.celticsTeam)
 	if TeamsVar.get() == "Brooklyn Nets":
 		teamSelectedOutput.delete(0.0, END)
-		selectBKN = brooklyn.netsTeam
-		teamSelectedOutput.insert(INSERT, selectBKN)
+		brooklyn.netsTeam
+		teamSelectedOutput.insert(INSERT, brooklyn.netsTeam)
 	if TeamsVar.get() == "Charlotte Hornets":
 		teamSelectedOutput.delete(0.0, END)
-		selectCHA = charlotte.hornetsTeam
-		teamSelectedOutput.insert(INSERT, selectCHA)
+		charlotte.hornetsTeam
+		teamSelectedOutput.insert(INSERT, charlotte.hornetsTeam)
 	if TeamsVar.get() == "Chicago Bulls":
 		teamSelectedOutput.delete(0.0, END)
-		selectCHI = chicago.bullsTeam
-		teamSelectedOutput.insert(INSERT, selectCHI)
+		chicago.bullsTeam
+		teamSelectedOutput.insert(INSERT, chicago.bullsTeam)
 	if TeamsVar.get() == "Cleveland Cavaliers":
 		teamSelectedOutput.delete(0.0, END)
-		selectCLE = cleveland.cavsTeam
-		teamSelectedOutput.insert(INSERT, selectCLE)
+		cleveland.cavsTeam
+		teamSelectedOutput.insert(INSERT, cleveland.cavsTeam)
 	if TeamsVar.get() == "Dallas Mavericks":
 		teamSelectedOutput.delete(0.0, END)
-		selectDAL = dallas.mavsTeam
-		teamSelectedOutput.insert(INSERT, selectDAL)
+		dallas.mavsTeam
+		teamSelectedOutput.insert(INSERT, dallas.mavsTeam)
 	if TeamsVar.get() == "Denver Nuggets":
 		teamSelectedOutput.delete(0.0, END)
-		selectDEN = denver.nuggetsTeam  # Locate the imported file and then the variable that is the parsed string you are looking for
-		teamSelectedOutput.insert(INSERT, selectDEN) # NOW insert it into the field
+		denver.nuggetsTeam  # Locate the imported file and then the variable that is the parsed string you are looking for
+		teamSelectedOutput.insert(INSERT, denver.nuggetsTeam) # NOW insert it into the field
 	if TeamsVar.get() == "Detroit Pistons":
 		teamSelectedOutput.delete(0.0, END)
-		selectDET = detroit.pistonsTeam  
-		teamSelectedOutput.insert(INSERT, selectDET)
+		detroit.pistonsTeam  
+		teamSelectedOutput.insert(INSERT, detroit.pistonsTeam)
 	if TeamsVar.get() == "Golden State Warriors":
 		teamSelectedOutput.delete(0.0, END)
-		selectGS = goldenstate.warriorsTeam
-		teamSelectedOutput.insert(INSERT, selectGS)
+		goldenstate.warriorsTeam
+		teamSelectedOutput.insert(INSERT, goldenstate.warriorsTeam)
 	if TeamsVar.get() == "Houston Rockets":
 		teamSelectedOutput.delete(0.0, END)
-		selectHOU = houston.rocketsTeam
-		teamSelectedOutput.insert(INSERT, selectHOU)
+		houston.rocketsTeam
+		teamSelectedOutput.insert(INSERT, houston.rocketsTeam)
 	if TeamsVar.get() == "Indiana Pacers":
 		teamSelectedOutput.delete(0.0, END)
-		selectIND = indiana.pacersTeam
-		teamSelectedOutput.insert(INSERT, selectIND)
+		indiana.pacersTeam
+		teamSelectedOutput.insert(INSERT, indiana.pacersTeam)
 	if TeamsVar.get() == "Los Angeles Clippers":
 		teamSelectedOutput.delete(0.0, END)
-		selectLAC = losangelesC.clippersTeam
-		teamSelectedOutput.insert(INSERT, selectLAC)
+		losangelesC.clippersTeam
+		teamSelectedOutput.insert(INSERT, losangelesC.clippersTeam)
 	if TeamsVar.get() == "Los Angeles Lakers":
 		teamSelectedOutput.delete(0.0, END)
-		selectLAL = losangelesL.lakersTeam
-		teamSelectedOutput.insert(INSERT, selectLAL)
+		losangelesL.lakersTeam
+		teamSelectedOutput.insert(INSERT, losangelesL.lakersTeam)
 	if TeamsVar.get() == "Memphis Grizzlies":
 		teamSelectedOutput.delete(0.0, END)
-		selectMEM = memphis.grizzTeam
-		teamSelectedOutput.insert(INSERT, selectMEM)
+		memphis.grizzTeam
+		teamSelectedOutput.insert(INSERT, memphis.grizzTeam)
 
 
 TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected
