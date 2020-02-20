@@ -24,8 +24,8 @@ LGparseATL = json.loads(LGdataATL)
 NGdataATL = hawksNG.text
 NGparseATL = json.loads(NGdataATL)
 
-# Info Layout for Drop Down ATLANTA 134880
-hawksTeam = parseATL["teams"][0]["strTeam"]
+# Info Layout for Drop Down ATLANTA 134880      # Now I can pull string data from the API
+hawksTeam = parseATL["teams"][0]["strTeam"]     # I created variables for each desired data object
 yearFormedATL = parseATL["teams"][0]["intFormedYear"]
 teamStadiumATL = parseATL["teams"][0]["strStadium"]
 teamInfoATL = parseATL["teams"][0]["strDescriptionEN"]
