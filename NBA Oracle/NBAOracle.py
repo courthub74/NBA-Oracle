@@ -154,64 +154,64 @@ TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly call
 def callYearFormed(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
 		yearFormedOutput.delete(0.0, END)
-		yearATL = atlanta.yearFormedATL
-		yearFormedOutput.insert(INSERT, yearATL)
+		atlanta.yearFormedATL
+		yearFormedOutput.insert(INSERT, atlanta.yearFormedATL)
 	if TeamsVar.get() == "Boston Celtics":
 		yearFormedOutput.delete(0.0, END)
-		yearBOS = boston.yearFormedBOS
-		yearFormedOutput.insert(INSERT, yearBOS)
+		boston.yearFormedBOS
+		yearFormedOutput.insert(INSERT, boston.yearFormedBOS)
 	if TeamsVar.get() == "Brooklyn Nets":
 		yearFormedOutput.delete(0.0, END)
-		yearBKN = brooklyn.yearFormedBKN
-		yearFormedOutput.insert(INSERT, yearBKN)
+		brooklyn.yearFormedBKN
+		yearFormedOutput.insert(INSERT, brooklyn.yearFormedBKN)
 	if TeamsVar.get() == "Charlotte Hornets":
 		yearFormedOutput.delete(0.0, END)
-		yearCHA = charlotte.yearFormedCHA
-		yearFormedOutput.insert(INSERT, yearCHA)
+		charlotte.yearFormedCHA
+		yearFormedOutput.insert(INSERT, charlotte.yearFormedCHA)
 	if TeamsVar.get() == "Chicago Bulls":
 		yearFormedOutput.delete(0.0, END)
-		yearCHI = chicago.yearFormedCHI
-		yearFormedOutput.insert(INSERT, yearCHI)
+		chicago.yearFormedCHI
+		yearFormedOutput.insert(INSERT, chicago.yearFormedCHI)
 	if TeamsVar.get() == "Cleveland Cavaliers":
 		yearFormedOutput.delete(0.0, END)
-		yearCLE = cleveland.yearFormedCLE
-		yearFormedOutput.insert(INSERT, yearCLE)
+		cleveland.yearFormedCLE
+		yearFormedOutput.insert(INSERT, cleveland.yearFormedCLE)
 	if TeamsVar.get() == "Dallas Mavericks":
 		yearFormedOutput.delete(0.0, END)
-		yearDAL = dallas.yearFormedDAL
-		yearFormedOutput.insert(INSERT, yearDAL)
+		dallas.yearFormedDAL
+		yearFormedOutput.insert(INSERT, dallas.yearFormedDAL)
 	if TeamsVar.get() == "Denver Nuggets":
 		yearFormedOutput.delete(0.0, END)
-		yearDEN = denver.yearFormedDEN
-		yearFormedOutput.insert(INSERT, yearDEN)
+		denver.yearFormedDEN
+		yearFormedOutput.insert(INSERT, denver.yearFormedDEN)
 	if TeamsVar.get() == "Detroit Pistons":
 		yearFormedOutput.delete(0.0, END)
-		yearDET = detroit.yearFormedDET
-		yearFormedOutput.insert(INSERT, yearDET)
+		detroit.yearFormedDET
+		yearFormedOutput.insert(INSERT, detroit.yearFormedDET)
 	if TeamsVar.get() == "Golden State Warriors":
 		yearFormedOutput.delete(0.0, END)
-		yearGS = goldenstate.yearFormedGS
-		yearFormedOutput.insert(INSERT, yearGS)
+		goldenstate.yearFormedGS
+		yearFormedOutput.insert(INSERT, goldenstate.yearFormedGS)
 	if TeamsVar.get() == "Houston Rockets":
 		yearFormedOutput.delete(0.0, END)
-		yearHOU = houston.yearFormedHOU
-		yearFormedOutput.insert(INSERT, yearHOU)
+		houston.yearFormedHOU
+		yearFormedOutput.insert(INSERT, houston.yearFormedHOU)
 	if TeamsVar.get() == "Indiana Pacers":
 		yearFormedOutput.delete(0.0, END)
-		yearIND = indiana.yearFormedIND
-		yearFormedOutput.insert(INSERT, yearIND)
+		indiana.yearFormedIND
+		yearFormedOutput.insert(INSERT, indiana.yearFormedIND)
 	if TeamsVar.get() == "Los Angeles Clippers":
 		yearFormedOutput.delete(0.0, END)
-		yearLAC = losangelesC.yearFormedLAC
-		yearFormedOutput.insert(INSERT, yearLAC)
+		losangelesC.yearFormedLAC
+		yearFormedOutput.insert(INSERT, losangelesC.yearFormedLAC)
 	if TeamsVar.get() == "Los Angeles Lakers":
 		yearFormedOutput.delete(0.0, END)
-		yearLAL = losangelesL.yearFormedLAL
-		yearFormedOutput.insert(INSERT, yearLAL)
+		losangelesL.yearFormedLAL
+		yearFormedOutput.insert(INSERT, losangelesL.yearFormedLAL)
 	if TeamsVar.get() == "Memphis Grizzlies":
 		yearFormedOutput.delete(0.0, END)
-		yearMEM = memphis.yearFormedMEM
-		yearFormedOutput.insert(INSERT, yearMEM)
+		memphis.yearFormedMEM
+		yearFormedOutput.insert(INSERT, memphis.yearFormedMEM)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -220,67 +220,68 @@ TeamsVar.trace("w", callYearFormed)
 def callTeamStadium(*args):
 	if TeamsVar.get() == "Atlanta Hawks":  
 		teamStadiumOutput.delete(0.0, END)  
-		stadiumATL = atlanta.teamStadiumATL
-		teamStadiumOutput.insert(INSERT, stadiumATL)
+		atlanta.teamStadiumATL
+		teamStadiumOutput.insert(INSERT, atlanta.teamStadiumATL)
 	if TeamsVar.get() == "Boston Celtics":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumBOS = boston.teamStadiumBOS
-		teamStadiumOutput.insert(INSERT, stadiumBOS)
+		boston.teamStadiumBOS
+		teamStadiumOutput.insert(INSERT, boston.teamStadiumBOS)
 	if TeamsVar.get() == "Brooklyn Nets":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumBKN = brooklyn.teamStadiumBKN
-		teamStadiumOutput.insert(INSERT, stadiumBKN)
+		brooklyn.teamStadiumBKN
+		teamStadiumOutput.insert(INSERT, brooklyn.teamStadiumBKN)
 	if TeamsVar.get() == "Charlotte Hornets":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumCHA = charlotte.teamStadiumCHA
-		teamStadiumOutput.insert(INSERT, stadiumCHA)
+		charlotte.teamStadiumCHA
+		teamStadiumOutput.insert(INSERT, charlotte.teamStadiumCHA)
 	if TeamsVar.get() == "Chicago Bulls": 
 		teamStadiumOutput.delete(0.0, END)
-		stadiumCHI = chicago.teamStadiumCHI
-		teamStadiumOutput.insert(INSERT, stadiumCHI)
+		chicago.teamStadiumCHI
+		teamStadiumOutput.insert(INSERT, chicago.teamStadiumCHI)
 	if TeamsVar.get() == "Cleveland Cavaliers": 
 		teamStadiumOutput.delete(0.0, END)
-		stadiumCLE = cleveland.teamStadiumCLE
-		teamStadiumOutput.insert(INSERT, stadiumCLE)
+		cleveland.teamStadiumCLE
+		teamStadiumOutput.insert(INSERT, cleveland.teamStadiumCLE)
 	if TeamsVar.get() == "Dallas Mavericks":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumDAL = dallas.teamStadiumDAL
-		teamStadiumOutput.insert(INSERT, stadiumDAL)
+		dallas.teamStadiumDAL
+		teamStadiumOutput.insert(INSERT, dallas.teamStadiumDAL)
 	if TeamsVar.get() == "Denver Nuggets":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumDEN = denver.teamStadiumDEN
-		teamStadiumOutput.insert(INSERT, stadiumDEN)
+		denver.teamStadiumDEN
+		teamStadiumOutput.insert(INSERT, denver.teamStadiumDEN)
 	if TeamsVar.get() == "Detroit Pistons":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumDET = detroit.teamStadiumDET
-		teamStadiumOutput.insert(INSERT, stadiumDET)
+		detroit.teamStadiumDET
+		teamStadiumOutput.insert(INSERT, detroit.teamStadiumDET)
 	if TeamsVar.get() == "Golden State Warriors":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumGS = goldenstate.teamStadiumGS
-		teamStadiumOutput.insert(INSERT, stadiumGS)
+		goldenstate.teamStadiumGS
+		teamStadiumOutput.insert(INSERT, goldenstate.teamStadiumGS)
 	if TeamsVar.get() == "Houston Rockets":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumHOU = houston.teamStadiumHOU
-		teamStadiumOutput.insert(INSERT, stadiumHOU)
+		houston.teamStadiumHOU
+		teamStadiumOutput.insert(INSERT, houston.teamStadiumHOU)
 	if TeamsVar.get() == "Indiana Pacers":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumIND = indiana.teamStadiumIND
-		teamStadiumOutput.insert(INSERT, stadiumIND)
+		indiana.teamStadiumIND
+		teamStadiumOutput.insert(INSERT, indiana.teamStadiumIND)
 	if TeamsVar.get() == "Los Angeles Clippers":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumLAC = losangelesC.teamStadiumLAC
-		teamStadiumOutput.insert(INSERT, stadiumLAC)
+		losangelesC.teamStadiumLAC
+		teamStadiumOutput.insert(INSERT, losangelesC.teamStadiumLAC)
 	if TeamsVar.get() == "Los Angeles Lakers":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumLAL = losangelesL.teamStadiumLAL
-		teamStadiumOutput.insert(INSERT, stadiumLAL)
+		losangelesL.teamStadiumLAL
+		teamStadiumOutput.insert(INSERT, losangelesL.teamStadiumLAL)
 	if TeamsVar.get() == "Memphis Grizzlies":
 		teamStadiumOutput.delete(0.0, END)
-		stadiumMEM = memphis.teamStadiumMEM
-		teamStadiumOutput.insert(INSERT, stadiumMEM)
+		memphis.teamStadiumMEM
+		teamStadiumOutput.insert(INSERT, memphis.teamStadiumMEM)
 
 			
 TeamsVar.trace("w", callTeamStadium)
+
 
 # CALL TEAM INFO
 def callTeamInfo(*args):
