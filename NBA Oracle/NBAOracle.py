@@ -287,64 +287,64 @@ TeamsVar.trace("w", callTeamStadium)
 def callTeamInfo(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
 		teamInfoOutput.delete(0.0, END)
-		infoATL = atlanta.teamInfoATL
-		teamInfoOutput.insert(INSERT, infoATL)
+		atlanta.teamInfoATL
+		teamInfoOutput.insert(INSERT, atlanta.teamInfoATL)
 	if TeamsVar.get() == "Boston Celtics":
 		teamInfoOutput.delete(0.0, END)
-		infoBOS = boston.teamInfoBOS
-		teamInfoOutput.insert(INSERT, infoBOS)
+		boston.teamInfoBOS
+		teamInfoOutput.insert(INSERT, boston.teamInfoBOS)
 	if TeamsVar.get() == "Brooklyn Nets":
 		teamInfoOutput.delete(0.0, END)
-		infoBKN = brooklyn.teamInfoBKN
-		teamInfoOutput.insert(INSERT, infoBKN)
+		brooklyn.teamInfoBKN
+		teamInfoOutput.insert(INSERT, brooklyn.teamInfoBKN)
 	if TeamsVar.get() == "Charlotte Hornets":
 		teamInfoOutput.delete(0.0, END)
-		infoCHA = charlotte.teamInfoCHA
-		teamInfoOutput.insert(INSERT, infoCHA)
+		charlotte.teamInfoCHA
+		teamInfoOutput.insert(INSERT, charlotte.teamInfoCHA)
 	if TeamsVar.get() == "Chicago Bulls":
 		teamInfoOutput.delete(0.0, END)
-		infoCHI = chicago.teamInfoCHI
-		teamInfoOutput.insert(INSERT, infoCHI)
+		chicago.teamInfoCHI
+		teamInfoOutput.insert(INSERT, chicago.teamInfoCHI)
 	if TeamsVar.get() == "Cleveland Cavaliers":
 		teamInfoOutput.delete(0.0, END)
-		infoCLE = cleveland.teamInfoCLE
-		teamInfoOutput.insert(INSERT, infoCLE)
+		cleveland.teamInfoCLE
+		teamInfoOutput.insert(INSERT, cleveland.teamInfoCLE)
 	if TeamsVar.get() == "Dallas Mavericks":
 		teamInfoOutput.delete(0.0, END)
-		infoDAL = dallas.teamInfoDAL
-		teamInfoOutput.insert(INSERT, infoDAL)
+		dallas.teamInfoDAL
+		teamInfoOutput.insert(INSERT, dallas.teamInfoDAL)
 	if TeamsVar.get() == "Denver Nuggets":
 		teamInfoOutput.delete(0.0, END)
-		infoDEN = denver.teamInfoDEN
-		teamInfoOutput.insert(INSERT, infoDEN)
+		denver.teamInfoDEN
+		teamInfoOutput.insert(INSERT, denver.teamInfoDEN)
 	if TeamsVar.get() == "Detroit Pistons":
 		teamInfoOutput.delete(0.0, END)
-		infoDET = detroit.teamInfoDET
-		teamInfoOutput.insert(INSERT, infoDET)
+		detroit.teamInfoDET
+		teamInfoOutput.insert(INSERT, detroit.teamInfoDET)
 	if TeamsVar.get() == "Golden State Warriors":
 		teamInfoOutput.delete(0.0, END)
-		infoGS = goldenstate.teamInfoGS
-		teamInfoOutput.insert(INSERT, infoGS)
+		goldenstate.teamInfoGS
+		teamInfoOutput.insert(INSERT, goldenstate.teamInfoGS)
 	if TeamsVar.get() == "Houston Rockets":
 		teamInfoOutput.delete(0.0, END)
-		infoHOU = houston.teamInfoHOU
-		teamInfoOutput.insert(INSERT, infoHOU)
+		houston.teamInfoHOU
+		teamInfoOutput.insert(INSERT, houston.teamInfoHOU)
 	if TeamsVar.get() == "Indiana Pacers":
 		teamInfoOutput.delete(0.0, END)
-		infoIND = indiana.teamInfoIND
-		teamInfoOutput.insert(INSERT, infoIND)
+		indiana.teamInfoIND
+		teamInfoOutput.insert(INSERT, indiana.teamInfoIND)
 	if TeamsVar.get() == "Los Angeles Clippers":
 		teamInfoOutput.delete(0.0, END)
-		infoLAC = losangelesC.teamInfoLAC
-		teamInfoOutput.insert(INSERT, infoLAC)
+		losangelesC.teamInfoLAC
+		teamInfoOutput.insert(INSERT, losangelesC.teamInfoLAC)
 	if TeamsVar.get() == "Los Angeles Lakers":
 		teamInfoOutput.delete(0.0, END)
-		infoLAL = losangelesL.teamInfoLAL
-		teamInfoOutput.insert(INSERT, infoLAL)
+		losangelesL.teamInfoLAL
+		teamInfoOutput.insert(INSERT, losangelesL.teamInfoLAL)
 	if TeamsVar.get() == "Memphis Grizzlies":
 		teamInfoOutput.delete(0.0, END)
-		infoMEM = memphis.teamInfoMEM
-		teamInfoOutput.insert(INSERT, infoMEM)
+		memphis.teamInfoMEM
+		teamInfoOutput.insert(INSERT, memphis.teamInfoMEM)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -352,64 +352,64 @@ TeamsVar.trace("w", callTeamInfo)
 def callLastGame(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
 		lastGameOutput.delete(0.0, END)
-		hawksLastGame = atlanta.hawksGame 
-		lastGameOutput.insert(INSERT, hawksLastGame)
+		atlanta.hawksGame 
+		lastGameOutput.insert(INSERT, atlanta.hawksGame)
 	if TeamsVar.get() == "Boston Celtics":
 		lastGameOutput.delete(0.0, END)
-		celticsLastGame = boston.celticsGame 
-		lastGameOutput.insert(INSERT, celticsLastGame)
+		boston.celticsGame 
+		lastGameOutput.insert(INSERT, boston.celticsGame)
 	if TeamsVar.get() == "Brooklyn Nets":
 		lastGameOutput.delete(0.0, END)
-		netsLastGame = brooklyn.netsGame 
-		lastGameOutput.insert(INSERT, netsLastGame)
+		brooklyn.netsGame 
+		lastGameOutput.insert(INSERT, brooklyn.netsGame)
 	if TeamsVar.get() == "Charlotte Hornets":
 		lastGameOutput.delete(0.0, END)
-		hornetsLastGame = charlotte.hornetsGame 
-		lastGameOutput.insert(INSERT, hornetsLastGame)
+		charlotte.hornetsGame 
+		lastGameOutput.insert(INSERT, charlotte.hornetsGame)
 	if TeamsVar.get() == "Chicago Bulls":
 		lastGameOutput.delete(0.0, END)
-		bullsLastGame = chicago.bullsGame
-		lastGameOutput.insert(INSERT,bullsLastGame)
+		chicago.bullsGame
+		lastGameOutput.insert(INSERT, chicago.bullsGame)
 	if TeamsVar.get() == "Cleveland Cavaliers":
 		lastGameOutput.delete(0.0, END)
-		cavsLastGame = cleveland.cavsGame
-		lastGameOutput.insert(INSERT,cavsLastGame)
+		cleveland.cavsGame
+		lastGameOutput.insert(INSERT, cleveland.cavsGame)
 	if TeamsVar.get() == "Dallas Mavericks":
 		lastGameOutput.delete(0.0, END)
-		mavsLastGame = dallas.mavsGame 
-		lastGameOutput.insert(INSERT, mavsLastGame)
+		dallas.mavsGame 
+		lastGameOutput.insert(INSERT, dallas.mavsGame)
 	if TeamsVar.get() == "Denver Nuggets":
 		lastGameOutput.delete(0.0, END)
-		nuggetsLastGame = denver.nuggetsGame 
-		lastGameOutput.insert(INSERT, nuggetsLastGame)
+		denver.nuggetsGame 
+		lastGameOutput.insert(INSERT, denver.nuggetsGame)
 	if TeamsVar.get() == "Detroit Pistons":
 		lastGameOutput.delete(0.0, END)
-		pistonsLastGame = detroit.pistonsGame 
-		lastGameOutput.insert(INSERT, pistonsLastGame)
+		detroit.pistonsGame 
+		lastGameOutput.insert(INSERT, detroit.pistonsGame)
 	if TeamsVar.get() == "Golden State Warriors":
 		lastGameOutput.delete(0.0, END)
-		warriorsLastGame = goldenstate.warriorsGame 
-		lastGameOutput.insert(INSERT, warriorsLastGame)
+		goldenstate.warriorsGame 
+		lastGameOutput.insert(INSERT, goldenstate.warriorsGame)
 	if TeamsVar.get() == "Houston Rockets":
 		lastGameOutput.delete(0.0, END)
-		rocketsLastGame = houston.rocketsGame 
-		lastGameOutput.insert(INSERT, rocketsLastGame)
+		houston.rocketsGame 
+		lastGameOutput.insert(INSERT, houston.rocketsGame)
 	if TeamsVar.get() == "Indiana Pacers":
 		lastGameOutput.delete(0.0, END)
-		pacersLastGame = indiana.pacersGame
-		lastGameOutput.insert(INSERT, pacersLastGame)
+		indiana.pacersGame
+		lastGameOutput.insert(INSERT, indiana.pacersGame)
 	if TeamsVar.get() == "Los Angeles Clippers":
 		lastGameOutput.delete(0.0, END)
-		clippersLastGame = losangelesC.clippersGame 
-		lastGameOutput.insert(INSERT, clippersLastGame)
+		losangelesC.clippersGame 
+		lastGameOutput.insert(INSERT, losangelesC.clippersGame)
 	if TeamsVar.get() == "Los Angeles Lakers":
 		lastGameOutput.delete(0.0, END)
-		lakersLastGame = losangelesL.lakersGame 
-		lastGameOutput.insert(INSERT, lakersLastGame)
+		losangelesL.lakersGame 
+		lastGameOutput.insert(INSERT, losangelesL.lakersGame)
 	if TeamsVar.get() == "Memphis Grizzlies":
 		lastGameOutput.delete(0.0, END)
-		grizzliesLastGame = memphis.grizzGame 
-		lastGameOutput.insert(INSERT, grizzliesLastGame)
+		memphis.grizzGame 
+		lastGameOutput.insert(INSERT, memphis.grizzGame)
 
 TeamsVar.trace("w", callLastGame)
 
