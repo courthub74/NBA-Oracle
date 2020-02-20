@@ -86,10 +86,10 @@ LabelCanvas.grid(row=8,column=0)
 #############################################################
 # CALL TEAM SELECTED 
 def callTeamSelected(*args):
-	if TeamsVar.get() == "Atlanta Hawks":
-		teamSelectedOutput.delete(0.0, END)
-		atlanta.hawksTeam
-		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)
+	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then
+		teamSelectedOutput.delete(0.0, END)  # Clear previous data from field
+		atlanta.hawksTeam                     # Variable called from imported file 
+		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)  # insert method to insert called variable into textfield
 	if TeamsVar.get() == "Boston Celtics":
 		teamSelectedOutput.delete(0.0, END)
 		boston.celticsTeam
@@ -116,8 +116,8 @@ def callTeamSelected(*args):
 		teamSelectedOutput.insert(INSERT, dallas.mavsTeam)
 	if TeamsVar.get() == "Denver Nuggets":
 		teamSelectedOutput.delete(0.0, END)
-		denver.nuggetsTeam  # Locate the imported file and then the variable that is the parsed string you are looking for
-		teamSelectedOutput.insert(INSERT, denver.nuggetsTeam) # NOW insert it into the field
+		denver.nuggetsTeam  
+		teamSelectedOutput.insert(INSERT, denver.nuggetsTeam) 
 	if TeamsVar.get() == "Detroit Pistons":
 		teamSelectedOutput.delete(0.0, END)
 		detroit.pistonsTeam  
@@ -148,7 +148,7 @@ def callTeamSelected(*args):
 		teamSelectedOutput.insert(INSERT, memphis.grizzTeam)
 
 
-TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected
+TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected 'w' for write writing to textfield
 
 # CALL YEAR FORMED
 def callYearFormed(*args):
@@ -218,8 +218,8 @@ TeamsVar.trace("w", callYearFormed)
 
 # CALL TEAM STADIUM
 def callTeamStadium(*args):
-	if TeamsVar.get() == "Atlanta Hawks":
-		teamStadiumOutput.delete(0.0, END)
+	if TeamsVar.get() == "Atlanta Hawks":  
+		teamStadiumOutput.delete(0.0, END)  
 		stadiumATL = atlanta.teamStadiumATL
 		teamStadiumOutput.insert(INSERT, stadiumATL)
 	if TeamsVar.get() == "Boston Celtics":
@@ -483,7 +483,7 @@ def callTeamLogo(*args):
 		LogoCanvas.delete("all")  # Deletes previous
 		hawksLogo = PhotoImage(file="logos/Hawks300.png") # Creates the actual image
 		LogoCanvas.image = hawksLogo  # Associates image with the canvas
-		LogoCanvas.create_image(0, 0, anchor='nw', image=hawksLogo) # Creates the appearance of the image
+		LogoCanvas.create_image(0, 0, anchor='nw', image=hawksLogo) # Creates the appearance of the image upon selection of StringVar with .trace 
 	if TeamsVar.get() == "Boston Celtics":
 		LogoCanvas.delete("all")
 		celticsLogo = PhotoImage(file="logos/Celtics300.png")

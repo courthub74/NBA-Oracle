@@ -6,15 +6,15 @@ import json
 # ATLANTA HAWKS
 
 # ATLANTA General Info 134880
-hawksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Atlanta%20Hawks")
+hawksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Atlanta%20Hawks")  # Sends a URL request to API
 # ATLANTA Last Game 134880
 hawksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134880")
 # ATLANTA Next Game 134880
 hawksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134880")
 
 # ATLANTA Info Parse 134880
-dataATL = hawksRE.text
-parseATL = json.loads(dataATL)
+dataATL = hawksRE.text # json data to text
+parseATL = json.loads(dataATL) # converts reads or parses json as a string
 
 # ATLANTA Last Game Parse 134880
 LGdataATL = hawksLG.text
