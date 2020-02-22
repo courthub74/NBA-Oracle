@@ -87,7 +87,7 @@ LabelCanvas.grid(row=8,column=0)
 #############################################################
 # CALL TEAM SELECTED 
 def callTeamSelected(*args):
-	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then proceed with this if state
+	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then proceed with this if statement
 		teamSelectedOutput.delete(0.0, END)  # Clear previous data from field
 		atlanta.hawksTeam                     # Call Variable from imported file 
 		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)  # insert method to insert called variable into textfield
