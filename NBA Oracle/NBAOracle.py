@@ -153,7 +153,7 @@ def callTeamSelected(*args):
 		teamSelectedOutput.insert(INSERT, miami.heatTeam)
 
 TeamsVar.trace("w", callTeamSelected) #Using the TRACE method associated with the TeamsVar string variable 
-											# I directly called the function callTeamSelected 'w' for write writing to textfield
+					 # I directly called the function callTeamSelected 'w' for write writing to textfield
 # CALL YEAR FORMED
 def callYearFormed(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
