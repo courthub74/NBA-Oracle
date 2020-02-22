@@ -15,6 +15,7 @@ import indiana
 import losangelesC
 import losangelesL
 import memphis
+import miami
 
 # WINDOW
 window = Tk()
@@ -31,7 +32,7 @@ logoNBA.config(image=resizeLogo)
 logoNBA.grid(row=0,column=1,sticky=W)
 
 # DROP DOWN MENU
-TeamsVar = StringVar() 
+TeamsVar = StringVar()  # Created a string variable for the drop down menu
 TeamsVar.set(teamslist.TeamsList[0])
 droplist = OptionMenu(window, TeamsVar, *teamslist.TeamsList)
 droplist.config(width=45, height=1, fg="Darkblue")
@@ -86,7 +87,7 @@ LabelCanvas.grid(row=8,column=0)
 #############################################################
 # CALL TEAM SELECTED 
 def callTeamSelected(*args):
-	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then
+	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then proceed with this if state
 		teamSelectedOutput.delete(0.0, END)  # Clear previous data from field
 		atlanta.hawksTeam                     # Call Variable from imported file 
 		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)  # insert method to insert called variable into textfield
@@ -149,11 +150,10 @@ def callTeamSelected(*args):
 	if TeamsVar.get() == "Miami Heat":
 		teamSelectedOutput.delete(0.0, END)
 		miami.heatTeam
-		teamStadiumOutput.insert(INSERT, miami.heatTeam)
+		teamSelectedOutput.insert(INSERT, miami.heatTeam)
 
-
-TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected 'w' for write writing to textfield
-
+TeamsVar.trace("w", callTeamSelected) #Using the TRACE method associated with the TeamsVar string variable 
+											# I directly called the function callTeamSelected 'w' for write writing to textfield
 # CALL YEAR FORMED
 def callYearFormed(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
