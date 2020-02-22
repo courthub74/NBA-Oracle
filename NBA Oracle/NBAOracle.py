@@ -88,7 +88,7 @@ LabelCanvas.grid(row=8,column=0)
 def callTeamSelected(*args):
 	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then
 		teamSelectedOutput.delete(0.0, END)  # Clear previous data from field
-		atlanta.hawksTeam                     # Variable called from imported file 
+		atlanta.hawksTeam                     # Call Variable from imported file 
 		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)  # insert method to insert called variable into textfield
 	if TeamsVar.get() == "Boston Celtics":
 		teamSelectedOutput.delete(0.0, END)
@@ -146,6 +146,10 @@ def callTeamSelected(*args):
 		teamSelectedOutput.delete(0.0, END)
 		memphis.grizzTeam
 		teamSelectedOutput.insert(INSERT, memphis.grizzTeam)
+	if TeamsVar.get() == "Miami Heat":
+		teamSelectedOutput.delete(0.0, END)
+		miami.heatTeam
+		teamStadiumOutput.insert(INSERT, miami.heatTeam)
 
 
 TeamsVar.trace("w", callTeamSelected) #TeamsVar a TRACE variable I directly called the function callTeamSelected 'w' for write writing to textfield
@@ -212,6 +216,10 @@ def callYearFormed(*args):
 		yearFormedOutput.delete(0.0, END)
 		memphis.yearFormedMEM
 		yearFormedOutput.insert(INSERT, memphis.yearFormedMEM)
+	if TeamsVar.get() == "Miami Heat":
+		yearFormedOutput.delete(0.0, END)
+		miami.yearFormedMIA
+		yearFormedOutput.insert(INSERT, miami.yearFormedMIA)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -278,6 +286,10 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		memphis.teamStadiumMEM
 		teamStadiumOutput.insert(INSERT, memphis.teamStadiumMEM)
+	if TeamsVar.get() == "Miami Heat":
+		teamStadiumOutput.delete(0.0, END)
+		miami.teamStadiumMIA
+		teamStadiumOutput.insert(INSERT, miami.teamStadiumMIA)
 
 			
 TeamsVar.trace("w", callTeamStadium)
@@ -345,6 +357,10 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		memphis.teamInfoMEM
 		teamInfoOutput.insert(INSERT, memphis.teamInfoMEM)
+	if TeamsVar.get() == "Miami Heat":
+		teamInfoOutput.delete(0.0, END)
+		miami.teamInfoMIA
+		teamInfoOutput.insert(INSERT, miami.teamInfoMIA)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -410,6 +426,11 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		memphis.grizzGame 
 		lastGameOutput.insert(INSERT, memphis.grizzGame)
+	if TeamsVar.get() == "Miami Heat":
+		lastGameOutput.delete(0.0, END)
+		miami.heatGame
+		lastGameOutput.insert(INSERT, miami.heatGame)
+
 
 TeamsVar.trace("w", callLastGame)
 
@@ -475,6 +496,11 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		grizzliesStanding = memphis.win()
 		outcomeOutput.insert(INSERT, grizzliesStanding)
+	if TeamsVar.get() == "Miami Heat":
+		outcomeOutput.delete(0.0, END)
+		heatStanding = miami.win()
+		outcomeOutput.insert(INSERT, heatStanding)
+
 
 TeamsVar.trace("w", callWinLoss)
 
@@ -555,6 +581,11 @@ def callTeamLogo(*args):
 		grizzliesLogo = PhotoImage(file="logos/Grizzlies300.png")
 		LogoCanvas.image = grizzliesLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=grizzliesLogo)
+	if TeamsVar.get() == "Miami Heat":
+		LogoCanvas.delete("all")
+		heatLogo = PhotoImage(file="logos/Heat300.png")
+		LogoCanvas.image = heatLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=heatLogo)
 
 TeamsVar.trace("w", callTeamLogo)
 
