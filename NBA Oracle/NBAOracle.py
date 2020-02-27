@@ -343,8 +343,7 @@ def callTeamInfo(*args):
 		teamInfoOutput.insert(INSERT, miami.teamInfoMIA)
 	if TeamsVar.get() == "Milwaukee Bucks":
 		teamInfoOutput.delete(0.0, END)
-		milwaukee.teamInfoMIL
-		teamInfoOutput.delete(0.0, END)
+		teamInfoOutput.insert(INSERT, milwaukee.teamInfoMIL)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -581,5 +580,7 @@ def callTeamLogo(*args):
 
 
 TeamsVar.trace("w", callTeamLogo)
+
+
 
 window.mainloop()
