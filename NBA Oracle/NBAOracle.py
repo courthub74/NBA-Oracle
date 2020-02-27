@@ -16,6 +16,7 @@ import losangelesC
 import losangelesL
 import memphis
 import miami
+import milwaukee
 
 # WINDOW
 window = Tk()
@@ -87,53 +88,41 @@ LabelCanvas.grid(row=8,column=0)
 #############################################################
 # CALL TEAM SELECTED 
 def callTeamSelected(*args):
-	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then proceed with this if statement
-		teamSelectedOutput.delete(0.0, END)  # Clear previous data from field
-		atlanta.hawksTeam                     # Call Variable from imported file 
-		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)  # insert method to insert called variable into textfield
+	if TeamsVar.get() == "Atlanta Hawks":  # If StringVar matches selected Var then proceed with this if state
+		teamSelectedOutput.delete(0.0, END)  # Clear previous data from field 
+		teamSelectedOutput.insert(INSERT, atlanta.hawksTeam)  # insert method to insert called variable into textfield. Variable is desired str parsed from API
 	if TeamsVar.get() == "Boston Celtics":
 		teamSelectedOutput.delete(0.0, END)
-		boston.celticsTeam
 		teamSelectedOutput.insert(INSERT, boston.celticsTeam)
 	if TeamsVar.get() == "Brooklyn Nets":
 		teamSelectedOutput.delete(0.0, END)
-		brooklyn.netsTeam
 		teamSelectedOutput.insert(INSERT, brooklyn.netsTeam)
 	if TeamsVar.get() == "Charlotte Hornets":
 		teamSelectedOutput.delete(0.0, END)
-		charlotte.hornetsTeam
 		teamSelectedOutput.insert(INSERT, charlotte.hornetsTeam)
 	if TeamsVar.get() == "Chicago Bulls":
 		teamSelectedOutput.delete(0.0, END)
-		chicago.bullsTeam
 		teamSelectedOutput.insert(INSERT, chicago.bullsTeam)
 	if TeamsVar.get() == "Cleveland Cavaliers":
 		teamSelectedOutput.delete(0.0, END)
-		cleveland.cavsTeam
 		teamSelectedOutput.insert(INSERT, cleveland.cavsTeam)
 	if TeamsVar.get() == "Dallas Mavericks":
 		teamSelectedOutput.delete(0.0, END)
-		dallas.mavsTeam
 		teamSelectedOutput.insert(INSERT, dallas.mavsTeam)
 	if TeamsVar.get() == "Denver Nuggets":
-		teamSelectedOutput.delete(0.0, END)
-		denver.nuggetsTeam  
+		teamSelectedOutput.delete(0.0, END) 
 		teamSelectedOutput.insert(INSERT, denver.nuggetsTeam) 
 	if TeamsVar.get() == "Detroit Pistons":
-		teamSelectedOutput.delete(0.0, END)
-		detroit.pistonsTeam  
+		teamSelectedOutput.delete(0.0, END) 
 		teamSelectedOutput.insert(INSERT, detroit.pistonsTeam)
 	if TeamsVar.get() == "Golden State Warriors":
 		teamSelectedOutput.delete(0.0, END)
-		goldenstate.warriorsTeam
 		teamSelectedOutput.insert(INSERT, goldenstate.warriorsTeam)
 	if TeamsVar.get() == "Houston Rockets":
 		teamSelectedOutput.delete(0.0, END)
-		houston.rocketsTeam
 		teamSelectedOutput.insert(INSERT, houston.rocketsTeam)
 	if TeamsVar.get() == "Indiana Pacers":
 		teamSelectedOutput.delete(0.0, END)
-		indiana.pacersTeam
 		teamSelectedOutput.insert(INSERT, indiana.pacersTeam)
 	if TeamsVar.get() == "Los Angeles Clippers":
 		teamSelectedOutput.delete(0.0, END)
@@ -141,44 +130,38 @@ def callTeamSelected(*args):
 		teamSelectedOutput.insert(INSERT, losangelesC.clippersTeam)
 	if TeamsVar.get() == "Los Angeles Lakers":
 		teamSelectedOutput.delete(0.0, END)
-		losangelesL.lakersTeam
 		teamSelectedOutput.insert(INSERT, losangelesL.lakersTeam)
 	if TeamsVar.get() == "Memphis Grizzlies":
 		teamSelectedOutput.delete(0.0, END)
-		memphis.grizzTeam
 		teamSelectedOutput.insert(INSERT, memphis.grizzTeam)
 	if TeamsVar.get() == "Miami Heat":
 		teamSelectedOutput.delete(0.0, END)
-		miami.heatTeam
 		teamSelectedOutput.insert(INSERT, miami.heatTeam)
+	if TeamsVar.get() == "Milwaukee Bucks":
+		teamSelectedOutput.delete(0.0, END)
+		teamSelectedOutput.insert(INSERT, milwaukee.bucksTeam)
 
 TeamsVar.trace("w", callTeamSelected) #Using the TRACE method associated with the TeamsVar string variable 
-					 # I directly called the function callTeamSelected 'w' for write writing to textfield
+											# I directly called the function callTeamSelected 'w' for write writing to textfield
 # CALL YEAR FORMED
 def callYearFormed(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
 		yearFormedOutput.delete(0.0, END)
-		atlanta.yearFormedATL
 		yearFormedOutput.insert(INSERT, atlanta.yearFormedATL)
 	if TeamsVar.get() == "Boston Celtics":
 		yearFormedOutput.delete(0.0, END)
-		boston.yearFormedBOS
 		yearFormedOutput.insert(INSERT, boston.yearFormedBOS)
 	if TeamsVar.get() == "Brooklyn Nets":
 		yearFormedOutput.delete(0.0, END)
-		brooklyn.yearFormedBKN
 		yearFormedOutput.insert(INSERT, brooklyn.yearFormedBKN)
 	if TeamsVar.get() == "Charlotte Hornets":
 		yearFormedOutput.delete(0.0, END)
-		charlotte.yearFormedCHA
 		yearFormedOutput.insert(INSERT, charlotte.yearFormedCHA)
 	if TeamsVar.get() == "Chicago Bulls":
 		yearFormedOutput.delete(0.0, END)
-		chicago.yearFormedCHI
 		yearFormedOutput.insert(INSERT, chicago.yearFormedCHI)
 	if TeamsVar.get() == "Cleveland Cavaliers":
 		yearFormedOutput.delete(0.0, END)
-		cleveland.yearFormedCLE
 		yearFormedOutput.insert(INSERT, cleveland.yearFormedCLE)
 	if TeamsVar.get() == "Dallas Mavericks":
 		yearFormedOutput.delete(0.0, END)
@@ -186,40 +169,34 @@ def callYearFormed(*args):
 		yearFormedOutput.insert(INSERT, dallas.yearFormedDAL)
 	if TeamsVar.get() == "Denver Nuggets":
 		yearFormedOutput.delete(0.0, END)
-		denver.yearFormedDEN
 		yearFormedOutput.insert(INSERT, denver.yearFormedDEN)
 	if TeamsVar.get() == "Detroit Pistons":
 		yearFormedOutput.delete(0.0, END)
-		detroit.yearFormedDET
 		yearFormedOutput.insert(INSERT, detroit.yearFormedDET)
 	if TeamsVar.get() == "Golden State Warriors":
 		yearFormedOutput.delete(0.0, END)
-		goldenstate.yearFormedGS
 		yearFormedOutput.insert(INSERT, goldenstate.yearFormedGS)
 	if TeamsVar.get() == "Houston Rockets":
 		yearFormedOutput.delete(0.0, END)
-		houston.yearFormedHOU
 		yearFormedOutput.insert(INSERT, houston.yearFormedHOU)
 	if TeamsVar.get() == "Indiana Pacers":
 		yearFormedOutput.delete(0.0, END)
-		indiana.yearFormedIND
 		yearFormedOutput.insert(INSERT, indiana.yearFormedIND)
 	if TeamsVar.get() == "Los Angeles Clippers":
 		yearFormedOutput.delete(0.0, END)
-		losangelesC.yearFormedLAC
 		yearFormedOutput.insert(INSERT, losangelesC.yearFormedLAC)
 	if TeamsVar.get() == "Los Angeles Lakers":
 		yearFormedOutput.delete(0.0, END)
-		losangelesL.yearFormedLAL
 		yearFormedOutput.insert(INSERT, losangelesL.yearFormedLAL)
 	if TeamsVar.get() == "Memphis Grizzlies":
 		yearFormedOutput.delete(0.0, END)
-		memphis.yearFormedMEM
 		yearFormedOutput.insert(INSERT, memphis.yearFormedMEM)
 	if TeamsVar.get() == "Miami Heat":
 		yearFormedOutput.delete(0.0, END)
-		miami.yearFormedMIA
 		yearFormedOutput.insert(INSERT, miami.yearFormedMIA)
+	if TeamsVar.get() == "Milwaukee Bucks":
+		yearFormedOutput.delete(0.0, END)
+		yearFormedOutput.insert(INSERT, milwaukee.yearFormedMIL)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -290,8 +267,11 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		miami.teamStadiumMIA
 		teamStadiumOutput.insert(INSERT, miami.teamStadiumMIA)
-
-			
+	if TeamsVar.get() == "Milwaukee Bucks":
+		teamStadiumOutput.delete(0.0, END)
+		milwaukee.teamStadiumMIL
+		teamStadiumOutput.insert(INSERT, milwaukee.teamStadiumMIL)
+		
 TeamsVar.trace("w", callTeamStadium)
 
 
@@ -361,6 +341,10 @@ def callTeamInfo(*args):
 		teamInfoOutput.delete(0.0, END)
 		miami.teamInfoMIA
 		teamInfoOutput.insert(INSERT, miami.teamInfoMIA)
+	if TeamsVar.get() == "Milwaukee Bucks":
+		teamInfoOutput.delete(0.0, END)
+		milwaukee.teamInfoMIL
+		teamInfoOutput.delete(0.0, END)
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -430,7 +414,10 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		miami.heatGame
 		lastGameOutput.insert(INSERT, miami.heatGame)
-
+	if TeamsVar.get() == "Milwaukee Bucks":
+		lastGameOutput.delete(0.0, END)
+		milwaukee.bucksGame
+		lastGameOutput.insert(INSERT, milwaukee.bucksGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -485,21 +472,21 @@ def callWinLoss(*args):
 		pacersStanding = indiana.win()
 		outcomeOutput.insert(INSERT, pacersStanding)
 	if TeamsVar.get() == "Los Angeles Clippers":
-		outcomeOutput.delete(0.0, END)
-		clippersStanding = losangelesC.win()
-		outcomeOutput.insert(INSERT, clippersStanding)
+		outcomeOutput.delete(0.0, END) 
+		outcomeOutput.insert(INSERT, losangelesC.win())
 	if TeamsVar.get() == "Los Angeles Lakers":
-		outcomeOutput.delete(0.0, END)
-		lakersStanding = losangelesL.win()
-		outcomeOutput.insert(INSERT, lakersStanding)
+		outcomeOutput.delete(0.0, END) 
+		outcomeOutput.insert(INSERT, losangelesL.win())
 	if TeamsVar.get() == "Memphis Grizzlies":
-		outcomeOutput.delete(0.0, END)
-		grizzliesStanding = memphis.win()
-		outcomeOutput.insert(INSERT, grizzliesStanding)
+		outcomeOutput.delete(0.0, END) 
+		outcomeOutput.insert(INSERT, memphis.win())
 	if TeamsVar.get() == "Miami Heat":
 		outcomeOutput.delete(0.0, END)
-		heatStanding = miami.win()
-		outcomeOutput.insert(INSERT, heatStanding)
+		outcomeOutput.insert(INSERT, miami.win())
+	if TeamsVar.get() == "Milwaukee Bucks":
+		outcomeOutput.delete(0.0, END)
+		outcomeOutput.insert(INSERT, milwaukee.win())
+
 
 
 TeamsVar.trace("w", callWinLoss)
@@ -586,9 +573,13 @@ def callTeamLogo(*args):
 		heatLogo = PhotoImage(file="logos/Heat300.png")
 		LogoCanvas.image = heatLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=heatLogo)
+	if TeamsVar.get() == "Milwaukee Bucks":
+		LogoCanvas.delete("all")
+		bucksLogo = PhotoImage(file="logos/Bucks300.png")
+		LogoCanvas.image = bucksLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=bucksLogo)
+
 
 TeamsVar.trace("w", callTeamLogo)
-
-
 
 window.mainloop()
