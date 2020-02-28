@@ -20,7 +20,7 @@ import milwaukee
 
 # WINDOW
 window = Tk()
-window.geometry("500x800")
+window.geometry("500x900")
 window.iconbitmap("icon/NBAclear.ico")
 window.title("NBA Oracle")
 window.configure(background="Darkblue")
@@ -69,19 +69,31 @@ lastGame.grid(row=6,column=0)
 lastGameOutput = Text(window, width=40, height=4, bg="Black", fg="White")
 lastGameOutput.grid(row=6,column=1,sticky=W)
 
-# WIN LOSS / STREAK
-outcome = Label(window, text="Win/Loss", bg="Darkblue", fg="White")
+# WIN LOSS 
+outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White")
 outcome.grid(row=7,column=0)
 outcomeOutput = Text(window, width=40, height=1, bg="Black", fg="White")
 outcomeOutput.grid(row=7,column=1,sticky=W)
 
+# WIN STREAK
+streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White")
+streak.grid(row=8,column=0)
+streakOutput = Text(window, width=40, height=1, bg="Black", fg="White")
+streakOutput.grid(row=8,column=1,sticky=W)
+
+# NEXT OPPONENT
+nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White")
+nextOpp.grid(row=9,column=0)
+nextOppOutput = Text(window, width=40, height=1, bg="Black", fg="White")
+nextOppOutput.grid(row=9,column=1,sticky=W)
+
 # LOGO
 LogoCanvas = Canvas(height=300, width=300, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LogoCanvas.grid(row=8,column=1)
+LogoCanvas.grid(row=10,column=1)
 
 # LOGO LABEL
 LabelCanvas = Canvas(height=1, width=3, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LabelCanvas.grid(row=8,column=0)
+LabelCanvas.grid(row=10,column=0)
 
 
 # FUNCTIONALITY
