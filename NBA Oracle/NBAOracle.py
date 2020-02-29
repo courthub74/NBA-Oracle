@@ -17,10 +17,11 @@ import losangelesL
 import memphis
 import miami
 import milwaukee
+import minnesota
 
 # WINDOW
 window = Tk()
-window.geometry("500x900")
+window.geometry("500x1000")
 window.iconbitmap("icon/NBAclear.ico")
 window.title("NBA Oracle")
 window.configure(background="Darkblue")
@@ -30,70 +31,70 @@ logo = PhotoImage(file="header/NBAclear.png")
 logoNBA = Label(window, image=logo, bg="Darkblue")
 resizeLogo = logo.subsample(1, 1)
 logoNBA.config(image=resizeLogo)
-logoNBA.grid(row=0,column=1,sticky=W)
+logoNBA.pack()
 
 # DROP DOWN MENU
 TeamsVar = StringVar()  # Created a string variable for the drop down menu
 TeamsVar.set(teamslist.TeamsList[0])
 droplist = OptionMenu(window, TeamsVar, *teamslist.TeamsList)
 droplist.config(width=45, height=1, fg="Darkblue")
-droplist.grid(row=1,column=1,sticky=W)
+droplist.pack()
 
 # TEAM SELECTED
-teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White")
-teamSelected.grid(row=2,column=0)
+teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+teamSelected.pack()
 teamSelectedOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-teamSelectedOutput.grid(row=2,column=1,sticky=W)
+teamSelectedOutput.pack()
 
 # YEAR FORMED
-yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White")
-yearFormed.grid(row=3,column=0)
+yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+yearFormed.pack()
 yearFormedOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-yearFormedOutput.grid(row=3,column=1,sticky=W)
+yearFormedOutput.pack()
 
 # TEAM STADIUM
-teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White")
-teamStadium.grid(row=4,column=0)
+teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+teamStadium.pack()
 teamStadiumOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-teamStadiumOutput.grid(row=4,column=1,sticky=W)
+teamStadiumOutput.pack()
 
 # TEAM INFO
-teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White")
-teamInfo.grid(row=5,column=0)
+teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+teamInfo.pack()
 teamInfoOutput = Text(window, width=40, height=5, wrap=WORD, bg="Black", fg="White")
-teamInfoOutput.grid(row=5,column=1,sticky=W)
+teamInfoOutput.pack()
 
 # LAST GAME
-lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White")
-lastGame.grid(row=6,column=0)
+lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+lastGame.pack()
 lastGameOutput = Text(window, width=40, height=4, bg="Black", fg="White")
-lastGameOutput.grid(row=6,column=1,sticky=W)
+lastGameOutput.pack()
 
 # WIN LOSS 
-outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White")
-outcome.grid(row=7,column=0)
+outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+outcome.pack()
 outcomeOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-outcomeOutput.grid(row=7,column=1,sticky=W)
+outcomeOutput.pack()
 
 # WIN STREAK
-streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White")
-streak.grid(row=8,column=0)
+streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+streak.pack()
 streakOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-streakOutput.grid(row=8,column=1,sticky=W)
+streakOutput.pack()
 
 # NEXT OPPONENT
-nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White")
-nextOpp.grid(row=9,column=0)
+nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+nextOpp.pack()
 nextOppOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-nextOppOutput.grid(row=9,column=1,sticky=W)
+nextOppOutput.pack()
 
 # LOGO
 LogoCanvas = Canvas(height=300, width=300, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LogoCanvas.grid(row=10,column=1)
+LogoCanvas.pack()
 
 # LOGO LABEL
 LabelCanvas = Canvas(height=1, width=3, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LabelCanvas.grid(row=10,column=0)
+LabelCanvas.pack()
 
 
 # FUNCTIONALITY
@@ -152,6 +153,9 @@ def callTeamSelected(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		teamSelectedOutput.delete(0.0, END)
 		teamSelectedOutput.insert(INSERT, milwaukee.bucksTeam)
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		teamSelectedOutput.delete(0.0, END)
+		teamSelectedOutput.insert(INSERT, minnesota.twolvesTeam)
 
 TeamsVar.trace("w", callTeamSelected) #Using the TRACE method associated with the TeamsVar string variable 
 											# I directly called the function callTeamSelected 'w' for write writing to textfield
@@ -209,6 +213,9 @@ def callYearFormed(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		yearFormedOutput.delete(0.0, END)
 		yearFormedOutput.insert(INSERT, milwaukee.yearFormedMIL)
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		yearFormedOutput.delete(0.0, END)
+		yearFormedOutput.insert(INSERT, minnesota.yearFormedMIN)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -283,6 +290,9 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		milwaukee.teamStadiumMIL
 		teamStadiumOutput.insert(INSERT, milwaukee.teamStadiumMIL)
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		teamStadiumOutput.delete(0.0, END)
+		teamStadiumOutput.insert(INSERT, minnesota.teamStadiumMIN)
 		
 TeamsVar.trace("w", callTeamStadium)
 
@@ -356,6 +366,10 @@ def callTeamInfo(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		teamInfoOutput.delete(0.0, END)
 		teamInfoOutput.insert(INSERT, milwaukee.teamInfoMIL)
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		teamInfoOutput.delete(0.0, END)
+		teamInfoOutput.insert(INSERT, minnesota.teamInfoMIN)
+
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -429,6 +443,9 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		milwaukee.bucksGame
 		lastGameOutput.insert(INSERT, milwaukee.bucksGame)
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		lastGameOutput.delete(0.0, END)
+		lastGameOutput.insert(INSERT, minnesota.twolvesGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -497,7 +514,9 @@ def callWinLoss(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		outcomeOutput.delete(0.0, END)
 		outcomeOutput.insert(INSERT, milwaukee.win())
-
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		outcomeOutput.delete(0.0, END)
+		outcomeOutput.insert(INSERT, minnesota.win())
 
 
 TeamsVar.trace("w", callWinLoss)
@@ -589,6 +608,11 @@ def callTeamLogo(*args):
 		bucksLogo = PhotoImage(file="logos/Bucks300.png")
 		LogoCanvas.image = bucksLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=bucksLogo)
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		LogoCanvas.delete("all")
+		twolvesLogo = PhotoImage(file="logos/Twolves300.png")
+		LogoCanvas.image = twolvesLogo
+		LogoCanvas.create_image(0, 0, anchor='nw', image=twolvesLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
