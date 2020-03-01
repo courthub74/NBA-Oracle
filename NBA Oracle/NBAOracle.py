@@ -21,7 +21,7 @@ import minnesota
 
 # WINDOW
 window = Tk()
-window.geometry("500x1000")
+window.geometry("500x1500")
 window.iconbitmap("icon/NBAclear.ico")
 window.title("NBA Oracle")
 window.configure(background="Darkblue")
@@ -87,6 +87,12 @@ nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White", font="
 nextOpp.pack()
 nextOppOutput = Text(window, width=40, height=1, bg="Black", fg="White")
 nextOppOutput.pack()
+
+# NEXT GAME LOCATION
+locNext = Label(window, text="Where:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+locNext.pack()
+locNextOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+locNextOutput.pack()
 
 # LOGO
 LogoCanvas = Canvas(height=300, width=300, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
@@ -520,6 +526,69 @@ def callWinLoss(*args):
 
 
 TeamsVar.trace("w", callWinLoss)
+
+# CALL NEXT OPPONENT
+def callNextOpp(*args):
+	if TeamsVar.get() == "Atlanta Hawks":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, atlanta.next())
+	if TeamsVar.get() == "Boston Celtics":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, boston.next())
+	if TeamsVar.get() == "Brooklyn Nets":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, brooklyn.next())
+	if TeamsVar.get() == "Charlotte Hornets":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, charlotte.next())
+	if TeamsVar.get() == "Chicago Bulls":
+	if TeamsVar.get() == "Cleveland Cavaliers":
+	if TeamsVar.get() == "Dallas Mavericks":
+	if TeamsVar.get() == "Denver Nuggets":
+	if TeamsVar.get() == "Detroit Pistons":
+	if TeamsVar.get() == "Golden State Warriors":
+	if TeamsVar.get() == "Houston Rockets":
+	if TeamsVar.get() == "Indiana Pacers":
+	if TeamsVar.get() == "Los Angeles Clippers":
+	if TeamsVar.get() == "Los Angeles Lakers":
+	if TeamsVar.get() == "Memphis Grizzlies":
+	if TeamsVar.get() == "Miami Heat":
+	if TeamsVar.get() == "Milwaukee Bucks":
+	if TeamsVar.get() == "Minnesota Timberwolves":
+
+
+TeamsVar.trace("w", callNextOpp)
+
+# CALL NEXT LOCATION
+def callNextLoc(*args):
+	if TeamsVar.get() == "Atlanta Hawks":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, atlanta.where())
+	if TeamsVar.get() == "Boston Celtics":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, boston.where())
+	if TeamsVar.get() == "Brooklyn Nets":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, brooklyn.where())
+	if TeamsVar.get() == "Charlotte Hornets":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, charlotte.where())
+	if TeamsVar.get() == "Chicago Bulls":
+	if TeamsVar.get() == "Cleveland Cavaliers":
+	if TeamsVar.get() == "Dallas Mavericks":
+	if TeamsVar.get() == "Denver Nuggets":
+	if TeamsVar.get() == "Detroit Pistons":
+	if TeamsVar.get() == "Golden State Warriors":
+	if TeamsVar.get() == "Houston Rockets":
+	if TeamsVar.get() == "Indiana Pacers":
+	if TeamsVar.get() == "Los Angeles Clippers":
+	if TeamsVar.get() == "Los Angeles Lakers":
+	if TeamsVar.get() == "Memphis Grizzlies":
+	if TeamsVar.get() == "Miami Heat":
+	if TeamsVar.get() == "Milwaukee Bucks":
+	if TeamsVar.get() == "Minnesota Timberwolves":
+
+TeamsVar.trace("w", callNextLoc)
 
 # CALL TEAM LOGO
 def callTeamLogo(*args):
