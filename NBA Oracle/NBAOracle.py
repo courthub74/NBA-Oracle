@@ -19,9 +19,10 @@ import miami
 import milwaukee
 import minnesota
 
+
 # WINDOW
 window = Tk()
-window.geometry("500x1500")
+window.geometry("900x900")
 window.iconbitmap("icon/NBAclear.ico")
 window.title("NBA Oracle")
 window.configure(background="Darkblue")
@@ -31,76 +32,81 @@ logo = PhotoImage(file="header/NBAclear.png")
 logoNBA = Label(window, image=logo, bg="Darkblue")
 resizeLogo = logo.subsample(1, 1)
 logoNBA.config(image=resizeLogo)
-logoNBA.pack()
+logoNBA.grid(row=0,column=1,sticky=W)
 
 # DROP DOWN MENU
 TeamsVar = StringVar()  # Created a string variable for the drop down menu
 TeamsVar.set(teamslist.TeamsList[0])
 droplist = OptionMenu(window, TeamsVar, *teamslist.TeamsList)
 droplist.config(width=45, height=1, fg="Darkblue")
-droplist.pack()
+droplist.grid(row=1,column=1,sticky=W)
 
 # TEAM SELECTED
-teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-teamSelected.pack()
-teamSelectedOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-teamSelectedOutput.pack()
+teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White")
+teamSelected.grid(row=2,column=0)
+teamSelectedOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+teamSelectedOutput.grid(row=3,column=1,sticky=W)
 
 # YEAR FORMED
-yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-yearFormed.pack()
-yearFormedOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-yearFormedOutput.pack()
+yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White")
+yearFormed.grid(row=4,column=0)
+yearFormedOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+yearFormedOutput.grid(row=5,column=1,sticky=W)
 
 # TEAM STADIUM
-teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-teamStadium.pack()
-teamStadiumOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-teamStadiumOutput.pack()
+teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White")
+teamStadium.grid(row=6,column=0)
+teamStadiumOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+teamStadiumOutput.grid(row=7,column=1,sticky=W)
 
 # TEAM INFO
-teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-teamInfo.pack()
+teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White")
+teamInfo.grid(row=8,column=0)
 teamInfoOutput = Text(window, width=40, height=5, wrap=WORD, bg="Black", fg="White")
-teamInfoOutput.pack()
+teamInfoOutput.grid(row=9,column=1,sticky=W)
 
 # LAST GAME
-lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-lastGame.pack()
+lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White")
+lastGame.grid(row=10,column=0)
 lastGameOutput = Text(window, width=40, height=4, bg="Black", fg="White")
-lastGameOutput.pack()
+lastGameOutput.grid(row=11,column=1,sticky=W)
 
 # WIN LOSS 
-outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-outcome.pack()
-outcomeOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-outcomeOutput.pack()
+outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White")
+outcome.grid(row=12,column=0)
+outcomeOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+outcomeOutput.grid(row=13,column=1,sticky=W)
 
 # WIN STREAK
-streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-streak.pack()
-streakOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-streakOutput.pack()
+streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White")
+streak.grid(row=14,column=0)
+streakOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+streakOutput.grid(row=15,column=1,sticky=W)
 
 # NEXT OPPONENT
 nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-nextOpp.pack()
-nextOppOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-nextOppOutput.pack()
+nextOpp.grid(row=16,column=0)
+nextOppOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+nextOppOutput.grid(row=17,column=1,sticky=W)
 
 # NEXT GAME LOCATION
 locNext = Label(window, text="Where:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-locNext.pack()
+locNext.grid(row=18,column=0)
 locNextOutput = Text(window, width=20, height=1, bg="Black", fg="White")
-locNextOutput.pack()
+locNextOutput.grid(row=19,column=1,sticky=W)
 
 # LOGO
-LogoCanvas = Canvas(height=300, width=300, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LogoCanvas.pack()
+LogoCanvas = Canvas(height=300, width=500, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
+LogoCanvas.grid(row=2,column=3, rowspan=15, sticky=W)
+
+# SPACE
+space = Canvas(height=1, width=50, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
+space.grid(row=4,column=2)
 
 # LOGO LABEL
-LabelCanvas = Canvas(height=1, width=3, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LabelCanvas.pack()
+LabelCanvas = Text(window, height=1, width=10, borderwidth=0, highlightthickness=0, bg="Darkblue", fg="White", font="none 15", bd=0)
+LabelCanvas.grid(row=1,column=3,sticky=W)
+
 
 
 # FUNCTIONALITY
@@ -541,20 +547,6 @@ def callNextOpp(*args):
 	if TeamsVar.get() == "Charlotte Hornets":
 		nextOppOutput.delete(0.0, END)
 		nextOppOutput.insert(INSERT, charlotte.next())
-	if TeamsVar.get() == "Chicago Bulls":
-	if TeamsVar.get() == "Cleveland Cavaliers":
-	if TeamsVar.get() == "Dallas Mavericks":
-	if TeamsVar.get() == "Denver Nuggets":
-	if TeamsVar.get() == "Detroit Pistons":
-	if TeamsVar.get() == "Golden State Warriors":
-	if TeamsVar.get() == "Houston Rockets":
-	if TeamsVar.get() == "Indiana Pacers":
-	if TeamsVar.get() == "Los Angeles Clippers":
-	if TeamsVar.get() == "Los Angeles Lakers":
-	if TeamsVar.get() == "Memphis Grizzlies":
-	if TeamsVar.get() == "Miami Heat":
-	if TeamsVar.get() == "Milwaukee Bucks":
-	if TeamsVar.get() == "Minnesota Timberwolves":
 
 
 TeamsVar.trace("w", callNextOpp)
@@ -573,20 +565,6 @@ def callNextLoc(*args):
 	if TeamsVar.get() == "Charlotte Hornets":
 		locNextOutput.delete(0.0, END)
 		locNextOutput.insert(INSERT, charlotte.where())
-	if TeamsVar.get() == "Chicago Bulls":
-	if TeamsVar.get() == "Cleveland Cavaliers":
-	if TeamsVar.get() == "Dallas Mavericks":
-	if TeamsVar.get() == "Denver Nuggets":
-	if TeamsVar.get() == "Detroit Pistons":
-	if TeamsVar.get() == "Golden State Warriors":
-	if TeamsVar.get() == "Houston Rockets":
-	if TeamsVar.get() == "Indiana Pacers":
-	if TeamsVar.get() == "Los Angeles Clippers":
-	if TeamsVar.get() == "Los Angeles Lakers":
-	if TeamsVar.get() == "Memphis Grizzlies":
-	if TeamsVar.get() == "Miami Heat":
-	if TeamsVar.get() == "Milwaukee Bucks":
-	if TeamsVar.get() == "Minnesota Timberwolves":
 
 TeamsVar.trace("w", callNextLoc)
 
@@ -687,5 +665,17 @@ def callTeamLogo(*args):
 TeamsVar.trace("w", callTeamLogo)
 
 
+def callLabelCanvas(*args):
+	if TeamsVar.get() == "Atlanta Hawks":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Logo:")
+
+TeamsVar.trace("w", callLabelCanvas)
+
+
 
 window.mainloop()
+
+
+
+
