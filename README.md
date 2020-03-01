@@ -4,7 +4,7 @@ Widget that provides general info and the latest scores of your favorite pro bas
 ### Things that still need to be added:
 ----------------------------------------
 * ~~All the NBA Teams~~
-* A More impressive frame(appearence)
+* ~~A More impressive frame(appearence)~~
 * Utilize the limited data that the JSON files give me to determine:
   * ~~Determine if selected team won or lost~~
   * ~~Determine if game is still in progress~~
