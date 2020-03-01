@@ -22,7 +22,7 @@ import minnesota
 
 # WINDOW
 window = Tk()
-window.geometry("900x900")
+window.geometry("900x800")
 window.iconbitmap("icon/NBAclear.ico")
 window.title("NBA Oracle")
 window.configure(background="Darkblue")
@@ -42,43 +42,43 @@ droplist.config(width=45, height=1, fg="Darkblue")
 droplist.grid(row=1,column=1,sticky=W)
 
 # TEAM SELECTED
-teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White")
+teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 teamSelected.grid(row=2,column=0)
 teamSelectedOutput = Text(window, width=20, height=1, bg="Black", fg="White")
 teamSelectedOutput.grid(row=3,column=1,sticky=W)
 
 # YEAR FORMED
-yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White")
+yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 yearFormed.grid(row=4,column=0)
 yearFormedOutput = Text(window, width=20, height=1, bg="Black", fg="White")
 yearFormedOutput.grid(row=5,column=1,sticky=W)
 
 # TEAM STADIUM
-teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White")
+teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 teamStadium.grid(row=6,column=0)
 teamStadiumOutput = Text(window, width=20, height=1, bg="Black", fg="White")
 teamStadiumOutput.grid(row=7,column=1,sticky=W)
 
 # TEAM INFO
-teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White")
+teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 teamInfo.grid(row=8,column=0)
 teamInfoOutput = Text(window, width=40, height=5, wrap=WORD, bg="Black", fg="White")
 teamInfoOutput.grid(row=9,column=1,sticky=W)
 
 # LAST GAME
-lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White")
+lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 lastGame.grid(row=10,column=0)
 lastGameOutput = Text(window, width=40, height=4, bg="Black", fg="White")
 lastGameOutput.grid(row=11,column=1,sticky=W)
 
 # WIN LOSS 
-outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White")
+outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 outcome.grid(row=12,column=0)
 outcomeOutput = Text(window, width=20, height=1, bg="Black", fg="White")
 outcomeOutput.grid(row=13,column=1,sticky=W)
 
 # WIN STREAK
-streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White")
+streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 streak.grid(row=14,column=0)
 streakOutput = Text(window, width=20, height=1, bg="Black", fg="White")
 streakOutput.grid(row=15,column=1,sticky=W)
@@ -104,8 +104,8 @@ space = Canvas(height=1, width=50, borderwidth=0, highlightthickness=0, bg="Dark
 space.grid(row=4,column=2)
 
 # LOGO LABEL
-LabelCanvas = Text(window, height=1, width=10, borderwidth=0, highlightthickness=0, bg="Darkblue", fg="White", font="none 15", bd=0)
-LabelCanvas.grid(row=1,column=3,sticky=W)
+LabelCanvas = Text(window, height=1, width=10, borderwidth=0, highlightthickness=0, bg="Darkblue", fg="White", font="Helvetica 15", bd=0)
+LabelCanvas.grid(row=1,column=3,sticky=SW)
 
 
 
@@ -668,14 +668,10 @@ TeamsVar.trace("w", callTeamLogo)
 def callLabelCanvas(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
 		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Logo:")
+		LabelCanvas.insert(INSERT, "Team Logo:")
 
 TeamsVar.trace("w", callLabelCanvas)
 
 
 
 window.mainloop()
-
-
-
-
