@@ -15,17 +15,20 @@ hawksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsne
 # ATLANTA Info Parse 134880
 dataATL = hawksRE.text # json data to text
 parseATL = json.loads(dataATL) # converts reads or parses json as a string
-
-# ATLANTA Last Game Parse 134880
+									# If I try to use the .text variable it will return an error saying 
+# ATLANTA Last Game Parse 134880      # It can't read the json data as a string
 LGdataATL = hawksLG.text
-LGparseATL = json.loads(LGdataATL)
+LGparseATL = json.loads(LGdataATL)            # Done for all 3 requests
 
 # ATLANTA Next Game Parse 134880
 NGdataATL = hawksNG.text
 NGparseATL = json.loads(NGdataATL)
 
-# Info Layout for Drop Down ATLANTA 134880      # Now I can pull string data from the API
-hawksTeam = parseATL["teams"][0]["strTeam"]     # I created variables for each desired data object
+######################################################################
+# LAST GAME
+
+# Last Game Info Variables ATLANTA 134880         # Now I can pull string data from the API
+hawksTeam = parseATL["teams"][0]["strTeam"]         # I created variables for each desired data object
 yearFormedATL = parseATL["teams"][0]["intFormedYear"]
 teamStadiumATL = parseATL["teams"][0]["strStadium"]
 teamInfoATL = parseATL["teams"][0]["strDescriptionEN"]
@@ -48,7 +51,7 @@ teamHome = homeTeamATL
 teamAway = awayTeamATL 
 
 scoreHome = int(homeScoreATL)
-scoreAway = int(awayScoreATL)
+scoreAway = int(awayScoreATL)   # Turned these into simple variables for my own sanity
 
 def win():
 	if scoreHome < 80 and scoreAway < 80:
@@ -62,5 +65,32 @@ def win():
 
 win()
 
+######################################################################
+# NEXT GAME
 
+# Next Game Info Variables ATLANTA 134880 
+nextOppATL = NGparseATL["events"][0]["strEventAlternate"]
+nextHomeATL = NGparseATL["events"][0]["strHomeTeam"]
+nextAwayATL = NGparseATL["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeATL == "Atlanta Hawks":
+		return str(nextAwayATL)
+	elif nextAwayATL == "Atlanta Hawks":
+		return str(nextHomeATL)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeATL == "Atlanta Hawks":
+		return "Home"
+	else:
+		return "Away"
+
+where()
 

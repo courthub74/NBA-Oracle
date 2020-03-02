@@ -24,7 +24,7 @@ LGparseBKN = json.loads(LGdataBKN)
 NGdataBKN = netsNG.text
 NGparseBKN = json.loads(NGdataBKN)
 
-# info Layout for the Drop Down Menu to Gather from NETS 134861
+# Last Game Info Variables NETS 134861
 netsTeam = parseBKN["teams"][0]["strTeam"]
 yearFormedBKN = parseBKN["teams"][0]["intFormedYear"]
 teamStadiumBKN = parseBKN["teams"][0]["strStadium"]
@@ -61,3 +61,33 @@ def win():
 		return "Nets Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables NETS 134861
+nextOppBKN = NGparseBKN["events"][0]["strEventAlternate"]
+nextHomeBKN = NGparseBKN["events"][0]["strHomeTeam"]
+nextAwayBKN = NGparseBKN["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeBKN == "Brooklyn Nets":
+		return str(nextAwayBKN)
+	elif nextAwayBKN == "Brooklyn Nets":
+		return str(nextHomeBKN)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeBKN == "Brooklyn Nets":
+		return "Home"
+	else:
+		return "Away"
+
+where()

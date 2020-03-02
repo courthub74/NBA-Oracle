@@ -24,7 +24,7 @@ LGparseCHI = json.loads(LGdataCHI)
 NGdataCHI = bullsNG.text
 NGparseCHI = json.loads(NGdataCHI)
 
-# info Layout for the Drop Down Menu to Gather from BULLS 134870
+# Last Game Info Variables BULLS 134870
 bullsTeam = parseCHI["teams"][0]["strTeam"]
 yearFormedCHI = parseCHI["teams"][0]["intFormedYear"]
 teamStadiumCHI = parseCHI["teams"][0]["strStadium"]
@@ -63,3 +63,32 @@ def win():
 		return "Bulls Lose"
 
 win()
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables BULLS 134870
+nextOppCHI = NGparseCHI["events"][0]["strEventAlternate"]
+nextHomeCHI = NGparseCHI["events"][0]["strHomeTeam"]
+nextAwayCHI = NGparseCHI["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeCHI == "Chicago Bulls":
+		return str(nextAwayCHI) + " @ Chicago"
+	elif nextAwayCHI == "Chicago Bulls":
+		return "@" + str(nextHomeCHI)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeCHI == "Chicago Bulls":
+		return "Home"
+	else:
+		return "Away"
+
+where()

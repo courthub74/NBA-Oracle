@@ -22,9 +22,9 @@ LGparseCHA = json.loads(LGdataCHA)
 
 # Next Game Parsed
 NGdataCHA = hornetsNG.text
-NGdataCHA = json.loads(NGdataCHA)
+NGparseCHA = json.loads(NGdataCHA)
 
-# info Layout for the Drop Down Menu to Gather from HORNETS 134881
+# Last Game Info Variables HORNETS 134881
 hornetsTeam = parseCHA["teams"][0]["strTeam"]
 yearFormedCHA = parseCHA["teams"][0]["intFormedYear"]
 teamStadiumCHA = parseCHA["teams"][0]["strStadium"]
@@ -61,3 +61,32 @@ def win():
 		return "Hornets Lose"
 
 win()
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables HORNETS 134881
+nextOppCHA = NGparseCHA["events"][0]["strEventAlternate"]
+nextHomeCHA = NGparseCHA["events"][0]["strHomeTeam"]
+nextAwayCHA = NGparseCHA["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeCHA == "Charlotte Hornets":
+		return str(nextAwayCHA) + " @ Charlotte"
+	elif nextAwayCHA == "Charlotte Hornets":
+		return "@" + str(nextHomeCHA)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeCHA == "Charlotte Hornets":
+		return "Home"
+	else:
+		return "Away"
+
+where()

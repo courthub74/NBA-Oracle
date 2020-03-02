@@ -24,7 +24,7 @@ LGparseBOS = json.loads(LGdataBOS)
 NGdataBOS = celticsNG.text
 NGparseBOS = json.loads(NGdataBOS)
 
-# Info Layout for Drop Down BOSTON 134860
+# Last Game Info Variables BOSTON 134860
 celticsTeam = parseBOS["teams"][0]["strTeam"]
 yearFormedBOS = parseBOS["teams"][0]["intFormedYear"]
 teamStadiumBOS = parseBOS["teams"][0]["strStadium"]
@@ -63,3 +63,31 @@ def win():
 
 win()
 
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables BOSTON 134860
+nextOppBOS = NGparseBOS["events"][0]["strEventAlternate"]
+nextHomeBOS = NGparseBOS["events"][0]["strHomeTeam"]
+nextAwayBOS = NGparseBOS["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeBOS == "Boston Celtics":
+		return str(nextAwayBOS)
+	elif nextAwayBOS == "Boston Celtics":
+		return str(nextHomeBOS)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeBOS == "Boston Celtics":
+		return "Home"
+	else:
+		return "Away"
+
+where()
