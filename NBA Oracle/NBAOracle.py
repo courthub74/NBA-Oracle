@@ -86,7 +86,7 @@ streakOutput.grid(row=15,column=1,sticky=W)
 # NEXT OPPONENT
 nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 nextOpp.grid(row=16,column=0)
-nextOppOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+nextOppOutput = Text(window, width=30, height=1, bg="Black", fg="White")
 nextOppOutput.grid(row=17,column=1,sticky=W)
 
 # NEXT GAME LOCATION
@@ -96,7 +96,7 @@ locNextOutput = Text(window, width=20, height=1, bg="Black", fg="White")
 locNextOutput.grid(row=19,column=1,sticky=W)
 
 # LOGO
-LogoCanvas = Canvas(height=300, width=500, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
+LogoCanvas = Canvas(height=400, width=500, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
 LogoCanvas.grid(row=2,column=3, rowspan=15, sticky=W)
 
 # SPACE
@@ -547,6 +547,9 @@ def callNextOpp(*args):
 	if TeamsVar.get() == "Charlotte Hornets":
 		nextOppOutput.delete(0.0, END)
 		nextOppOutput.insert(INSERT, charlotte.next())
+	if TeamsVar.get() == "Chicago Bulls":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, chicago.next())
 
 
 TeamsVar.trace("w", callNextOpp)
@@ -565,6 +568,10 @@ def callNextLoc(*args):
 	if TeamsVar.get() == "Charlotte Hornets":
 		locNextOutput.delete(0.0, END)
 		locNextOutput.insert(INSERT, charlotte.where())
+	if TeamsVar.get() == "Chicago Bulls":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, chicago.where())
+
 
 TeamsVar.trace("w", callNextLoc)
 
