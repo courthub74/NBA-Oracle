@@ -669,9 +669,68 @@ def callLabelCanvas(*args):
 	if TeamsVar.get() == "Atlanta Hawks":
 		LabelCanvas.delete(0.0, END)
 		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Boston Celtics":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Brooklyn Nets":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Brooklyn Nets":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Charlotte Hornets":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Chicago Bulls":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Dallas Mavericks":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Denver Nuggets":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Detroit Pistons":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Golden State Warriors":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Houston Rockets":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Indiana Pacers":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Los Angeles Clippers":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Los Angeles Lakers":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Memphis Grizzlies":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Miami Heat":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Milwaukee Bucks":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+	if TeamsVar.get() == "Minnesota Timberwolves":
+		LabelCanvas.delete(0.0, END)
+		LabelCanvas.insert(INSERT, "Team Logo:")
+
 
 TeamsVar.trace("w", callLabelCanvas)
 
 
 
 window.mainloop()
+
+
+
+
