@@ -22,7 +22,7 @@ import minnesota
 
 # WINDOW
 window = Tk()
-window.geometry("900x800")
+window.geometry("1000x800")
 window.iconbitmap("icon/NBAclear.ico")
 window.title("NBA Oracle")
 window.configure(background="Darkblue")
@@ -62,7 +62,7 @@ teamStadiumOutput.grid(row=7,column=1,sticky=W)
 # TEAM INFO
 teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 teamInfo.grid(row=8,column=0)
-teamInfoOutput = Text(window, width=40, height=5, wrap=WORD, bg="Black", fg="White")
+teamInfoOutput = Text(window, width=55, height=5, wrap=WORD, bg="Black", fg="White")
 teamInfoOutput.grid(row=9,column=1,sticky=W)
 
 # LAST GAME
@@ -103,7 +103,7 @@ nextDateOutput.grid(row=21, column=1,sticky=W)
 
 # LOGO
 LogoCanvas = Canvas(height=400, width=500, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LogoCanvas.grid(row=2,column=3, rowspan=15, sticky=W)
+LogoCanvas.grid(row=2,column=6, rowspan=15, sticky=W)
 
 # SPACE
 space = Canvas(height=1, width=50, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
@@ -111,7 +111,7 @@ space.grid(row=4,column=2)
 
 # LOGO LABEL
 LabelCanvas = Text(window, height=1, width=10, borderwidth=0, highlightthickness=0, bg="Darkblue", fg="White", font="Helvetica 15", bd=0)
-LabelCanvas.grid(row=1,column=3,sticky=SW)
+LabelCanvas.grid(row=1,column=6,sticky=SW)
 
 
 
@@ -648,6 +648,9 @@ def callNextDate(*args):
 	if TeamsVar.get() == "Detroit Pistons":
 		nextDateOutput.delete(0.0, END)
 		nextDateOutput.insert(INSERT, detroit.nextOppDateDET)
+	if TeamsVar.get() == "Golden State Warriors":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, goldenstate.nextOppDateGS)
 
 
 TeamsVar.trace("w", callNextDate)
