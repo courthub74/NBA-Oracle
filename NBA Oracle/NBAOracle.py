@@ -110,7 +110,7 @@ space = Canvas(height=1, width=50, borderwidth=0, highlightthickness=0, bg="Dark
 space.grid(row=4,column=2)
 
 # LOGO LABEL
-LabelCanvas = Text(window, height=1, width=10, borderwidth=0, highlightthickness=0, bg="Darkblue", fg="White", font="Helvetica 15", bd=0)
+LabelCanvas = Text(window, height=1, width=10, borderwidth=0, highlightthickness=0, bg="Darkblue", fg="White", font="Denmark 15", bd=0)
 LabelCanvas.grid(row=1,column=6,sticky=SW)
 
 
@@ -651,6 +651,9 @@ def callNextDate(*args):
 	if TeamsVar.get() == "Golden State Warriors":
 		nextDateOutput.delete(0.0, END)
 		nextDateOutput.insert(INSERT, goldenstate.nextOppDateGS)
+	if TeamsVar.get() == "Houston Rockets":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, houston.nextOppDateHOU)
 
 
 TeamsVar.trace("w", callNextDate)
