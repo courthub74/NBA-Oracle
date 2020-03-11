@@ -92,8 +92,14 @@ nextOppOutput.grid(row=17,column=1,sticky=W)
 # NEXT GAME LOCATION
 locNext = Label(window, text="Where:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 locNext.grid(row=18,column=0)
-locNextOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+locNextOutput = Text(window, width=40, height=1, bg="Black", fg="White")
 locNextOutput.grid(row=19,column=1,sticky=W)
+
+# NEXT GAME DATE 
+nextDate = Label(window, text="Date:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+nextDate.grid(row=20, column=0)
+nextDateOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+nextDateOutput.grid(row=21, column=1,sticky=W)
 
 # LOGO
 LogoCanvas = Canvas(height=400, width=500, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
@@ -568,6 +574,9 @@ def callNextOpp(*args):
 	if TeamsVar.get() == "Houston Rockets":
 		nextOppOutput.delete(0.0, END)
 		nextOppOutput.insert(INSERT, houston.next())
+	if TeamsVar.get() == "Indiana Pacers":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, indiana.next())
 
 
 TeamsVar.trace("w", callNextOpp)
@@ -607,9 +616,41 @@ def callNextLoc(*args):
 	if TeamsVar.get() == "Houston Rockets":
 		locNextOutput.delete(0.0, END)
 		locNextOutput.insert(INSERT, houston.where())
-
+	if TeamsVar.get() == "Indiana Pacers":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, indiana.where())
 
 TeamsVar.trace("w", callNextLoc)
+
+# CALL NEXT DATE
+def callNextDate(*args):
+	if TeamsVar.get() == "Atlanta Hawks":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, atlanta.nextOppDateATL)
+	if TeamsVar.get() == "Boston Celtics":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, boston.nextOppDateBOS)
+	if TeamsVar.get() == "Brooklyn Nets":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, brooklyn.nextOppDateBKN)
+	if TeamsVar.get() == "Charlotte Hornets":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, charlotte.nextOppDateCHA)
+	if TeamsVar.get() == "Chicago Bulls":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, chicago.nextOppDateCHI)
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, cleveland.nextOppDateCLE)
+	if TeamsVar.get() == "Dallas Mavericks":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, dallas.nextOppDateDAL)
+	if TeamsVar.get() == "Detroit Pistons":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, detroit.nextOppDateDET)
+
+
+TeamsVar.trace("w", callNextDate)
 
 # CALL TEAM LOGO
 def callTeamLogo(*args):
