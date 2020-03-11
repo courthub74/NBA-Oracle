@@ -44,7 +44,7 @@ droplist.grid(row=1,column=1,sticky=W)
 # TEAM SELECTED
 teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 teamSelected.grid(row=2,column=0)
-teamSelectedOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+teamSelectedOutput = Text(window, width=40, height=1, bg="Black", fg="White")
 teamSelectedOutput.grid(row=3,column=1,sticky=W)
 
 # YEAR FORMED
@@ -56,7 +56,7 @@ yearFormedOutput.grid(row=5,column=1,sticky=W)
 # TEAM STADIUM
 teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 teamStadium.grid(row=6,column=0)
-teamStadiumOutput = Text(window, width=20, height=1, bg="Black", fg="White")
+teamStadiumOutput = Text(window, width=40, height=1, bg="Black", fg="White")
 teamStadiumOutput.grid(row=7,column=1,sticky=W)
 
 # TEAM INFO
@@ -86,7 +86,7 @@ streakOutput.grid(row=15,column=1,sticky=W)
 # NEXT OPPONENT
 nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
 nextOpp.grid(row=16,column=0)
-nextOppOutput = Text(window, width=30, height=1, bg="Black", fg="White")
+nextOppOutput = Text(window, width=40, height=1, bg="Black", fg="White")
 nextOppOutput.grid(row=17,column=1,sticky=W)
 
 # NEXT GAME LOCATION
@@ -550,6 +550,24 @@ def callNextOpp(*args):
 	if TeamsVar.get() == "Chicago Bulls":
 		nextOppOutput.delete(0.0, END)
 		nextOppOutput.insert(INSERT, chicago.next())
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, cleveland.next())
+	if TeamsVar.get() == "Dallas Mavericks":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, dallas.next())
+	if TeamsVar.get() == "Denver Nuggets":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, denver.next())
+	if TeamsVar.get() == "Detroit Pistons":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, detroit.next())
+	if TeamsVar.get() == "Golden State Warriors":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, goldenstate.next())
+	if TeamsVar.get() == "Houston Rockets":
+		nextOppOutput.delete(0.0, END)
+		nextOppOutput.insert(INSERT, houston.next())
 
 
 TeamsVar.trace("w", callNextOpp)
@@ -571,6 +589,24 @@ def callNextLoc(*args):
 	if TeamsVar.get() == "Chicago Bulls":
 		locNextOutput.delete(0.0, END)
 		locNextOutput.insert(INSERT, chicago.where())
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, cleveland.where())
+	if TeamsVar.get() == "Dallas Mavericks":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, dallas.where())
+	if TeamsVar.get() == "Denver Nuggets":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, denver.where())
+	if TeamsVar.get() == "Detroit Pistons":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, detroit.where())
+	if TeamsVar.get() == "Golden State Warriors":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, goldenstate.where())
+	if TeamsVar.get() == "Houston Rockets":
+		locNextOutput.delete(0.0, END)
+		locNextOutput.insert(INSERT, houston.where())
 
 
 TeamsVar.trace("w", callNextLoc)
