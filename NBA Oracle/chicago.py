@@ -71,26 +71,24 @@ win()
 nextOppCHI = NGparseCHI["events"][0]["strEventAlternate"]
 nextHomeCHI = NGparseCHI["events"][0]["strHomeTeam"]
 nextAwayCHI = NGparseCHI["events"][0]["strAwayTeam"]
+nextOppDateCHI = NGparseCHI["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeCHI == "Chicago Bulls":
-		return str(nextAwayCHI) + " @" + teamStadiumCHI
+		return str(nextAwayCHI)
 	elif nextAwayCHI == "Chicago Bulls":
 		return "@" + str(nextHomeCHI)
 
 next()
 
-# DETERMINE THE STADIUM
-
-'''you would have to trace the oppteam string to their stadium string'''
 
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
 	if nextHomeCHI == "Chicago Bulls":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumCHI
 	else:
 		return "Away"
 

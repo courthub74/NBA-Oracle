@@ -60,3 +60,35 @@ def win():
 		return "Pacers Lose"
 
 win()
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables PACERS 134873
+nextOppIND = NGparseIND["events"][0]["strEventAlternate"]
+nextHomeIND = NGparseIND["events"][0]["strHomeTeam"]
+nextAwayIND = NGparseIND["events"][0]["strAwayTeam"]
+nextOppDateIND = NGparseIND["events"][0]["dateEventLocal"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeIND == "Indiana Pacers":
+		return str(nextAwayIND)  + " " + nextOppDateIND
+	elif nextAwayIND == "Indiana Pacers":
+		return "@" + str(nextHomeIND) + " " + nextOppDateIND
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeIND == "Indiana Pacers":
+		return "@Home" + " --- " + teamStadiumIND
+	else:
+		return "Away"
+
+where()
+
+# If you need to print the API data for review
+# print(json.dumps(NGparseIND, indent=4))

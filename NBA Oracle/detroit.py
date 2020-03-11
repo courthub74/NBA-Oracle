@@ -74,22 +74,25 @@ win()
 nextOppDET = NGparseDET["events"][0]["strEventAlternate"]
 nextHomeDET = NGparseDET["events"][0]["strHomeTeam"]
 nextAwayDET = NGparseDET["events"][0]["strAwayTeam"]
+nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
+nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeDET == "Detroit Pistons":
-		return str(nextAwayDET) + " @" + teamStadiumDET
+		return str(nextAwayDET)
 	elif nextAwayDET == "Detroit Pistons":
 		return "@" + str(nextHomeDET)
 
 next()
 
+
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
 	if nextHomeDET == "Detroit Pistons":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumDET
 	else:
 		return "Away"
 

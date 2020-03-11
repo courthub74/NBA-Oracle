@@ -70,25 +70,25 @@ win()
 nextOppDAL = NGparseDAL["events"][0]["strEventAlternate"]
 nextHomeDAL = NGparseDAL["events"][0]["strHomeTeam"]
 nextAwayDAL = NGparseDAL["events"][0]["strAwayTeam"]
+nextOppDateDAL = NGparseDAL["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeDAL == "Dallas Mavericks":
-		return str(nextAwayDAL) + " @" + teamStadiumDAL
+		return str(nextAwayDAL)
 	elif nextAwayDAL == "Dallas Mavericks":
 		return "@" + str(nextHomeDAL)
 
 next()
 
+
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
 	if nextHomeDAL == "Dallas Mavericks":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumDAL
 	else:
 		return "Away"
 
 where()
-
-

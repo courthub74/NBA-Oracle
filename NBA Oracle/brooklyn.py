@@ -70,12 +70,13 @@ win()
 nextOppBKN = NGparseBKN["events"][0]["strEventAlternate"]
 nextHomeBKN = NGparseBKN["events"][0]["strHomeTeam"]
 nextAwayBKN = NGparseBKN["events"][0]["strAwayTeam"]
+nextOppDateBKN = NGparseBKN["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeBKN == "Brooklyn Nets":
-		return str(nextAwayBKN) + " @" + teamStadiumBKN
+		return str(nextAwayBKN)
 	elif nextAwayBKN == "Brooklyn Nets":
 		return "@" + str(nextHomeBKN)
 
@@ -86,7 +87,7 @@ next()
 
 def where():
 	if nextHomeBKN == "Brooklyn Nets":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumBKN
 	else:
 		return "Away"
 

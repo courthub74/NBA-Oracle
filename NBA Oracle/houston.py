@@ -70,14 +70,15 @@ win()
 nextOppHOU = NGparseHOU["events"][0]["strEventAlternate"]
 nextHomeHOU = NGparseHOU["events"][0]["strHomeTeam"]
 nextAwayHOU = NGparseHOU["events"][0]["strAwayTeam"]
+nextOppDateHOU = NGparseHOU["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeHOU == "Houston Rockets":
-		return str(nextAwayHOU) + " @" + teamStadiumHOU
+		return str(nextAwayHOU)  
 	elif nextAwayHOU == "Houston Rockets":
-		return "@" + str(nextHomeHOU)
+		return "@" + str(nextHomeHOU) 
 
 next()
 
@@ -85,7 +86,7 @@ next()
 
 def where():
 	if nextHomeHOU == "Houston Rockets":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumHOU
 	else:
 		return "Away"
 

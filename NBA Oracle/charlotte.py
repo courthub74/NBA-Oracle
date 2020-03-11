@@ -69,12 +69,13 @@ win()
 nextOppCHA = NGparseCHA["events"][0]["strEventAlternate"]
 nextHomeCHA = NGparseCHA["events"][0]["strHomeTeam"]
 nextAwayCHA = NGparseCHA["events"][0]["strAwayTeam"]
+nextOppDateCHA = NGparseCHA["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeCHA == "Charlotte Hornets":
-		return str(nextAwayCHA) + " @" + teamStadiumCHA
+		return str(nextAwayCHA)
 	elif nextAwayCHA == "Charlotte Hornets":
 		return "@" + str(nextHomeCHA)
 
@@ -85,7 +86,7 @@ next()
 
 def where():
 	if nextHomeCHA == "Charlotte Hornets":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumCHA
 	else:
 		return "Away"
 

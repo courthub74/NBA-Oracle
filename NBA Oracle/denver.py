@@ -72,24 +72,25 @@ win()
 nextOppDEN = NGparseDEN["events"][0]["strEventAlternate"]
 nextHomeDEN = NGparseDEN["events"][0]["strHomeTeam"]
 nextAwayDEN = NGparseDEN["events"][0]["strAwayTeam"]
+nextOppDateDEN = NGparseDEN["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeDEN == "Denver Nuggets":
-		return str(nextAwayDEN) + " @" + teamStadiumDEN
+		return str(nextAwayDEN)
 	elif nextAwayDEN == "Denver Nuggets":
 		return "@" + str(nextHomeDEN)
 
 next()
 
+
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
 	if nextHomeDEN == "Denver Nuggets":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumDEN
 	else:
 		return "Away"
 
 where()
-

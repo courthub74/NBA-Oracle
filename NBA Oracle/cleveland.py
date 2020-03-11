@@ -71,22 +71,24 @@ win()
 nextOppCLE = NGparseCLE["events"][0]["strEventAlternate"]
 nextHomeCLE = NGparseCLE["events"][0]["strHomeTeam"]
 nextAwayCLE = NGparseCLE["events"][0]["strAwayTeam"]
+nextOppDateCLE = NGparseCLE["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeCLE == "Cleveland Cavaliers":
-		return str(nextAwayCLE) + " @" + teamStadiumCLE
+		return str(nextAwayCLE)
 	elif nextAwayCLE == "Cleveland Cavaliers":
 		return "@" + str(nextHomeCLE)
 
 next()
 
+
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
 	if nextHomeCLE == "Cleveland Cavaliers":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumCLE
 	else:
 		return "Away"
 

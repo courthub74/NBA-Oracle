@@ -70,12 +70,13 @@ win()
 nextOppBOS = NGparseBOS["events"][0]["strEventAlternate"]
 nextHomeBOS = NGparseBOS["events"][0]["strHomeTeam"]
 nextAwayBOS = NGparseBOS["events"][0]["strAwayTeam"]
+nextOppDateBOS = NGparseBOS["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeBOS == "Boston Celtics":
-		return str(nextAwayBOS) + " @" + teamStadiumBOS
+		return str(nextAwayBOS)
 	elif nextAwayBOS == "Boston Celtics":
 		return "@" + str(nextHomeBOS)
 
@@ -86,8 +87,12 @@ next()
 
 def where():
 	if nextHomeBOS == "Boston Celtics":
-		return "Home"
+		return "@Home"  + " --- " + teamStadiumBOS
 	else:
 		return "Away"
 
 where()
+
+
+# In Case you need to review API data
+# print(json.dumps(x, indent=4))

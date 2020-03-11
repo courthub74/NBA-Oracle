@@ -73,22 +73,24 @@ win()
 nextOppGS = NGparseGS["events"][0]["strEventAlternate"]
 nextHomeGS = NGparseGS["events"][0]["strHomeTeam"]
 nextAwayGS = NGparseGS["events"][0]["strAwayTeam"]
+nextOppDateGS = NGparseGS["events"][0]["dateEventLocal"]
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeGS == "Golden State Warriors":
-		return str(nextAwayGS) + " @" + teamStadiumGS
+		return str(nextAwayGS)
 	elif nextAwayGS == "Golden State Warriors":
 		return "@" + str(nextHomeGS)
 
 next()
 
+
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
 	if nextHomeGS == "Golden State Warriors":
-		return "Home"
+		return "@Home" + " --- " + teamStadiumGS
 	else:
 		return "Away"
 
