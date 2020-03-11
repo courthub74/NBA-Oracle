@@ -76,12 +76,15 @@ nextAwayCHI = NGparseCHI["events"][0]["strAwayTeam"]
 
 def next():
 	if nextHomeCHI == "Chicago Bulls":
-		return str(nextAwayCHI) + " @ Chicago"
+		return str(nextAwayCHI) + " @" + teamStadiumCHI
 	elif nextAwayCHI == "Chicago Bulls":
 		return "@" + str(nextHomeCHI)
 
 next()
 
+# DETERMINE THE STADIUM
+
+'''you would have to trace the oppteam string to their stadium string'''
 
 # DETERMINING WHERE NEXT OPPONENT
 

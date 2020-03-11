@@ -63,3 +63,33 @@ def win():
 		return "Nuggets Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables NUGGETS 134885
+nextOppDEN = NGparseDEN["events"][0]["strEventAlternate"]
+nextHomeDEN = NGparseDEN["events"][0]["strHomeTeam"]
+nextAwayDEN = NGparseDEN["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeDEN == "Denver Nuggets":
+		return str(nextAwayDEN) + " @" + teamStadiumDEN
+	elif nextAwayDEN == "Denver Nuggets":
+		return "@" + str(nextHomeDEN)
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeDEN == "Denver Nuggets":
+		return "Home"
+	else:
+		return "Away"
+
+where()
+

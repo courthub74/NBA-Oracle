@@ -61,3 +61,34 @@ def win():
 		return "Mavs Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables MAVERICKS 134875
+nextOppDAL = NGparseDAL["events"][0]["strEventAlternate"]
+nextHomeDAL = NGparseDAL["events"][0]["strHomeTeam"]
+nextAwayDAL = NGparseDAL["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeDAL == "Dallas Mavericks":
+		return str(nextAwayDAL) + " @" + teamStadiumDAL
+	elif nextAwayDAL == "Dallas Mavericks":
+		return "@" + str(nextHomeDAL)
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeDAL == "Dallas Mavericks":
+		return "Home"
+	else:
+		return "Away"
+
+where()
+
+

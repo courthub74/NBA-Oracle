@@ -62,3 +62,32 @@ def win():
 		return "Cavs Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables CAVALIERS 134871
+nextOppCLE = NGparseCLE["events"][0]["strEventAlternate"]
+nextHomeCLE = NGparseCLE["events"][0]["strHomeTeam"]
+nextAwayCLE = NGparseCLE["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeCLE == "Cleveland Cavaliers":
+		return str(nextAwayCLE) + " @" + teamStadiumCLE
+	elif nextAwayCLE == "Cleveland Cavaliers":
+		return "@" + str(nextHomeCLE)
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeCLE == "Cleveland Cavaliers":
+		return "Home"
+	else:
+		return "Away"
+
+where()

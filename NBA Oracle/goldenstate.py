@@ -65,3 +65,31 @@ def win():
 		return "Warriors Lose"
 
 win()
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables WARRIORS 134865
+nextOppGS = NGparseGS["events"][0]["strEventAlternate"]
+nextHomeGS = NGparseGS["events"][0]["strHomeTeam"]
+nextAwayGS = NGparseGS["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeGS == "Golden State Warriors":
+		return str(nextAwayGS) + " @" + teamStadiumGS
+	elif nextAwayGS == "Golden State Warriors":
+		return "@" + str(nextHomeGS)
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeGS == "Golden State Warriors":
+		return "Home"
+	else:
+		return "Away"
+
+where()

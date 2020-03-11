@@ -61,3 +61,32 @@ def win():
 		return "Rockets Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables ROCKETS 134876
+nextOppHOU = NGparseHOU["events"][0]["strEventAlternate"]
+nextHomeHOU = NGparseHOU["events"][0]["strHomeTeam"]
+nextAwayHOU = NGparseHOU["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeHOU == "Houston Rockets":
+		return str(nextAwayHOU) + " @" + teamStadiumHOU
+	elif nextAwayHOU == "Houston Rockets":
+		return "@" + str(nextHomeHOU)
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeHOU == "Houston Rockets":
+		return "Home"
+	else:
+		return "Away"
+
+where()

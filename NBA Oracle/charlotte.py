@@ -74,7 +74,7 @@ nextAwayCHA = NGparseCHA["events"][0]["strAwayTeam"]
 
 def next():
 	if nextHomeCHA == "Charlotte Hornets":
-		return str(nextAwayCHA) + " @ Charlotte"
+		return str(nextAwayCHA) + " @" + teamStadiumCHA
 	elif nextAwayCHA == "Charlotte Hornets":
 		return "@" + str(nextHomeCHA)
 

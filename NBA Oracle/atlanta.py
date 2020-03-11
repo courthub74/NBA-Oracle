@@ -77,9 +77,9 @@ nextAwayATL = NGparseATL["events"][0]["strAwayTeam"]
 
 def next():
 	if nextHomeATL == "Atlanta Hawks":
-		return str(nextAwayATL)
+		return str(nextAwayATL) + " @" + teamStadiumATL 
 	elif nextAwayATL == "Atlanta Hawks":
-		return str(nextHomeATL)
+		return "@" + str(nextHomeATL)
 
 next()
 

@@ -66,3 +66,31 @@ def win():
 
 win()
 
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables PISTONS 134872
+nextOppDET = NGparseDET["events"][0]["strEventAlternate"]
+nextHomeDET = NGparseDET["events"][0]["strHomeTeam"]
+nextAwayDET = NGparseDET["events"][0]["strAwayTeam"]
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeDET == "Detroit Pistons":
+		return str(nextAwayDET) + " @" + teamStadiumDET
+	elif nextAwayDET == "Detroit Pistons":
+		return "@" + str(nextHomeDET)
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeDET == "Detroit Pistons":
+		return "Home"
+	else:
+		return "Away"
+
+where()

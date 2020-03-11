@@ -75,9 +75,9 @@ nextAwayBKN = NGparseBKN["events"][0]["strAwayTeam"]
 
 def next():
 	if nextHomeBKN == "Brooklyn Nets":
-		return str(nextAwayBKN)
+		return str(nextAwayBKN) + " @" + teamStadiumBKN
 	elif nextAwayBKN == "Brooklyn Nets":
-		return str(nextHomeBKN)
+		return "@" + str(nextHomeBKN)
 
 next()
 
