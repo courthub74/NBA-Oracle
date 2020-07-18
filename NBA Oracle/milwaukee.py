@@ -44,7 +44,7 @@ teamHome = homeTeamMIL
 teamAway = awayTeamMIL 
 
 scoreHome = int(homeScoreMIL)
-scoreAway = int(awayScoreMIL)   # Turned these into simple variables for my own sanity
+scoreAway = int(awayScoreMIL)   # Turned these into simple variables for my own sanity for the win()
 
 def win():
 	if scoreHome < 80 and scoreAway < 80:

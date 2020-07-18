@@ -66,18 +66,30 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables HORNETS 134881
-nextOppCHA = NGparseCHA["events"][0]["strEventAlternate"]
-nextHomeCHA = NGparseCHA["events"][0]["strHomeTeam"]
-nextAwayCHA = NGparseCHA["events"][0]["strAwayTeam"]
-nextOppDateCHA = NGparseCHA["events"][0]["dateEventLocal"]
+try:
+	nextOppCHA = NGparseCHA["events"][0]["strEventAlternate"]
+	nextHomeCHA = NGparseCHA["events"][0]["strHomeTeam"]
+	nextAwayCHA = NGparseCHA["events"][0]["strAwayTeam"]
+	nextOppDateCHA = NGparseCHA["events"][0]["dateEventLocal"]
+except:
+	nextOppCHA = "No Games Being Played"
+	nextHomeCHA = "No Games Being Played"
+	nextAwayCHA = "No Games Being Played"
+	nextOppDateCHA = "N/A"
 
 # DETERMINING NEXT OPPONENT
 
 def next():
-	if nextHomeCHA == "Charlotte Hornets":
-		return str(nextAwayCHA)
-	elif nextAwayCHA == "Charlotte Hornets":
-		return "@" + str(nextHomeCHA)
+	try:
+		if nextHomeCHA == "Charlotte Hornets":
+			return str(nextAwayCHA)
+		elif nextAwayCHA == "Charlotte Hornets":
+			return "@" + str(nextHomeCHA)
+	except:
+		if nextHomeCHA == "No Games Being Played":
+			return "No Games Being Played"
+		elif nextAwayCHA == "No Games Being Played":
+			return "No Games Being Played"
 
 next()
 
@@ -85,9 +97,15 @@ next()
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
-	if nextHomeCHA == "Charlotte Hornets":
-		return "@Home" + " --- " + teamStadiumCHA
-	else:
-		return "Away"
+	try:
+		if nextHomeCHA == "Charlotte Hornets":
+			return "@Home" + " --- " + teamStadiumCHA
+		elif nextAwayCHA == "Charlotte Hornets":
+			return "Away"
+	except:
+		if nextHomeCHA == "No Games Being Played":
+			return "No Games Being Played"
+		elif nextAwayCHA == "No Games Being Played":
+			return "No Games Being Played"
 
 where()

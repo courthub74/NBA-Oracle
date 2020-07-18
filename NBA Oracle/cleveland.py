@@ -68,10 +68,16 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables CAVALIERS 134871
-nextOppCLE = NGparseCLE["events"][0]["strEventAlternate"]
-nextHomeCLE = NGparseCLE["events"][0]["strHomeTeam"]
-nextAwayCLE = NGparseCLE["events"][0]["strAwayTeam"]
-nextOppDateCLE = NGparseCLE["events"][0]["dateEventLocal"]
+try:
+	nextOppCLE = NGparseCLE["events"][0]["strEventAlternate"]
+	nextHomeCLE = NGparseCLE["events"][0]["strHomeTeam"]
+	nextAwayCLE = NGparseCLE["events"][0]["strAwayTeam"]
+	nextOppDateCLE = NGparseCLE["events"][0]["dateEventLocal"]
+except:
+	nextOppCLE = "No Games Being Played"
+	nextHomeCLE = "No Games Being Played"
+	nextAwayCLE = "No Games Being Played"
+	nextOppDateCLE = "No Games Being Played"
 
 # DETERMINING NEXT OPPONENT
 

@@ -70,10 +70,16 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables WARRIORS 134865
-nextOppGS = NGparseGS["events"][0]["strEventAlternate"]
-nextHomeGS = NGparseGS["events"][0]["strHomeTeam"]
-nextAwayGS = NGparseGS["events"][0]["strAwayTeam"]
-nextOppDateGS = NGparseGS["events"][0]["dateEventLocal"]
+try:
+	nextOppGS = NGparseGS["events"][0]["strEventAlternate"]
+	nextHomeGS = NGparseGS["events"][0]["strHomeTeam"]
+	nextAwayGS = NGparseGS["events"][0]["strAwayTeam"]
+	nextOppDateGS = NGparseGS["events"][0]["dateEventLocal"]
+except:
+	nextOppGS = "No Games Being Played"
+	nextHomeGS = "No Games Being Played"
+	nextAwayGS = "No Games Being Played"
+	nextOppDateGS = "No Games Being Played"
 
 # DETERMINING NEXT OPPONENT
 

@@ -17,12 +17,10 @@ import losangelesL
 import memphis
 import miami
 import milwaukee
-import minnesota
-
 
 # WINDOW
 window = Tk()
-window.geometry("1000x800")
+window.geometry("500x900")
 window.iconbitmap("icon/NBAclear.ico")
 window.title("NBA Oracle")
 window.configure(background="Darkblue")
@@ -42,77 +40,60 @@ droplist.config(width=45, height=1, fg="Darkblue")
 droplist.grid(row=1,column=1,sticky=W)
 
 # TEAM SELECTED
-teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
+teamSelected = Label(window, text="Team Selected:", bg="Darkblue", fg="White")
 teamSelected.grid(row=2,column=0)
 teamSelectedOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-teamSelectedOutput.grid(row=3,column=1,sticky=W)
+teamSelectedOutput.grid(row=2,column=1,sticky=W)
 
 # YEAR FORMED
-yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-yearFormed.grid(row=4,column=0)
-yearFormedOutput = Text(window, width=20, height=1, bg="Black", fg="White")
-yearFormedOutput.grid(row=5,column=1,sticky=W)
+yearFormed = Label(window, text="Year Formed:", bg="Darkblue", fg="White")
+yearFormed.grid(row=3,column=0)
+yearFormedOutput = Text(window, width=40, height=1, bg="Black", fg="White")
+yearFormedOutput.grid(row=3,column=1,sticky=W)
 
 # TEAM STADIUM
-teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-teamStadium.grid(row=6,column=0)
+teamStadium = Label(window, text="Team Stadium:", bg="Darkblue", fg="White")
+teamStadium.grid(row=4,column=0)
 teamStadiumOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-teamStadiumOutput.grid(row=7,column=1,sticky=W)
+teamStadiumOutput.grid(row=4,column=1,sticky=W)
 
 # TEAM INFO
-teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-teamInfo.grid(row=8,column=0)
-teamInfoOutput = Text(window, width=55, height=5, wrap=WORD, bg="Black", fg="White")
-teamInfoOutput.grid(row=9,column=1,sticky=W)
+teamInfo = Label(window, text="Team Info:", bg="Darkblue", fg="White")
+teamInfo.grid(row=5,column=0)
+teamInfoOutput = Text(window, width=40, height=5, wrap=WORD, bg="Black", fg="White")
+teamInfoOutput.grid(row=5,column=1,sticky=W)
 
 # LAST GAME
-lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-lastGame.grid(row=10,column=0)
+lastGame = Label(window, text="Last Game Played:", bg="Darkblue", fg="White")
+lastGame.grid(row=6,column=0)
 lastGameOutput = Text(window, width=40, height=4, bg="Black", fg="White")
-lastGameOutput.grid(row=11,column=1,sticky=W)
+lastGameOutput.grid(row=6,column=1,sticky=W)
 
 # WIN LOSS 
-outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-outcome.grid(row=12,column=0)
-outcomeOutput = Text(window, width=20, height=1, bg="Black", fg="White")
-outcomeOutput.grid(row=13,column=1,sticky=W)
+outcome = Label(window, text="Last Game Win/Loss:", bg="Darkblue", fg="White")
+outcome.grid(row=7,column=0)
+outcomeOutput = Text(window, width=40, height=1, bg="Black", fg="White")
+outcomeOutput.grid(row=7,column=1,sticky=W)
 
 # WIN STREAK
-streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-streak.grid(row=14,column=0)
-streakOutput = Text(window, width=20, height=1, bg="Black", fg="White")
-streakOutput.grid(row=15,column=1,sticky=W)
+streak = Label(window, text="Win Streak:", bg="Darkblue", fg="White")
+streak.grid(row=8,column=0)
+streakOutput = Text(window, width=40, height=1, bg="Black", fg="White")
+streakOutput.grid(row=8,column=1,sticky=W)
 
 # NEXT OPPONENT
-nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-nextOpp.grid(row=16,column=0)
+nextOpp = Label(window, text="Next Opponent:", bg="Darkblue", fg="White")
+nextOpp.grid(row=9,column=0)
 nextOppOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-nextOppOutput.grid(row=17,column=1,sticky=W)
-
-# NEXT GAME LOCATION
-locNext = Label(window, text="Where:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-locNext.grid(row=18,column=0)
-locNextOutput = Text(window, width=40, height=1, bg="Black", fg="White")
-locNextOutput.grid(row=19,column=1,sticky=W)
-
-# NEXT GAME DATE 
-nextDate = Label(window, text="Date:", bg="Darkblue", fg="White", font="Helvetica 10 bold")
-nextDate.grid(row=20, column=0)
-nextDateOutput = Text(window, width=20, height=1, bg="Black", fg="White")
-nextDateOutput.grid(row=21, column=1,sticky=W)
+nextOppOutput.grid(row=9,column=1,sticky=W)
 
 # LOGO
-LogoCanvas = Canvas(height=400, width=500, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-LogoCanvas.grid(row=2,column=6, rowspan=15, sticky=W)
-
-# SPACE
-space = Canvas(height=1, width=50, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
-space.grid(row=4,column=2)
+LogoCanvas = Canvas(height=300, width=300, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
+LogoCanvas.grid(row=10,column=1)
 
 # LOGO LABEL
-LabelCanvas = Text(window, height=1, width=10, borderwidth=0, highlightthickness=0, bg="Darkblue", fg="White", font="Denmark 15", bd=0)
-LabelCanvas.grid(row=1,column=6,sticky=SW)
-
+LabelCanvas = Canvas(height=1, width=3, borderwidth=0, highlightthickness=0, bg="Darkblue", bd=0)
+LabelCanvas.grid(row=10,column=0)
 
 
 # FUNCTIONALITY
@@ -171,9 +152,6 @@ def callTeamSelected(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		teamSelectedOutput.delete(0.0, END)
 		teamSelectedOutput.insert(INSERT, milwaukee.bucksTeam)
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		teamSelectedOutput.delete(0.0, END)
-		teamSelectedOutput.insert(INSERT, minnesota.twolvesTeam)
 
 TeamsVar.trace("w", callTeamSelected) #Using the TRACE method associated with the TeamsVar string variable 
 											# I directly called the function callTeamSelected 'w' for write writing to textfield
@@ -231,9 +209,6 @@ def callYearFormed(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		yearFormedOutput.delete(0.0, END)
 		yearFormedOutput.insert(INSERT, milwaukee.yearFormedMIL)
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		yearFormedOutput.delete(0.0, END)
-		yearFormedOutput.insert(INSERT, minnesota.yearFormedMIN)
 
 TeamsVar.trace("w", callYearFormed)
 
@@ -308,9 +283,6 @@ def callTeamStadium(*args):
 		teamStadiumOutput.delete(0.0, END)
 		milwaukee.teamStadiumMIL
 		teamStadiumOutput.insert(INSERT, milwaukee.teamStadiumMIL)
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		teamStadiumOutput.delete(0.0, END)
-		teamStadiumOutput.insert(INSERT, minnesota.teamStadiumMIN)
 		
 TeamsVar.trace("w", callTeamStadium)
 
@@ -384,10 +356,6 @@ def callTeamInfo(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		teamInfoOutput.delete(0.0, END)
 		teamInfoOutput.insert(INSERT, milwaukee.teamInfoMIL)
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		teamInfoOutput.delete(0.0, END)
-		teamInfoOutput.insert(INSERT, minnesota.teamInfoMIN)
-
 
 TeamsVar.trace("w", callTeamInfo)
 
@@ -461,9 +429,6 @@ def callLastGame(*args):
 		lastGameOutput.delete(0.0, END)
 		milwaukee.bucksGame
 		lastGameOutput.insert(INSERT, milwaukee.bucksGame)
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		lastGameOutput.delete(0.0, END)
-		lastGameOutput.insert(INSERT, minnesota.twolvesGame)
 
 TeamsVar.trace("w", callLastGame)
 
@@ -532,131 +497,10 @@ def callWinLoss(*args):
 	if TeamsVar.get() == "Milwaukee Bucks":
 		outcomeOutput.delete(0.0, END)
 		outcomeOutput.insert(INSERT, milwaukee.win())
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		outcomeOutput.delete(0.0, END)
-		outcomeOutput.insert(INSERT, minnesota.win())
+
 
 
 TeamsVar.trace("w", callWinLoss)
-
-# CALL NEXT OPPONENT
-def callNextOpp(*args):
-	if TeamsVar.get() == "Atlanta Hawks":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, atlanta.next())
-	if TeamsVar.get() == "Boston Celtics":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, boston.next())
-	if TeamsVar.get() == "Brooklyn Nets":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, brooklyn.next())
-	if TeamsVar.get() == "Charlotte Hornets":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, charlotte.next())
-	if TeamsVar.get() == "Chicago Bulls":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, chicago.next())
-	if TeamsVar.get() == "Cleveland Cavaliers":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, cleveland.next())
-	if TeamsVar.get() == "Dallas Mavericks":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, dallas.next())
-	if TeamsVar.get() == "Denver Nuggets":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, denver.next())
-	if TeamsVar.get() == "Detroit Pistons":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, detroit.next())
-	if TeamsVar.get() == "Golden State Warriors":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, goldenstate.next())
-	if TeamsVar.get() == "Houston Rockets":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, houston.next())
-	if TeamsVar.get() == "Indiana Pacers":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, indiana.next())
-
-
-TeamsVar.trace("w", callNextOpp)
-
-# CALL NEXT LOCATION
-def callNextLoc(*args):
-	if TeamsVar.get() == "Atlanta Hawks":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, atlanta.where())
-	if TeamsVar.get() == "Boston Celtics":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, boston.where())
-	if TeamsVar.get() == "Brooklyn Nets":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, brooklyn.where())
-	if TeamsVar.get() == "Charlotte Hornets":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, charlotte.where())
-	if TeamsVar.get() == "Chicago Bulls":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, chicago.where())
-	if TeamsVar.get() == "Cleveland Cavaliers":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, cleveland.where())
-	if TeamsVar.get() == "Dallas Mavericks":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, dallas.where())
-	if TeamsVar.get() == "Denver Nuggets":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, denver.where())
-	if TeamsVar.get() == "Detroit Pistons":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, detroit.where())
-	if TeamsVar.get() == "Golden State Warriors":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, goldenstate.where())
-	if TeamsVar.get() == "Houston Rockets":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, houston.where())
-	if TeamsVar.get() == "Indiana Pacers":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, indiana.where())
-
-TeamsVar.trace("w", callNextLoc)
-
-# CALL NEXT DATE
-def callNextDate(*args):
-	if TeamsVar.get() == "Atlanta Hawks":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, atlanta.nextOppDateATL)
-	if TeamsVar.get() == "Boston Celtics":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, boston.nextOppDateBOS)
-	if TeamsVar.get() == "Brooklyn Nets":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, brooklyn.nextOppDateBKN)
-	if TeamsVar.get() == "Charlotte Hornets":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, charlotte.nextOppDateCHA)
-	if TeamsVar.get() == "Chicago Bulls":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, chicago.nextOppDateCHI)
-	if TeamsVar.get() == "Cleveland Cavaliers":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, cleveland.nextOppDateCLE)
-	if TeamsVar.get() == "Dallas Mavericks":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, dallas.nextOppDateDAL)
-	if TeamsVar.get() == "Detroit Pistons":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, detroit.nextOppDateDET)
-	if TeamsVar.get() == "Golden State Warriors":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, goldenstate.nextOppDateGS)
-	if TeamsVar.get() == "Houston Rockets":
-		nextDateOutput.delete(0.0, END)
-		nextDateOutput.insert(INSERT, houston.nextOppDateHOU)
-
-
-TeamsVar.trace("w", callNextDate)
 
 # CALL TEAM LOGO
 def callTeamLogo(*args):
@@ -745,82 +589,10 @@ def callTeamLogo(*args):
 		bucksLogo = PhotoImage(file="logos/Bucks300.png")
 		LogoCanvas.image = bucksLogo
 		LogoCanvas.create_image(0, 0, anchor='nw', image=bucksLogo)
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		LogoCanvas.delete("all")
-		twolvesLogo = PhotoImage(file="logos/Twolves300.png")
-		LogoCanvas.image = twolvesLogo
-		LogoCanvas.create_image(0, 0, anchor='nw', image=twolvesLogo)
 
 
 TeamsVar.trace("w", callTeamLogo)
 
 
-def callLabelCanvas(*args):
-	if TeamsVar.get() == "Atlanta Hawks":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Boston Celtics":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Brooklyn Nets":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Brooklyn Nets":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Charlotte Hornets":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Chicago Bulls":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Cleveland Cavaliers":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Dallas Mavericks":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Denver Nuggets":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Detroit Pistons":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Golden State Warriors":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Houston Rockets":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Indiana Pacers":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Los Angeles Clippers":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Los Angeles Lakers":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Memphis Grizzlies":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Miami Heat":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Milwaukee Bucks":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-	if TeamsVar.get() == "Minnesota Timberwolves":
-		LabelCanvas.delete(0.0, END)
-		LabelCanvas.insert(INSERT, "Team Logo:")
-
-
-TeamsVar.trace("w", callLabelCanvas)
-
-
 
 window.mainloop()
-
-
-
-

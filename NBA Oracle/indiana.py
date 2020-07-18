@@ -65,18 +65,24 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables PACERS 134873
-nextOppIND = NGparseIND["events"][0]["strEventAlternate"]
-nextHomeIND = NGparseIND["events"][0]["strHomeTeam"]
-nextAwayIND = NGparseIND["events"][0]["strAwayTeam"]
-nextOppDateIND = NGparseIND["events"][0]["dateEventLocal"]
+try:
+	nextOppIND = NGparseIND["events"][0]["strEventAlternate"]
+	nextHomeIND = NGparseIND["events"][0]["strHomeTeam"]
+	nextAwayIND = NGparseIND["events"][0]["strAwayTeam"]
+	nextOppDateIND = NGparseIND["events"][0]["dateEventLocal"]
+except:
+	nextOppIND = "No Games Being Played"
+	nextHomeIND = "N/A"
+	nextAwayIND = "N/A"
+	nextOppDateIND = "N/A"
 
 # DETERMINING NEXT OPPONENT
 
 def next():
 	if nextHomeIND == "Indiana Pacers":
-		return str(nextAwayIND)  + " " + nextOppDateIND
+		return str(nextAwayIND)  
 	elif nextAwayIND == "Indiana Pacers":
-		return "@" + str(nextHomeIND) + " " + nextOppDateIND
+		return "@" + str(nextHomeIND) 
 
 next()
 

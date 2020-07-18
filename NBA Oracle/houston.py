@@ -67,10 +67,16 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables ROCKETS 134876
-nextOppHOU = NGparseHOU["events"][0]["strEventAlternate"]
-nextHomeHOU = NGparseHOU["events"][0]["strHomeTeam"]
-nextAwayHOU = NGparseHOU["events"][0]["strAwayTeam"]
-nextOppDateHOU = NGparseHOU["events"][0]["dateEventLocal"]
+try:
+	nextOppHOU = NGparseHOU["events"][0]["strEventAlternate"]
+	nextHomeHOU = NGparseHOU["events"][0]["strHomeTeam"]
+	nextAwayHOU = NGparseHOU["events"][0]["strAwayTeam"]
+	nextOppDateHOU = NGparseHOU["events"][0]["dateEventLocal"]
+except:
+	nextOppHOU = "No Games Being Played"
+	nextHomeHOU = "N/A"
+	nextAwayHOU = "N/A"
+	nextOppDateHOU = "N/A"
 
 # DETERMINING NEXT OPPONENT
 

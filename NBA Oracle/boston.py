@@ -67,18 +67,32 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables BOSTON 134860
-nextOppBOS = NGparseBOS["events"][0]["strEventAlternate"]
-nextHomeBOS = NGparseBOS["events"][0]["strHomeTeam"]
-nextAwayBOS = NGparseBOS["events"][0]["strAwayTeam"]
-nextOppDateBOS = NGparseBOS["events"][0]["dateEventLocal"]
+
+try:
+	nextOppBOS = NGparseBOS["events"][0]["strEventAlternate"]
+	nextHomeBOS = NGparseBOS["events"][0]["strHomeTeam"]
+	nextAwayBOS = NGparseBOS["events"][0]["strAwayTeam"]
+	nextOppDateBOS = NGparseBOS["events"][0]["dateEventLocal"]
+except:
+	nextOppBOS = "No Games Being Played"
+	nextHomeBOS = "No Games Being Played"
+	nextAwayBOS = "No Games Being Played"
+	nextOppDateBOS = "N/A"
+
 
 # DETERMINING NEXT OPPONENT
 
-def next():
-	if nextHomeBOS == "Boston Celtics":
-		return str(nextAwayBOS)
-	elif nextAwayBOS == "Boston Celtics":
-		return "@" + str(nextHomeBOS)
+def next(*args):
+	try:
+		if nextHomeBOS == "Boston Celtics":
+			return str(nextAwayBOS)
+		elif nextAwayBOS == "Boston Celtics":
+			return "@" + str(nextHomeBOS)
+	except:
+		if nextHomeBOS == "No Games Being Played":
+			return "No Games Being Played"
+		elif nextAwayBOS == "No Games Being Played":
+			return "No Games Being Played"
 
 next()
 
@@ -86,10 +100,16 @@ next()
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
-	if nextHomeBOS == "Boston Celtics":
-		return "@Home"  + " --- " + teamStadiumBOS
-	else:
-		return "Away"
+	try:
+		if nextHomeBOS == "Boston Celtics":
+			return "@Home"  + " --- " + teamStadiumBOS
+		elif nextAwayBOS == "Boston Celtics":
+			return "Away"
+	except:
+		if nextHomeBOS == "No Games Being Played":
+			return "No Games Being Played"
+		elif nextAwayBOS == "No Games Being Played":
+			return "No Games Being Played"
 
 where()
 

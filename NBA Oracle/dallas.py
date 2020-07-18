@@ -67,10 +67,17 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables MAVERICKS 134875
-nextOppDAL = NGparseDAL["events"][0]["strEventAlternate"]
-nextHomeDAL = NGparseDAL["events"][0]["strHomeTeam"]
-nextAwayDAL = NGparseDAL["events"][0]["strAwayTeam"]
-nextOppDateDAL = NGparseDAL["events"][0]["dateEventLocal"]
+try:
+	nextOppDAL = NGparseDAL["events"][0]["strEventAlternate"]
+	nextHomeDAL = NGparseDAL["events"][0]["strHomeTeam"]
+	nextAwayDAL = NGparseDAL["events"][0]["strAwayTeam"]
+	nextOppDateDAL = NGparseDAL["events"][0]["dateEventLocal"]
+except:
+	nextOppDAL = "No Games Being Played"
+	nextHomeDAL = "No Games Being Played"
+	nextAwayDAL = "No Games Being Played"
+	nextOppDateDAL = "No Games Being Played"
+	
 
 # DETERMINING NEXT OPPONENT
 

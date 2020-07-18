@@ -69,10 +69,16 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables NUGGETS 134885
-nextOppDEN = NGparseDEN["events"][0]["strEventAlternate"]
-nextHomeDEN = NGparseDEN["events"][0]["strHomeTeam"]
-nextAwayDEN = NGparseDEN["events"][0]["strAwayTeam"]
-nextOppDateDEN = NGparseDEN["events"][0]["dateEventLocal"]
+try:
+	nextOppDEN = NGparseDEN["events"][0]["strEventAlternate"]
+	nextHomeDEN = NGparseDEN["events"][0]["strHomeTeam"]
+	nextAwayDEN = NGparseDEN["events"][0]["strAwayTeam"]
+	nextOppDateDEN = NGparseDEN["events"][0]["dateEventLocal"]
+except:
+	nextOppDEN = "No Games Being Played"
+	nextHomeDEN = "No Games Being Played"
+	nextAwayDEN = "No Games Being Played"
+	nextOppDateDEN = "No Games Being Played"
 
 # DETERMINING NEXT OPPONENT
 

@@ -1,0 +1,916 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nex",
+				"nextOppOutput"
+			],
+			[
+				"ou",
+				"outcomeOutput"
+			],
+			[
+				"last",
+				"lastGameOutput"
+			],
+			[
+				"yea",
+				"yearFormedOutput"
+			],
+			[
+				"mo",
+				"models"
+			],
+			[
+				"bac",
+				"backend4"
+			],
+			[
+				"all",
+				"all_items"
+			],
+			[
+				"L",
+				"ListForm"
+			],
+			[
+				"obj",
+				"obj"
+			],
+			[
+				"p",
+				"printj"
+			],
+			[
+				"j",
+				"json"
+			],
+			[
+				"g",
+				"games"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"js",
+				"json_obj"
+			],
+			[
+				"colu",
+				"columnspan"
+			],
+			[
+				"va",
+				"var2"
+			],
+			[
+				"en",
+				"entry2"
+			],
+			[
+				"var",
+				"var2"
+			],
+			[
+				"bu",
+				"but2pic"
+			],
+			[
+				"b",
+				"but1pic"
+			],
+			[
+				"l",
+				"LabelOut"
+			],
+			[
+				"ho",
+				"hodl_func"
+			],
+			[
+				"ltc",
+				"ltcbuttpic"
+			],
+			[
+				"oNE",
+				"OneDrive"
+			],
+			[
+				"h",
+				"hodl"
+			],
+			[
+				"r",
+				"rsizltc"
+			],
+			[
+				"ri",
+				"RIGHT"
+			],
+			[
+				"com",
+				"compound"
+			],
+			[
+				"On",
+				"OneDrive"
+			],
+			[
+				"CON",
+				"config"
+			],
+			[
+				"B",
+				"button_4"
+			],
+			[
+				"BU",
+				"button_3"
+			],
+			[
+				"s",
+				"spacing1"
+			],
+			[
+				"the",
+				"theForecast"
+			],
+			[
+				"day2",
+				"day2name"
+			],
+			[
+				"day1",
+				"day1cast"
+			],
+			[
+				"eth",
+				"eths2"
+			],
+			[
+				"La",
+				"LabelOut"
+			],
+			[
+				"th",
+				"theLabel"
+			],
+			[
+				"bch",
+				"bch_button"
+			],
+			[
+				"x",
+				"xrp_button"
+			],
+			[
+				"but",
+				"button_2"
+			],
+			[
+				"C",
+				"CoinStartApp3"
+			],
+			[
+				"print",
+				"printName"
+			],
+			[
+				"button",
+				"button_1"
+			],
+			[
+				"prin",
+				"printName"
+			],
+			[
+				"btc",
+				"btc_func"
+			],
+			[
+				"co",
+				"coinentry"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"H",
+				"HAVE"
+			],
+			[
+				"up",
+				"upper"
+			],
+			[
+				"HODL",
+				"HODLing"
+			],
+			[
+				"curr",
+				"currently"
+			],
+			[
+				"res",
+				"resultcoin"
+			],
+			[
+				"e",
+				"ethm"
+			],
+			[
+				"m",
+				"mcap"
+			],
+			[
+				"c",
+				"cryptolive"
+			],
+			[
+				"price",
+				"prices"
+			],
+			[
+				"shor",
+				"short-desc"
+			],
+			[
+				"pe",
+				"period-name"
+			],
+			[
+				"wea",
+				"weather_stuff"
+			],
+			[
+				"w",
+				"weather_stuff"
+			],
+			[
+				"per",
+				"period-name"
+			],
+			[
+				"sho",
+				"short_description"
+			],
+			[
+				"tem",
+				"temperature"
+			],
+			[
+				"sh",
+				"short_description"
+			],
+			[
+				"class",
+				"class_"
+			],
+			[
+				"get",
+				"get_text"
+			],
+			[
+				"cl",
+				"class_"
+			],
+			[
+				"find",
+				"find_all"
+			],
+			[
+				"str",
+				"str_two"
+			],
+			[
+				"st",
+				"str_one"
+			],
+			[
+				"stri",
+				"string2"
+			],
+			[
+				"wor",
+				"wordy"
+			],
+			[
+				"n",
+				"nation"
+			],
+			[
+				"se",
+				"selected"
+			],
+			[
+				"art",
+				"artnm"
+			],
+			[
+				"Pa",
+				"Painter"
+			],
+			[
+				"a",
+				"artnm"
+			],
+			[
+				"ch",
+				"chart_pos"
+			],
+			[
+				"pa",
+				"pass_wd"
+			],
+			[
+				"us",
+				"user_name"
+			],
+			[
+				"u",
+				"user_named"
+			],
+			[
+				"S",
+				"Speed"
+			],
+			[
+				"Se",
+				"Settlement"
+			],
+			[
+				"pr",
+				"prncryp"
+			],
+			[
+				"col",
+				"colstring"
+			],
+			[
+				"wh",
+				"whi_loop"
+			],
+			[
+				"rev",
+				"rev_bk"
+			],
+			[
+				"predi",
+				"prediction"
+			],
+			[
+				"resu",
+				"resultxrp"
+			],
+			[
+				"is",
+				"is_even"
+			],
+			[
+				"div",
+				"div42"
+			],
+			[
+				"di",
+				"divBy"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"gues",
+				"guess3"
+			],
+			[
+				"ad",
+				"add_two"
+			],
+			[
+				"num",
+				"num_again"
+			],
+			[
+				"an",
+				"animal_crackers"
+			],
+			[
+				"less",
+				"lesser_num"
+			],
+			[
+				"le",
+				"lesser_num"
+			],
+			[
+				"in",
+				"int2"
+			],
+			[
+				"pi",
+				"pig_word"
+			],
+			[
+				"pre",
+				"predictions"
+			],
+			[
+				"dictiona",
+				"dictionaries"
+			],
+			[
+				"lis",
+				"list4"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "NBAOracle3.py",
+			"settings":
+			{
+				"buffer_size": 32046,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "teamslist.py",
+			"settings":
+			{
+				"buffer_size": 766,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "houston.py",
+			"settings":
+			{
+				"buffer_size": 2783,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "indiana.py",
+			"settings":
+			{
+				"buffer_size": 2783,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "atlanta.py",
+			"settings":
+			{
+				"buffer_size": 3358,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Build With: Python"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/atltest.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/goldenstate.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/detroit.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/denver.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/dallas.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/cleveland.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/chicago.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/charlotte.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/boston.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/brooklyn.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/atlanta.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/houston.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/NBAOracle2.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/NBAOracle.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/minnesota.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/milwaukee.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/NBA Oracle/miami.py",
+		"/C/DjangoClass/my_app/static/css/my_style.css",
+		"/C/DjangoClass/my_app/todo_app/settings.py",
+		"/C/DjangoClass/my_app/todo_list/urls.py",
+		"/C/DjangoClass/my_app/todo_list/templates/about.html",
+		"/C/DjangoClass/my_app/todo_list/templates/base.html",
+		"/C/DjangoClass/my_app/todo_list/templates/home.html",
+		"/C/DjangoClass/my_app/todo_list/views.py",
+		"/C/DjangoClass/my_app/todo_app/urls.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/Button Experiment/frontend.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/Button Experiment/backend1.py",
+		"/C/Users/cjaco/OneDrive/Desktop/PythonFiles/Button Experiment/backend2.py",
+		"/C/Users/cjaco/Downloads/NBAOraclePack.py",
+		"/C/Users/cjaco/Downloads/milestokm.py",
+		"/C/Users/cjaco/Downloads/zodiacReader.py",
+		"/C/Users/cjaco/Downloads/APIClass/apiBasic.py",
+		"/C/Users/cjaco/Downloads/APIClass/miamiTest.py",
+		"/C/Users/cjaco/Downloads/worddwntxt.py",
+		"/C/Users/cjaco/Downloads/listaprint1.py",
+		"/C/Users/cjaco/Downloads/APIClass/getiss.py",
+		"/C/Users/cjaco/Downloads/submittaldetailsform.py",
+		"/C/Users/cjaco/Downloads/funcButton.py",
+		"/C/django/django_todo_app/todo/todo_list/urls.py",
+		"/C/django/django_todo_app/todo/todo_list/templates/base.html",
+		"/C/django/django_todo_app/todo/todo/settings.py",
+		"/C/django/django_todo_app/todo/todo_list/models.py",
+		"/C/django/django_todo_app/todo/todo_list/forms.py",
+		"/C/django/django_todo_app/todo/todo_list/templates/home.html",
+		"/C/django/django_todo_app/todo/todo_list/views.py",
+		"/C/Users/cjaco/Downloads/Django Start/mysite/polls/views.py",
+		"/C/Users/cjaco/Downloads/Django Start/mysite/mysite/urls.py",
+		"/C/Users/cjaco/Downloads/Django Start/mysite/polls/urls.py",
+		"/C/django/django_todo_app/todo/todo/urls.py",
+		"/C/Users/cjaco/Downloads/CoinGUI2.py",
+		"/C/Users/cjaco/Downloads/CourtsWord.py",
+		"/C/Users/cjaco/Downloads/basictextfile.py",
+		"/C/Users/cjaco/Downloads/Django Start/djangoOne.py",
+		"/C/Users/cjaco/Downloads/weatherWidgetScrape.py",
+		"/C/Users/cjaco/Downloads/scrollbarWithClasses.py",
+		"/C/Users/cjaco/Downloads/weatherWithGUI.py",
+		"/C/Users/cjaco/Downloads/APIClass/NBAOracle.py",
+		"/C/Users/cjaco/Downloads/cryptolive.py",
+		"/C/Users/cjaco/Downloads/funcForDropDown.py",
+		"/C/Users/cjaco/Downloads/funcForDropDown2.py",
+		"/C/Users/cjaco/Downloads/CryptoOracle/crypto oracle.py",
+		"/C/Users/cjaco/Downloads/theCoinStartCoins.py",
+		"/C/Users/cjaco/Downloads/TheSporter/entrywidget.py",
+		"/C/Users/cjaco/Downloads/CoinStart.py",
+		"/C/Users/cjaco/Downloads/password.py",
+		"/C/Users/cjaco/Downloads/NotAllSame.py",
+		"/C/Users/cjaco/Downloads/Tkinter Course Udemy/entries.py",
+		"/C/Users/cjaco/Downloads/Tkinter Course Udemy/grid manager.py",
+		"/C/Users/cjaco/Downloads/Tkinter Course Udemy/buttons.py",
+		"/C/Users/cjaco/Downloads/Tkinter Course Udemy/using labels.py",
+		"/C/Users/cjaco/Downloads/Tkinter Course Udemy/creating window.py",
+		"/C/Users/cjaco/Downloads/weather.py",
+		"/C/Users/cjaco/Downloads/stringget.py",
+		"/C/Users/cjaco/Downloads/stringget2.py",
+		"/C/Users/cjaco/Downloads/CoinStart3.py",
+		"/C/Users/cjaco/Downloads/CoinStart4.py",
+		"/C/Users/cjaco/Downloads/nbaScraper.py",
+		"/C/Users/cjaco/Downloads/CoinStart5.py",
+		"/C/Users/cjaco/Downloads/CoinStartPro/First3Coins/First3Coins.py",
+		"/C/Users/cjaco/Downloads/MyWeatherApp.py",
+		"/C/Users/cjaco/Downloads/loggedin.py",
+		"/C/Users/cjaco/Downloads/StringAccess/MoreString/string2.py",
+		"/C/Users/cjaco/Downloads/StringAccess/string1.py",
+		"/C/Users/cjaco/Downloads/worddown.py",
+		"/C/Users/cjaco/Downloads/StringAccess/__init__.py",
+		"/C/Users/cjaco/Downloads/StringAccess/MoreString/__init__.py",
+		"/C/Users/cjaco/Downloads/StringAccess/String1/string1.py",
+		"/C/Users/cjaco/Downloads/StringAccess/String2/string2.py",
+		"/C/Users/cjaco/Downloads/stringcaller.py",
+		"/C/Users/cjaco/Downloads/StringAccess.py",
+		"/C/Users/cjaco/Downloads/StringAccess/String2/__init__.py",
+		"/C/Users/cjaco/Downloads/StringAccess/String1/__init__.py",
+		"/C/Users/cjaco/Downloads/MathPackage/MoreMathPackage/EvenMoreMoreMath/__init__.py",
+		"/C/Users/cjaco/Downloads/MathPackage/__init__.py",
+		"/C/Users/cjaco/Downloads/MathPackage/MoreMathPackage/__init__.py",
+		"/C/Users/cjaco/Downloads/mymodule.py",
+		"/C/Users/cjaco/Downloads/MyMainPackage/some_main_script.py",
+		"/C/Users/cjaco/Downloads/MyMainPackage/SubPackage/mysubscript.py",
+		"/C/Users/cjaco/Downloads/myprogram.py",
+		"/C/Users/cjaco/Downloads/divModule1.py",
+		"/C/Users/cjaco/Downloads/mathprogram1.py",
+		"/C/Users/cjaco/Downloads/MathPackage/divProgram.py",
+		"/C/Users/cjaco/Downloads/MathPackages/mathModule1.py",
+		"/C/Users/cjaco/Downloads/MathPackages/MathPackOne/__init__.py",
+		"/C/Users/cjaco/Downloads/MathPackages/__init__.py",
+		"/C/Users/cjaco/Downloads/MyMainPackage/__init__.py",
+		"/C/Users/cjaco/Downloads/MyMainPackage/SubPackage/__init__.py",
+		"/C/Users/cjaco/Downloads/inheritance1.py",
+		"/C/Users/cjaco/Downloads/CoinStart2.py",
+		"/C/Users/cjaco/Downloads/oopReview.py",
+		"/C/Users/cjaco/Downloads/oopReview2.py",
+		"/C/Users/cjaco/Downloads/oop2.py",
+		"/C/Users/cjaco/Downloads/webScrapper.py",
+		"/C/Users/cjaco/Downloads/NumGuess2.py",
+		"/C/Users/cjaco/Downloads/raceidform.py",
+		"/C/Users/cjaco/Downloads/oop1.py",
+		"/C/Users/cjaco/Downloads/AllenIverson.py",
+		"/C/Users/cjaco/Downloads/TryException.py",
+		"/C/Users/cjaco/Downloads/RevList.py",
+		"/C/Users/cjaco/Downloads/Erased.py",
+		"/C/Users/cjaco/Downloads/FunctionFrestyle.py",
+		"/C/Users/cjaco/Downloads/income.py",
+		"/C/Users/cjaco/Downloads/PigLatinGenerator.py",
+		"/C/Users/cjaco/Downloads/NumGuess.py",
+		"/C/Users/cjaco/Downloads/DivThree.py",
+		"/C/Users/cjaco/Downloads/IfElifElse.py",
+		"/C/Users/cjaco/Downloads/forLoops.py",
+		"/C/Users/cjaco/Downloads/DictionaryPractice.py"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"yearFormedHOU"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "NBAOracle3.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32046,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5093,
+								5093
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2056.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "teamslist.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								698,
+								698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 17.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "houston.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2612,
+								2612
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 918.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "indiana.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2523,
+								2523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1350.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "atlanta.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3319,
+								3319
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1080.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "NBAOracle.sublime-workspace",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 179.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

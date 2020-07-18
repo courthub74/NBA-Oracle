@@ -71,11 +71,19 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables PISTONS 134872
-nextOppDET = NGparseDET["events"][0]["strEventAlternate"]
-nextHomeDET = NGparseDET["events"][0]["strHomeTeam"]
-nextAwayDET = NGparseDET["events"][0]["strAwayTeam"]
-nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
-nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
+try:
+	nextOppDET = NGparseDET["events"][0]["strEventAlternate"]
+	nextHomeDET = NGparseDET["events"][0]["strHomeTeam"]
+	nextAwayDET = NGparseDET["events"][0]["strAwayTeam"]
+	nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
+	nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
+except:
+	nextOppDET = "No Games Being Played"
+	nextHomeDET = "No Games Being Played"
+	nextAwayDET = "No Games Being Played"
+	nextOppDateDET = "No Games Being Played"
+	nextOppDateDET = "No Games Being Played"
+	
 
 # DETERMINING NEXT OPPONENT
 

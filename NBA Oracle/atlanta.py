@@ -66,32 +66,51 @@ def win():
 win()
 
 ######################################################################
-# NEXT GAME
+#NEXT GAME
 
-# Next Game Info Variables ATLANTA 134880 
-nextOppATL = NGparseATL["events"][0]["strEventAlternate"]
-nextHomeATL = NGparseATL["events"][0]["strHomeTeam"]
-nextAwayATL = NGparseATL["events"][0]["strAwayTeam"]
-nextOppDateATL = NGparseATL["events"][0]["dateEventLocal"]
+#Next Game Info Variables ATLANTA 134880 
+try:
+	nextOppATL = NGparseATL["events"][0]["strEventAlternate"]
+	nextHomeATL = NGparseATL["events"][0]["strHomeTeam"]
+	nextAwayATL = NGparseATL["events"][0]["strAwayTeam"]
+	nextOppDateATL = NGparseATL["events"][0]["dateEventLocal"]
+except:
+	nextOppATL = "No Games Being Played"
+	nextHomeATL = "No Games Being Played"
+	nextAwayATL = "No Games Being Played"
+	nextOppDateATL = "N/A"
 
-# DETERMINING NEXT OPPONENT
 
-def next():
-	if nextHomeATL == "Atlanta Hawks":
-		return str(nextAwayATL)
-	elif nextAwayATL == "Atlanta Hawks":
-		return "@" + str(nextHomeATL) 
+#DETERMINING NEXT OPPONENT
+
+def next(*args):
+	try:
+		if nextHomeATL == "Atlanta Hawks":
+			return str(nextAwayATL)
+		elif nextAwayATL == "Atlanta Hawks":
+			return "@" + str(nextHomeATL)
+	except:
+		 if nextHomeATL == "No Games Being Played":
+		 	return "No Games Being Played"
+		 elif nextAwayATL == "No Games Being Played":
+		 	return "No Games Being Played"
 
 next()
 
 
-# DETERMINING WHERE NEXT OPPONENT
+#DETERMINING WHERE NEXT OPPONENT
 
 def where():
-	if nextHomeATL == "Atlanta Hawks":
-		return "@Home" + " --- " + teamStadiumATL
-	else:
-		return "Away"
+	try:
+		if nextHomeATL == "Atlanta Hawks":
+			return "@Home" + " --- " + teamStadiumATL
+		elif nextAwayATL == "Atlanta Hawks":
+			return "Away"
+	except:
+		 if nextHomeATL == "No Games Being Played":
+		 	return "No Games Being Played"
+		 elif nextAwayATL == "No Games Being Played":
+		 	return "No Games Being Played"
 
 where()
 
@@ -104,4 +123,4 @@ where()
 
 
 # In Case you need to review API data
-# print(json.dumps(x, indent=4))
+# print(json.dumps(LGparseATL, indent=4))

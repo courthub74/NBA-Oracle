@@ -67,18 +67,30 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables NETS 134861
-nextOppBKN = NGparseBKN["events"][0]["strEventAlternate"]
-nextHomeBKN = NGparseBKN["events"][0]["strHomeTeam"]
-nextAwayBKN = NGparseBKN["events"][0]["strAwayTeam"]
-nextOppDateBKN = NGparseBKN["events"][0]["dateEventLocal"]
+try:
+	nextOppBKN = NGparseBKN["events"][0]["strEventAlternate"]
+	nextHomeBKN = NGparseBKN["events"][0]["strHomeTeam"]
+	nextAwayBKN = NGparseBKN["events"][0]["strAwayTeam"]
+	nextOppDateBKN = NGparseBKN["events"][0]["dateEventLocal"]
+except:
+	nextOppBKN = "No Games Being Played"
+	nextHomeBKN = "No Games Being Played"
+	nextAwayBKN = "No Games Being Played"
+	nextOppDateBKN = "N/A"
 
 # DETERMINING NEXT OPPONENT
 
 def next():
-	if nextHomeBKN == "Brooklyn Nets":
-		return str(nextAwayBKN)
-	elif nextAwayBKN == "Brooklyn Nets":
-		return "@" + str(nextHomeBKN)
+	try:
+		if nextHomeBKN == "Brooklyn Nets":
+			return str(nextAwayBKN)
+		elif nextAwayBKN == "Brooklyn Nets":
+			return "@" + str(nextHomeBKN)
+	except:
+		if nextHomeBKN == "No Games Being Played":
+			return "No Games Being Played"
+		elif nextAwayBKN == "No Games Being Played":
+			return "No Games Being Played"
 
 next()
 
@@ -86,9 +98,15 @@ next()
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
-	if nextHomeBKN == "Brooklyn Nets":
-		return "@Home" + " --- " + teamStadiumBKN
-	else:
-		return "Away"
+	try:
+		if nextHomeBKN == "Brooklyn Nets":
+			return "@Home" + " --- " + teamStadiumBKN
+		elif nextAwayBKN == "Brooklyn Nets":
+			return "Away"
+	except:
+		if nextHomeBKN == "No Games Being Played":
+			return "No Games Being Played"
+		elif nextAwayBKN == "No Games Being Played":
+			return "No Games Being Played"
 
 where()

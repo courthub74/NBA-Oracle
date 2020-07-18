@@ -68,10 +68,17 @@ win()
 # NEXT GAME
 
 # Next Game Info Variables BULLS 134870
-nextOppCHI = NGparseCHI["events"][0]["strEventAlternate"]
-nextHomeCHI = NGparseCHI["events"][0]["strHomeTeam"]
-nextAwayCHI = NGparseCHI["events"][0]["strAwayTeam"]
-nextOppDateCHI = NGparseCHI["events"][0]["dateEventLocal"]
+try:
+	nextOppCHI = NGparseCHI["events"][0]["strEventAlternate"]
+	nextHomeCHI = NGparseCHI["events"][0]["strHomeTeam"]
+	nextAwayCHI = NGparseCHI["events"][0]["strAwayTeam"]
+	nextOppDateCHI = NGparseCHI["events"][0]["dateEventLocal"]
+except:
+	nextOppCHI = "No Games Being Played"
+	nextHomeCHI = "No Games Being Played"
+	nextAwayCHI = "No Games Being Played"
+	nextOppDateCHI = "No Games Being Played"
+	
 
 # DETERMINING NEXT OPPONENT
 
