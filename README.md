@@ -13,7 +13,7 @@ Widget that provides general info and the latest scores of your favorite pro bas
 * ~~Add an Exception handle for the season cancellation~~
 
 #### What I Learned
-- Widget creation
+- Tkinter Widget creation
 - Making graphics appear at the selection of drop down menu
 - API integration
 - Parsing and Routing JSON data
