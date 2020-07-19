@@ -546,7 +546,7 @@ def callNextOpp(*args):
 			nextOppOutput.insert(INSERT, atlanta.next())
 		except:
 			nextOppOutput.delete(0.0, END)
-			nextOppOutput.insert(INSERT, atlanta.nextOppATL)
+			nextOppOutput.insert(INSERT, atlanta.nextGameOpp)
 
 	if TeamsVar.get() == "Boston Celtics":
 		try:
@@ -554,7 +554,7 @@ def callNextOpp(*args):
 			nextOppOutput.insert(INSERT, boston.next())
 		except:
 			nextOppOutput.delete(0.0, END)
-			nextOppOutput.insert(INSERT, boston.nextOppBOS)
+			nextOppOutput.insert(INSERT, boston.nextGameOpp)
 		
 
 	if TeamsVar.get() == "Brooklyn Nets":
@@ -563,7 +563,7 @@ def callNextOpp(*args):
 			nextOppOutput.insert(INSERT, brooklyn.next())
 		except:
 			nextOppOutput.delete(0.0, END)
-			nextOppOutput.insert(INSERT, brooklyn.nextOppBKN)
+			nextOppOutput.insert(INSERT, brooklyn.nextGameOpp)
 
 	if TeamsVar.get() == "Charlotte Hornets":
 		try:
@@ -571,34 +571,86 @@ def callNextOpp(*args):
 			nextOppOutput.insert(INSERT, charlotte.next())
 		except:
 			nextOppOutput.delete(0.0, END)
-			nextOppOutput.insert(INSERT, charlotte.nextOppCHA)
-	if TeamsVar.get() == "Chicago Bulls":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, chicago.next())
-	if TeamsVar.get() == "Cleveland Cavaliers":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, cleveland.next())
-	if TeamsVar.get() == "Dallas Mavericks":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, dallas.next())
-	if TeamsVar.get() == "Denver Nuggets":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, denver.next())
-	if TeamsVar.get() == "Detroit Pistons":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, detroit.next())
-	if TeamsVar.get() == "Golden State Warriors":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, goldenstate.next())
-	if TeamsVar.get() == "Houston Rockets":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, houston.next())
-	if TeamsVar.get() == "Indiana Pacers":
-		nextOppOutput.delete(0.0, END)
-		nextOppOutput.insert(INSERT, indiana.next())
+			nextOppOutput.insert(INSERT, charlotte.nextGameOpp)
 
+
+	if TeamsVar.get() == "Chicago Bulls":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, chicago.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, chicago.nextGameOpp)
+
+
+	if TeamsVar.get() == "Cleveland Cavaliers":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, cleveland.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, cleveland.nextGameOpp)
+
+
+	if TeamsVar.get() == "Dallas Mavericks":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, dallas.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, dallas.nextGameOpp)
+
+
+	if TeamsVar.get() == "Denver Nuggets":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, denver.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, denver.nextGameOpp)
+
+	if TeamsVar.get() == "Detroit Pistons":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, detroit.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, detroit.nextGameOpp)
+
+	if TeamsVar.get() == "Golden State Warriors":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, goldenstate.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, goldenstate.nextGameOpp)
+
+	if TeamsVar.get() == "Houston Rockets":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, houston.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, houston.nextGameOpp)
+
+	if TeamsVar.get() == "Indiana Pacers":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, indiana.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, indiana.nextGameOpp)
+
+	if TeamsVar.get() == "Los Angeles Clippers":
+		try:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, losangelesC.next())
+		except:
+			nextOppOutput.delete(0.0, END)
+			nextOppOutput.insert(INSERT, losangelesC.nextGameOpp)
 
 TeamsVar.trace("w", callNextOpp)
+
 
 # CALL NEXT LOCATION
 def callNextLoc(*args):
@@ -608,7 +660,8 @@ def callNextLoc(*args):
 			locNextOutput.insert(INSERT, atlanta.where())
 		except:
 			locNextOutput.delete(0.0, END)
-			locNextOutput.insert(INSERT, atlanta.nextOppATL)
+			locNextOutput.insert(INSERT, atlanta.nextGameLoc)
+
 
 	if TeamsVar.get() == "Boston Celtics":
 		try:
@@ -616,7 +669,8 @@ def callNextLoc(*args):
 			locNextOutput.insert(INSERT, boston.where())
 		except:
 			locNextOutput.delete(0.0, END)
-			locNextOutput.insert(INSERT, boston.nextOppBOS)
+			locNextOutput.insert(INSERT, boston.nextGameLoc)
+
 
 	if TeamsVar.get() == "Brooklyn Nets":
 		try:
@@ -624,7 +678,7 @@ def callNextLoc(*args):
 			locNextOutput.insert(INSERT, brooklyn.where())
 		except:
 			locNextOutput.delete(0.0, END)
-			locNextOutput.insert(INSERT, brooklyn.nextOppBKN)
+			locNextOutput.insert(INSERT, brooklyn.nextGameLoc)
 
 	if TeamsVar.get() == "Charlotte Hornets":
 		try:
@@ -632,32 +686,81 @@ def callNextLoc(*args):
 			locNextOutput.insert(INSERT, charlotte.where())
 		except:
 			locNextOutput.delete(0.0, END)
-			locNextOutput.insert(INSERT, charlotte.nextOppCHA)
+			locNextOutput.insert(INSERT, charlotte.nextGameLoc)
 
 	if TeamsVar.get() == "Chicago Bulls":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, chicago.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, chicago.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, chicago.nextGameLoc)
+		
+
 	if TeamsVar.get() == "Cleveland Cavaliers":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, cleveland.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, cleveland.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, cleveland.nextGameLoc)
+
+
 	if TeamsVar.get() == "Dallas Mavericks":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, dallas.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, dallas.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, dallas.nextGameLoc)
+
 	if TeamsVar.get() == "Denver Nuggets":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, denver.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, denver.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, denver.nextGameLoc)
+
 	if TeamsVar.get() == "Detroit Pistons":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, detroit.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, detroit.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, detroit.nextGameLoc)
+
 	if TeamsVar.get() == "Golden State Warriors":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, goldenstate.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, goldenstate.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, goldenstate.nextGameLoc)
+
 	if TeamsVar.get() == "Houston Rockets":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, houston.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, houston.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, houston.nextGameLoc)
+
 	if TeamsVar.get() == "Indiana Pacers":
-		locNextOutput.delete(0.0, END)
-		locNextOutput.insert(INSERT, indiana.where())
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, indiana.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, indiana.nextGameLoc)
+
+	if TeamsVar.get() == "Los Angeles Clippers":
+		try:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, losangelesC.where())
+		except:
+			locNextOutput.delete(0.0, END)
+			locNextOutput.insert(INSERT, losangelesC.nextGameLoc)
 
 TeamsVar.trace("w", callNextLoc)
 
@@ -696,6 +799,9 @@ def callNextDate(*args):
 	if TeamsVar.get() == "Indiana Pacers":
 		nextDateOutput.delete(0.0, END)
 		nextDateOutput.insert(INSERT, indiana.nextOppDateIND)
+	if TeamsVar.get() == "Los Angeles Clippers":
+		nextDateOutput.delete(0.0, END)
+		nextDateOutput.insert(INSERT, losangelesC.nextOppDateLAC)
 
 
 TeamsVar.trace("w", callNextDate)

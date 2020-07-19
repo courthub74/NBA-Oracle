@@ -74,10 +74,15 @@ try:
 	nextAwayCLE = NGparseCLE["events"][0]["strAwayTeam"]
 	nextOppDateCLE = NGparseCLE["events"][0]["dateEventLocal"]
 except:
-	nextOppCLE = "No Games Being Played"
-	nextHomeCLE = "No Games Being Played"
-	nextAwayCLE = "No Games Being Played"
-	nextOppDateCLE = "No Games Being Played"
+	nextOppCLE = 'null'
+	nextHomeCLE = 'null'
+	nextAwayCLE = 'null'
+	nextOppDateCLE = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
 
 # DETERMINING NEXT OPPONENT
 
@@ -95,7 +100,7 @@ next()
 def where():
 	if nextHomeCLE == "Cleveland Cavaliers":
 		return "@Home" + " --- " + teamStadiumCLE
-	else:
+	elif nextAwayCLE == "Cleveland Cavaliers":
 		return "Away"
 
 where()

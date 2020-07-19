@@ -60,3 +60,45 @@ def win():
 		return "Grizzlies Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables GRIZZLIES 134877
+try:
+	nextOppMEM = NGparseMEM["events"][0]["strEventAlternate"]
+	nextHomeMEM = NGparseMEM["events"][0]["strHomeTeam"]
+	nextAwayMEM = NGparseMEM["events"][0]["strAwayTeam"]
+	nextOppDateMEM = NGparseMEM["events"][0]["dateEventLocal"]
+except:
+	nextOppMEM = 'null'
+	nextHomeMEM = 'null'
+	nextAwayMEM = 'null'
+	nextOppDateMEM = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeMEM == "Memphis Grizzlies":
+		return str(nextAwayMEM)
+	elif nextAwayMEM == "Memphis Grizzlies":
+		return "@" + str(nextHomeMEM)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeMEM == "Memphis Grizzlies":
+		return "@Home" + "---" + teamStadiumMEM
+	elif nextAwayMEM == "Memphis Grizzlies":
+		return "Away"
+
+where()

@@ -78,12 +78,16 @@ try:
 	nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
 	nextOppDateDET = NGparseDET["events"][0]["dateEventLocal"]
 except:
-	nextOppDET = "No Games Being Played"
-	nextHomeDET = "No Games Being Played"
-	nextAwayDET = "No Games Being Played"
-	nextOppDateDET = "No Games Being Played"
-	nextOppDateDET = "No Games Being Played"
-	
+	nextOppDET = 'null'
+	nextHomeDET = 'null'
+	nextAwayDET = 'null'
+	nextOppDateDET = 'null'
+	nextOppDateDET = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+		
 
 # DETERMINING NEXT OPPONENT
 
@@ -101,7 +105,7 @@ next()
 def where():
 	if nextHomeDET == "Detroit Pistons":
 		return "@Home" + " --- " + teamStadiumDET
-	else:
+	elif nextAwayDET == "Detroit Pistons":
 		return "Away"
 
 where()

@@ -73,10 +73,15 @@ try:
 	nextAwayDAL = NGparseDAL["events"][0]["strAwayTeam"]
 	nextOppDateDAL = NGparseDAL["events"][0]["dateEventLocal"]
 except:
-	nextOppDAL = "No Games Being Played"
-	nextHomeDAL = "No Games Being Played"
-	nextAwayDAL = "No Games Being Played"
-	nextOppDateDAL = "No Games Being Played"
+	nextOppDAL = 'null'
+	nextHomeDAL = 'null'
+	nextAwayDAL = 'null'
+	nextOppDateDAL = "TBD"
+
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
 	
 
 # DETERMINING NEXT OPPONENT
@@ -95,7 +100,7 @@ next()
 def where():
 	if nextHomeDAL == "Dallas Mavericks":
 		return "@Home" + " --- " + teamStadiumDAL
-	else:
+	elif nextAwayDAL == "Dallas Mavericks":
 		return "Away"
 
 where()

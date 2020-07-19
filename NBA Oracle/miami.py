@@ -60,3 +60,45 @@ def win():
 		return "Heat Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables HEAT 134882
+try:
+	nextOppMIA = NGparseMIA["events"][0]["strEventAlternate"]
+	nextHomeMIA = NGparseMIA["events"][0]["strHomeTeam"]
+	nextAwayMIA = NGparseMIA["events"][0]["strAwayTeam"]
+	nextOppDateMIA = NGparseMIA["events"][0]["dateEventLocal"]
+except:
+	nextOppMIA = 'null'
+	nextHomeMIA = 'null'
+	nextAwayMIA = 'null'
+	nextOppDateMIA = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeMIA == "Miami Heat":
+		return str(nextAwayMIA)
+	elif nextAwayMIA == "Miami Heat":
+		return "Away"
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeMIA == "Miami Heat":
+		return "@Home" + "---" + teamStadiumMIA
+	elif nextAwayMIA == "Miami Heat":
+		return "Away"
+
+where()
+

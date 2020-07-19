@@ -73,24 +73,24 @@ try:
 	nextAwayBKN = NGparseBKN["events"][0]["strAwayTeam"]
 	nextOppDateBKN = NGparseBKN["events"][0]["dateEventLocal"]
 except:
-	nextOppBKN = "No Games Being Played"
-	nextHomeBKN = "No Games Being Played"
-	nextAwayBKN = "No Games Being Played"
-	nextOppDateBKN = "N/A"
+	nextOppBKN = 'null'
+	nextHomeBKN = 'null'
+	nextAwayBKN = 'null'
+	nextOppDateBKN = "TBD"
+	
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
 
 # DETERMINING NEXT OPPONENT
 
 def next():
-	try:
-		if nextHomeBKN == "Brooklyn Nets":
-			return str(nextAwayBKN)
-		elif nextAwayBKN == "Brooklyn Nets":
-			return "@" + str(nextHomeBKN)
-	except:
-		if nextHomeBKN == "No Games Being Played":
-			return "No Games Being Played"
-		elif nextAwayBKN == "No Games Being Played":
-			return "No Games Being Played"
+	if nextHomeBKN == "Brooklyn Nets":
+		return str(nextAwayBKN)
+	elif nextAwayBKN == "Brooklyn Nets":
+		return "@" + str(nextHomeBKN)
 
 next()
 
@@ -98,15 +98,9 @@ next()
 # DETERMINING WHERE NEXT OPPONENT
 
 def where():
-	try:
-		if nextHomeBKN == "Brooklyn Nets":
-			return "@Home" + " --- " + teamStadiumBKN
-		elif nextAwayBKN == "Brooklyn Nets":
-			return "Away"
-	except:
-		if nextHomeBKN == "No Games Being Played":
-			return "No Games Being Played"
-		elif nextAwayBKN == "No Games Being Played":
-			return "No Games Being Played"
+	if nextHomeBKN == "Brooklyn Nets":
+		return "@Home" + " --- " + teamStadiumBKN
+	elif nextAwayBKN == "Brooklyn Nets":
+		return "Away"
 
 where()

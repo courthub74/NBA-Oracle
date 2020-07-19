@@ -61,3 +61,43 @@ def win():
 		return "Lakers Lose"
 
 win()
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables LAKERS 134867
+try:
+	nextOppLAL = NGparseLAL["events"][0]["strEventAlternate"]
+	nextHomeLAL = NGparseLAL["events"][0]["strHomeTeam"]
+	nextAwayLAL = NGparseLAL["events"][0]["strAwayTeam"]
+	nextOppDateLAL = NGparseLAL["events"][0]["dateEventLocal"]
+except:
+	nextOppLAL = 'null'
+	nextHomeLAL = 'null'
+	nextAwayLAL = 'null'
+	nextOppDateLAL = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeLAL == "Los Angeles Lakers":
+		return str(nextAwayLAL)
+	elif nextAwayLAL == "Los Angeles Lakers":
+		return "@" + str(nextHomeLAL)
+
+next()
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeLAL == "Los Angeles Lakers":
+		return "@Home" + "---" + teamStadiumLAL
+	elif nextAwayLAL == "Los Angeles Lakers":
+		return "Away"
+
+where()
+

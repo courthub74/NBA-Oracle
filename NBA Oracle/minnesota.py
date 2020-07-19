@@ -60,3 +60,45 @@ def win():
 		return "T-Wolves Lose"
 
 win()
+
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables TWOLVES 134886
+try:
+	nextOppMIN = NGparseMIN["events"][0]["strEventAlternate"]
+	nextHomeMIN = NGparseMIN["events"][0]["strHomeTeam"]
+	nextAwayMIN = NGparseMIN["events"][0]["strAwayTeam"]
+	nextOppDateMIN = NGparseMIN["events"][0]["dateEventLocal"]
+except:
+	nextOppMIN = 'null'
+	nextHomeMIN = 'null'
+	nextAwayMIN = 'null'
+	nextOppDateMIN = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeMIN == "Minnesota Timberwolves":
+		return str(nextAwayMIN)
+	elif nextAwayMIN == "Minnesota Timberwolves":
+		return "@" + str(nextHomeMIN)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeMIN == "Minnesota Timberwolves":
+		return "@Home" + "---" + teamStadiumMIN
+	elif nextAwayMIN == "Minnesota Timberwolves":
+		return "Away"
+
+where()

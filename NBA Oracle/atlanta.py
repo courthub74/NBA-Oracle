@@ -75,25 +75,22 @@ try:
 	nextAwayATL = NGparseATL["events"][0]["strAwayTeam"]
 	nextOppDateATL = NGparseATL["events"][0]["dateEventLocal"]
 except:
-	nextOppATL = "No Games Being Played"
-	nextHomeATL = "No Games Being Played"
-	nextAwayATL = "No Games Being Played"
-	nextOppDateATL = "N/A"
+	nextOppATL = 'null'
+	nextHomeATL = 'null'
+	nextAwayATL = 'null'
+	nextOppDateATL = 'TBD'
 
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
 
 #DETERMINING NEXT OPPONENT
 
 def next(*args):
-	try:
-		if nextHomeATL == "Atlanta Hawks":
-			return str(nextAwayATL)
-		elif nextAwayATL == "Atlanta Hawks":
-			return "@" + str(nextHomeATL)
-	except:
-		 if nextHomeATL == "No Games Being Played":
-		 	return "No Games Being Played"
-		 elif nextAwayATL == "No Games Being Played":
-		 	return "No Games Being Played"
+	if nextHomeATL == "Atlanta Hawks":
+		return str(nextAwayATL)
+	elif nextAwayATL == "Atlanta Hawks":
+		return "@" + str(nextHomeATL)
 
 next()
 
@@ -101,19 +98,12 @@ next()
 #DETERMINING WHERE NEXT OPPONENT
 
 def where():
-	try:
-		if nextHomeATL == "Atlanta Hawks":
-			return "@Home" + " --- " + teamStadiumATL
-		elif nextAwayATL == "Atlanta Hawks":
-			return "Away"
-	except:
-		 if nextHomeATL == "No Games Being Played":
-		 	return "No Games Being Played"
-		 elif nextAwayATL == "No Games Being Played":
-		 	return "No Games Being Played"
+	if nextHomeATL == "Atlanta Hawks":
+		return "@Home" + " --- " + teamStadiumATL
+	elif nextAwayATL == "Atlanta Hawks":
+		return "Away"
 
 where()
-
 
 
 # DETERMINE THE STADIUM

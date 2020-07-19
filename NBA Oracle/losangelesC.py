@@ -59,3 +59,43 @@ def win():
 		return "Clippers Lose"
 
 win()
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables CLIPPERS 134866
+try:
+	nextOppLAC = NGparseLAC["events"][0]["strEventAlternate"]
+	nextHomeLAC = NGparseLAC["events"][0]["strHomeTeam"]
+	nextAwayLAC = NGparseLAC["events"][0]["strAwayTeam"]
+	nextOppDateLAC = NGparseLAC["events"][0]["dateEventLocal"]
+except:
+	nextOppLAC = 'null'
+	nextHomeLAC = 'null'
+	nextAwayLAC = 'null'
+	nextOppDateLAC = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeLAC == "Los Angeles Clippers":
+		return str(nextAwayLAC)
+	elif nextAwayLAC == "Los Angeles Clippers":
+		return "@" + str(nextHomeLAC)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeLAC == "Los Angeles Clippers":
+		return "@Home" + "---"+ teamStadiumLAC
+	elif nextAwayLAC == "Los Angeles Clippers":
+		return "@" + str(nextHomeLAC)
+
+where()

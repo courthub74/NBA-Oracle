@@ -58,3 +58,48 @@ def win():
 
 win()
 
+
+######################################################################
+# NEXT GAME
+
+# Next Game Info Variables BUCKS 134874
+try:
+	nextOppMIL = NGparseMIL["events"][0]["strEventAlternate"]
+	nextHomeMIL = NGparseMIL["events"][0]["strHomeTeam"]
+	nextAwayMIL = NGparseMIL["events"][0]["strAwayTeam"]
+	nextOppDateMIL = NGparseMIL["events"][0]["dateEventLocal"]
+except:
+	nextOppMIL = 'null'
+	nextHomeMIL = 'null'
+	nextAwayMIL = 'null'
+	nextOppDateMIL = 'null'
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+
+# DETERMINING NEXT OPPONENT
+
+def next():
+	if nextHomeMIL == "Milwaukee Bucks":
+		return str(nextAwayMIL)
+	elif nextAwayMIL == "Milwaukee Bucks":
+		return "@" + str(nextHomeMIL)
+
+next()
+
+
+# DETERMINING WHERE NEXT OPPONENT
+
+def where():
+	if nextHomeMIL == "Milwaukee Bucks":
+		return "@Home" + "---" + teamStadiumMIL
+	elif nextAwayMIL == "Milwaukee Bucks":
+		return "Away"
+
+where()
+
+	
+
+
+

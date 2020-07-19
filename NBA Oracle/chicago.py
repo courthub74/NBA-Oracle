@@ -74,12 +74,15 @@ try:
 	nextAwayCHI = NGparseCHI["events"][0]["strAwayTeam"]
 	nextOppDateCHI = NGparseCHI["events"][0]["dateEventLocal"]
 except:
-	nextOppCHI = "No Games Being Played"
-	nextHomeCHI = "No Games Being Played"
-	nextAwayCHI = "No Games Being Played"
-	nextOppDateCHI = "No Games Being Played"
-	
+	nextOppCHI = 'null'
+	nextHomeCHI = 'null'
+	nextAwayCHI = 'null'
+	nextOppDateCHI = "TBD"
 
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
+	
 # DETERMINING NEXT OPPONENT
 
 def next():
@@ -96,7 +99,7 @@ next()
 def where():
 	if nextHomeCHI == "Chicago Bulls":
 		return "@Home" + " --- " + teamStadiumCHI
-	else:
+	elif nextAwayCHI == "Chicago Bulls":
 		return "Away"
 
 where()

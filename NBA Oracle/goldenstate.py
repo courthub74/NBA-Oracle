@@ -76,10 +76,14 @@ try:
 	nextAwayGS = NGparseGS["events"][0]["strAwayTeam"]
 	nextOppDateGS = NGparseGS["events"][0]["dateEventLocal"]
 except:
-	nextOppGS = "No Games Being Played"
-	nextHomeGS = "No Games Being Played"
-	nextAwayGS = "No Games Being Played"
-	nextOppDateGS = "No Games Being Played"
+	nextOppGS = 'null'
+	nextHomeGS = 'null'
+	nextAwayGS = 'null'
+	nextOppDateGS = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
 
 # DETERMINING NEXT OPPONENT
 
@@ -97,7 +101,7 @@ next()
 def where():
 	if nextHomeGS == "Golden State Warriors":
 		return "@Home" + " --- " + teamStadiumGS
-	else:
+	elif nextAwayGS == "Golden State Warriors":
 		return "Away"
 
 where()

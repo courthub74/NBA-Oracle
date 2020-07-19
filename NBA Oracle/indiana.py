@@ -71,10 +71,14 @@ try:
 	nextAwayIND = NGparseIND["events"][0]["strAwayTeam"]
 	nextOppDateIND = NGparseIND["events"][0]["dateEventLocal"]
 except:
-	nextOppIND = "No Games Being Played"
-	nextHomeIND = "N/A"
-	nextAwayIND = "N/A"
-	nextOppDateIND = "N/A"
+	nextOppIND = 'null'
+	nextHomeIND = 'null'
+	nextAwayIND = 'null'
+	nextOppDateIND = "TBD"
+
+#Season Suspension Variables
+nextGameOpp = "No Games at the Moment"
+nextGameLoc = "In the Bubble"
 
 # DETERMINING NEXT OPPONENT
 
@@ -91,7 +95,7 @@ next()
 def where():
 	if nextHomeIND == "Indiana Pacers":
 		return "@Home" + " --- " + teamStadiumIND
-	else:
+	elif nextAwayIND == "Indiana Pacers":
 		return "Away"
 
 where()
