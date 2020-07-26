@@ -15,7 +15,6 @@ celticsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/events
 # CELTICS General Info Parse
 dataBOS = celticsRE.text
 parseBOS = json.loads(dataBOS)
-
 # CELTICS Last Game Parse
 LGdataBOS = celticsLG.text
 LGparseBOS = json.loads(LGdataBOS)

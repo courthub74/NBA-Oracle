@@ -80,12 +80,12 @@ except:
 	nextOppDateCHI = "TBD"
 
 #Season Suspension Variables
-nextGameOpp = "No Games at the Moment"
+nextGameOppCHI = "No Games at the Moment"
 nextGameLoc = "In the Bubble"
 	
 # DETERMINING NEXT OPPONENT
 
-def next():
+def next(*args):
 	if nextHomeCHI == "Chicago Bulls":
 		return str(nextAwayCHI)
 	elif nextAwayCHI == "Chicago Bulls":
