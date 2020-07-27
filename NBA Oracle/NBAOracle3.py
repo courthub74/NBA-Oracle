@@ -591,8 +591,6 @@ def callWinLoss(*args):
 		outcomeOutput.delete(0.0, END)
 		outcomeOutput.insert(INSERT, oklahoma.win())
 
-
-
 TeamsVar.trace("w", callWinLoss)
 
 # CALL NEXT OPPONENT
