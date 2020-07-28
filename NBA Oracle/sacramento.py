@@ -5,22 +5,22 @@ import json
 ###############################################################
 # SACRAMENTO KINGS
 
-# SACRAMENTO General Info 134869
+# KINGS General Info 134869
 sacramentoRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Sacramento_Kings")
-# SACRAMENTO Last Game 134869
+# KINGS Last Game 134869
 sacramentoLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134869")
-# SACRAMENTO Next Game 134869
+# KINGS Next Game 134869
 sacramentoNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134869")
 
-# SACRAMENTO General Info Parse 134869
+# KINGS General Info Parse 134869
 dataSAC = sacramentoRE.text
 parseSAC = json.loads(dataSAC)
 
-# SACRAMENTO Last Game Parse 134869
+# KINGS Last Game Parse 134869
 LGdataSAC = sacramentoLG.text
 LGparseSAC = json.loads(LGdataSAC)
 
-# SACRAMENTO Next Game Parse 134869
+# KINGS Next Game Parse 134869
 NGdataSAC  = sacramentoNG.text
 NGparseSAC = json.loads(NGdataSAC)
 
@@ -28,7 +28,7 @@ NGparseSAC = json.loads(NGdataSAC)
 ######################################################################
 # LAST GAME
 
-# Last Game Info Variables SACRAMENTO 134869
+# Last Game Info Variables KINGS 134869
 kingsTeam = parseSAC["teams"][0]["strTeam"]
 yearFormedSAC = parseSAC["teams"][0]["intFormedYear"]
 teamStadiumSAC = parseSAC["teams"][0]["strStadium"]
